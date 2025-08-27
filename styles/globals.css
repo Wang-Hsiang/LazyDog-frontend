@@ -1,0 +1,95 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "../html/Home/css/home.css";
+
+/* @import
+  url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;family=Oswald:wght@200..700&amp;display=swap'); */
+
+body {
+  * {
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  color: #3b3330;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 登入表單 */
+
+/* .lumi-bread {
+  color: #828282;
+} */
+
+/* teacher */
+.lumi-all-wrapper {
+  margin: 90px auto 20px;
+  max-width: 1320px;
+}
+
+.lumi-m-title {
+  color: #f5842b !important;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6px;
+}
+.lumi-s-title {
+  color: #66c5bd;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 3px;
+}
+
+/* noUiSlider 全域樣式 */
+.noUi-target {
+  background: #fff !important;
+  border-radius: 20px !important;
+  border: 2px solid #ff9900 !important;
+  box-shadow: none !important;
+  height: 8px !important;
+}
+
+.noUi-connect {
+  background: linear-gradient(to right, #ff8c00, #ffa500) !important;
+  border-radius: 20px !important;
+}
+
+.noUi-handle {
+  background: white !important;
+  border: 3px solid #ffa500 !important;
+  border-radius: 50% !important;
+  width: 22px !important;
+  height: 22px !important;
+  top: -8px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none !important;
+}
+
+.noUi-tooltip {
+  background: #ffa500 !important;
+  color: white !important;
+  border-radius: 5px !important;
+  font-size: 12px !important;
+  padding: 5px !important;
+  font-weight: bold !important;
+}
+/* noUi結束*/
+@media (max-width: 768px) {
+  .lumi-m-title{
+    font-size: 24px;
+  }
+  .lumi-s-title{
+    font-size: 16px;
+  }
+}

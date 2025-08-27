@@ -1,0 +1,100 @@
+.floor {
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-weight: bold;
+  background-color: #d9d9d9;
+}
+.carousel-inner img {
+  width: 263px;
+  height: 263px;
+}
+
+.avatar {
+  width: 37px;
+  height: 37px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+
+
+.article_img {
+  width: 100%;
+}
+.auther{
+  width: 48px;
+}
+
+/* .chat{
+  margin-top: 500px;
+} */
+ 
+
+/* img{
+  width: 100%;  
+} */
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  max-height: 80px;
+  overflow: hidden;
+}
+.link:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+.link2 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.link2:hover {
+  text-decoration: none;
+  color: white;
+}
+/* -------button---------- */
+.customToggle::after {
+  display: none; /* 隱藏倒三角形 */
+}
+.customDropdownMenu {
+  min-width: 80px; /* 設置下拉式選單的最小寬度 */
+  padding: 10px 0; /* 設置內邊距 */
+}
+.item:hover {
+  background-color: #66c5bd;
+  color: white;
+}
+.moreComments{
+  background-color: #f5842b;
+  color:aliceblue;
+  border-radius: 5px;
+  border: 2 solid #f5842b;
+  padding: 7px;
+  position: absolute;
+  top:-35px
+}
+.moreComments:hover{
+  background-color: #d9d9d900;
+  color:#f5842b;
+  border-radius: 5px;
+  border: 2 solid #f5842b;
+  padding: 7px;
+}
+
+@media screen and (min-width: 390px) {
+    .chat{
+        width: 390px;
+    }
+    /* textarea{
+        height: 27px;
+    } */
+}

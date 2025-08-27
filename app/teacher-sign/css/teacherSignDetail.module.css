@@ -1,0 +1,132 @@
+/* 共用 */
+/* 滾軸樣式 */
+.scrollOrg {
+  --sb-track-color: #bcbcbc38;
+  --sb-thumb-color: #f7a96d;
+  --sb-size: 4px;
+}
+
+.scrollOrg::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scrollOrg::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 4px;
+}
+
+.scrollOrg::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 4px;
+  /* border: 1px solid #232E33; */
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollOrg {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.labels:focus,
+.controls:focus,
+input:focus,
+input:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #a1a1a1 !important;
+}
+
+/* 右邊 */
+.right {
+  background: #fff;
+  overflow-y: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* margin-top: 100px; */
+
+  .tTitle {
+    font-weight: bold;
+  }
+
+  .labels {
+    font-size: 15px;
+  }
+
+  .controls {
+    border-radius: 8px;
+    background-color: #bcbcbc38;
+    border: none;
+  }
+
+  .mainPic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border: 0.8px solid #ecebeb;
+    border-radius: 8px;
+    height: 290px;
+    padding: 0;
+  }
+
+  .otherPic {
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    overflow: hidden;
+    border: 0.8px solid #f5f3f3;
+    border-radius: 8px;
+    height: 250px;
+    padding: 8px;
+  }
+
+  /* 美化圖片預覽區 */
+  .imageCard {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .imageCard .imgCr {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .imageCard .pics {
+    width: 100px;
+    height: 100px;
+  }
+
+  .imageCard .add {
+    width: 100%;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 3px;
+  }
+
+  .submitBtn {
+    background-color: #f5842b;
+    border: none;
+    &:hover {
+      background-color: #e26404;
+    }
+
+    .submitBtnA {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

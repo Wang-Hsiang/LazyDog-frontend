@@ -1,0 +1,20 @@
+.post {
+    background-color: #f5842b;
+    /* color: white; */
+    border-radius: 7px;
+    border: none;
+    font-size: 16px;
+    border:1.5 solid #f5842b;
+    .postLink{
+      color: white;
+    }
+  }
+  
+  .post:hover {
+    background-color: white;
+    color: #f5842b;
+    border:1.5 solid #f5842b;
+    .postLink{
+      color: #f5842b;
+    }
+  }

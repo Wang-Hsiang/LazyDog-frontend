@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/operatorCamera.css" />
+    <title>opCourseEdit</title>
+    <style>
+        /* 共用 */
+      .rounded {
+        border-radius: 5px !important;
+      }
+      .tName,.tGmail,.tTitle{
+        font-weight: bold;
+        }
+
+
+        /* 左邊 */
+      .left{
+        margin: 0 20px;
+
+        .btn-outline{
+            height: 35px;
+            padding: 6px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--Color-3, #66C5BD);
+            color: var(--Color-3, #66C5BD);
+            font-family: "Noto Sans TC";
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+
+        }
+        .btn-outline:hover{
+            background-color:  var(--Color-3, #66C5BD);
+            color: #fff;
+            
+        }
+        .text-center {
+            padding: 38px;
+        }
+        .lis {
+            border-top: 0.1px solid var(--text-Gy, #dee2e6);
+        }
+        .icons{
+            width: 18px;
+            margin-right: 15px;
+        }
+
+        .li-text {
+            color: var(--text-Gy, #bcbcbc);
+            font-family: 'Noto Sans TC';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 30px; /* 187.5% */
+            letter-spacing: 0.96px;
+        }
+      }
+      
+      /* 右邊 */
+      .right{
+        /* height: 95vh;
+        overflow-y: auto; */
+        .must{
+        color: red;
+        padding-left: 5px;
+        }
+        .example{
+            color: #bcbcbc;
+            font-size: 12px;
+            padding-left: 15px;
+        }
+
+        .form-control {
+          border-radius: 8px;
+        }  
+
+        /* 美化圖片預覽區 */
+        .image-card {
+          position: relative;
+          width: 100px;
+          height: 100px;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #f8f9fa;
+          border: 1px solid #ddd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          /* padding: 8px; */
+        }
+
+        .image-card .imgCr {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+
+        .image-card .add {
+          width: 100%;
+          font-size: 12px;
+          margin-top: 5px;
+          padding: 3px;
+        }
+        .delete-btn {
+          position: absolute;
+          top: 4px;
+          right: 5px;
+          background: red;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+        .delete-btn:hover {
+          background: darkred;
+        }
+
+        .btnAddPic{
+            background-color: #66C5BD;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btnSubmit{
+          background-color: #F5842B;
+          border: none;
+          
+          .btnSubmitA{
+            color:white;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+
+      }
+      
+
+    </style>
+</head>
+<body>
+    <!-- 點擊圖片 Bs Modal (彈出視窗)  -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img id="modalImage" class="img-fluid" src="" alt="放大圖片">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- 左邊sidebar -->
+            <div class="col-md-3">
+                <div class="left">
+                  <div class="border rounded ">
+                    <div class="text-center">
+                      <div class="position-relative d-inline-block">
+                        <img
+                          src="./img/25 (1).jpeg"
+                          class="rounded-circle avatar-img"
+                          alt="User Avatar"
+                        />
+                        <!-- 相機按鈕Dropdown) -->
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-light camera-icon p-0"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <img
+                              src="./img/camera.png"
+                              alt="相機"
+                              class="camera-icon-img"
+                            />
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <button
+                                class="dropdown-item text-danger"
+                                id="deletePhoto"
+                              >
+                                刪除照片
+                              </button>
+                            </li>
+                            <li>
+                              <label for="uploadPhoto" class="dropdown-item"
+                                >上傳照片</label
+                              >
+                              <input
+                                type="file"
+                                id="uploadPhoto"
+                                accept="image/*"
+                                class="d-none"
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <h5 class="m-3 tName">陳大方</h5>
+                      <p class="text-muted tGmail">165846hote@gmail.com</p>
+                      <button class="btn btn-outline btn-sm">已認證</button>
+                    </div>
+                    <ul class="list-unstyled text-start m-0">
+                      <li class="p-4 lis">
+                        <a
+                          href="opTeacherInfo.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/userIcon.png" alt="" />我的資訊
+                        </a>
+                      </li>
+                      <li class="p-4 lis">
+                        <a
+                          href="opCourseList.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/penIcon.png" alt=""></i>我的課程
+                        </a>
+                      </li>
+                      <li class="p-4 lis">
+                        <a
+                          href="opCoursePlace.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/flagIcon.png" alt=""></i>開課地點
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                
+            </div>
+            <!-- 右邊 -->
+          <div class="col-md-9">            
+            <div class="right border rounded p-5">
+            <form action="">
+            <h3 class="mb-4 tTitle">編輯課程</h3>
+            <div class=" mb-2">
+              <div class="row g-4">
+                <div class="col-md-12">
+                  <label class="form-label">課程名稱<span class="must">*</span></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="一對一寵物美容教學實作"
+                    placeholder=""
+                  />
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">課程類別<span class="must">*</span></label>
+                  <select class="form-select" >
+                    <option selected>請選擇</option>
+                    <option>寵物美容</option>
+                    <option>寵膳食育</option>
+                    <option>寵物訓練</option>
+                    <option>寵物照護</option>
+                    <option>商業思維與專業培訓</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">課程金額<span class="must">*</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="4,200"
+                      placeholder=""
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">開課日期<span class="must">*</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="2025/12/20 20:00:00"
+                      placeholder=""
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">開課地點<span class="must">*</span></label>
+                    <select class="form-select">
+                      <option selected>請選擇</option>
+                      <option>台北</option>
+                      <option>台中</option>
+                      <option>高雄</option>
+                      <option>線上直播</option>
+                      <option>線上預錄</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mt-4">
+                <label class="form-label">該梯每堂課日期<span class="must">*</span><span class="example">範例 : 第二梯 08/17、08/24、08/31、09/07、09/14 、09/21、09/28</span></label>
+                <input
+                      type="text"
+                      class="form-control"
+                      value="第二梯   08/17、08/24、08/31、09/07、09/14 、09/21、09/28"
+                      placeholder=""
+                    />
+                </div>
+
+                <div class="col-md-12 mt-4">
+                  <label class="form-label">課程介紹<span class="must">*</span></label>
+                  <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="3" >課程時間為3小時(包含觀念、溝通、保定及實際操作)，，學員需自行攜帶毛孩（犬貓、各種品種皆可，一堂課以一位毛孩-限中小型19公斤以下），完成報名及繳費後請加入官方Line@：@lazydog，以利後續相關通知</textarea>
+                </div>
+                <div class="col-md-12 mt-4">
+                  <label class="form-label">注意事項<span class="must">*</span></label>
+                  <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="5">本單位保留權益：因應疫情、天候或突發、身體因素等狀況變化，本單位保留可隨時改採直播授課方式上課，或做講師異動等必要安排，學員一樣可做線上或學生群等提問及互動，不便之處敬請見諒。
+
+                開課通知：完成實體課程報名繳費後，將於開課前7-10工作天，以E-mail或簡訊寄發開課通知，故請同學務必留意填寫正確的E-Mail及手機號碼；報名線上預錄課程，則可直接使用報名電郵登入後台即可觀看。
+                
+                請假補課：學員報名各項課程，因故辦理請假，可選擇後面開辦之線上或線下梯次申請補課，唯考慮實體梯次可能會有座位有限、人數不足等因素取消開課，故將優先安排線上補課。請填寫補課申請單，等候助教通知安排出席或觀看。(若原課程出席率請假超過80%，即使補課也無法領取結業證書)
+                
+                結業證書資格：當梯課程出席率需達80%並如期繳交老師指派作業或練習 （所有課程結業時數證書響應環保已全面改為電子檔方式發送致電郵）。
+                
+                報名考試說明：只要領有課程結業證書，無論是參加線上預錄或線下課程學員，均可自由報考，參與台北現場考試。</textarea>
+                </div>
+                <div class="col-md-12 mt-4">
+                    <label class="form-label">Q&A<span class="must">*</span></label>
+                    <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="5" >Q1：什麼是一對一寵物美容課程？ 👉答：一對一寵物美容課程與市面上寵物美容課程最大不同在 老師上課學生只有你一個人，而非傳統一對多人方式，無法針對個別化程度及學習需求做加強指導。 一對一寵物美容有分是針對飼主，還是想報考寵物美容丙級的初級美容師，課程內容大不相同。 針對飼主的一對一寵物美容課程，主要是教授在家DIY技巧，及基礎問題皮毛調理；針對應考的一對一寵物美容課程，則是針對考試重點與術科實作處理技巧做考前複習。 Q2：課程結束是否有結業完課時數證書？ 👉答：完整參與陪跑計劃，並繳交作業，即可領取結業時數證明 Q3：是否有報名課程的優惠？ 👉答：報名一對一課程屬客製化服務，因此無再享有報名優惠，敬請見諒。 Q4：繳費方式有哪些？ 👉答：目前繳費方式有線上刷卡、匯款、超商條碼繳費及中租零卡分期4種。 【匯款】 可使用平台下單匯款或是臨櫃、ATM等方式，臨櫃或ATM請繳費後至官方Line@告知匯款末五碼，方便核對回報。 ★臨櫃ATM使用帳號 戶名：寵愛國際股份有限公司 銀行：永豐銀行(807)內湖分行 帳號：134-018-0006552-1 【刷卡】線上報名連結使用藍新第三方金流。如需信用卡分期，請自行洽詢使用金融卡銀行。 【中租零卡分期】分期期數及利率分別為 3期：2.3% 6期：3.3% 9期：5.0% 12期：6.5% 18期：8.5% 24期：11.5% 再請加入官方LINE@：@padore 告訴我們想要報名的課程及預計分期期數 並提供個人中文姓名／電話／Email 我們會協助提供給中租協助零卡分期審核~謝謝</textarea>
+                </div>
+
+                 <!-- 圖片 -->
+                <div class="col-md-12 my-4">
+                    <div class="section">
+                        <h5>課程圖片</h5>
+                        <div
+                          id="imagePreviewContainer"
+                          class="d-flex flex-wrap gap-3 mb-2"
+                        >
+                          <div class="image-card">
+                            <img
+                              class="imgCr"
+                              src="./img/25 (1).jpeg"
+                              alt="課程圖片1"
+                            />
+                            <button type="button" class="delete-btn deletPic">&times;</button>
+                          </div>
+                          <div class="image-card">
+                            <img
+                              class="imgCr"
+                              src="./img/25 (1).jpeg"
+                              alt="課程圖片1"
+                            />
+                            <button type="button" class="delete-btn deletPic">&times;</button>
+                          </div>
+                          <div class="image-card">
+                            <img
+                              class="imgCr"
+                              src="./img/25 (1).jpeg"
+                              alt="課程圖片1"
+                            />
+                            <button type="button" class="delete-btn deletPic">&times;</button>
+                          </div>
+                          <div class="image-card">
+                            <img
+                              class="imgCr"
+                              src="./img/25 (1).jpeg"
+                              alt="課程圖片1"
+                            />
+                            <button type="button" class="delete-btn deletPic">&times;</button>
+                          </div>
+                          
+                        </div>
+                        <input
+                          type="file"
+                          id="imageUpload"
+                          class="form-control d-none add"
+                          accept="image/*"
+                          multiple
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-sm mt-2 btnAddPic"
+                          onclick="document.getElementById('imageUpload').click();"
+                        >
+                          + 新增圖片
+                        </button>
+                      </div>
+                </div>
+              </div>
+            </div>          
+            
+             <!-- 按鈕區 -->
+             <div class="d-flex justify-content-end gap-3">
+              <button type="submit" class="btn btn-primary btn-sm px-4 btnSubmit">
+                <a class="btnSubmitA" href="./opCourseList.html">儲存</a>
+              </button>
+            </div>
+        </form>
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+
+
+    <script>
+        document
+        .getElementById("imageUpload")
+        .addEventListener("change", function (event) {
+          const files = event.target.files;
+          const previewContainer = document.getElementById(
+            "imagePreviewContainer"
+          );
+
+          for (const file of files) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const imgWrapper = document.createElement("div");
+              imgWrapper.classList.add("image-card");
+
+              const imgElement = document.createElement("img");
+              imgElement.src = e.target.result;
+              imgElement.classList.add("imgCr");
+
+              const descriptionInput = document.createElement("input");
+              descriptionInput.type = "text";
+              descriptionInput.classList.add("form-control");
+              descriptionInput.placeholder = "輸入圖片描述";
+
+              const removeBtn = document.createElement("button");
+              removeBtn.classList.add("delete-btn" , "deletPic");
+              removeBtn.innerHTML = "&times;";
+              removeBtn.onclick = function () {
+                previewContainer.removeChild(imgWrapper);
+              };
+
+              imgWrapper.appendChild(imgElement);
+              imgWrapper.appendChild(descriptionInput);
+              imgWrapper.appendChild(removeBtn);
+
+              previewContainer.appendChild(imgWrapper);
+            };
+            reader.readAsDataURL(file);
+          }
+
+           event.target.value = "";
+        });
+
+        //  deletPic 
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("deletPic")) {
+                const imgCard = event.target.closest(".image-card");
+                if (imgCard) {
+                    imgCard.remove();
+                }
+            }
+         });
+
+        // 點擊圖片彈出視窗
+        document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("imgCr")) {
+            const imgSrc = event.target.src;  // 取得圖片路徑
+            document.getElementById("modalImage").src = imgSrc;  // 設定 Modal 內的圖片
+            const modal = new bootstrap.Modal(document.getElementById("imageModal"));
+            modal.show();  // 顯示 Modal
+        }
+       });
+
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

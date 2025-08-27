@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lazy Dog 優惠券</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 第一區塊 (背景) */
+      .coupon-container {
+        background-color: #fdfaf5;
+        padding: 40px;
+      }
+
+      /* 背景 */
+      .second-section {
+        background-color: #fff6e8;
+        padding: 40px;
+      }
+      /* 背景 */
+      .third-section {
+        background-color: #fdfaf5;
+      }
+      /* 背景 */
+      .forth-section {
+        background-color: #fef3d8;
+        padding: 40px;
+      }
+
+      /* 第一區塊優惠券 */
+      .coupon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-image: url("../../public/hotel/hotel-images/page-image/coupon/coupon-G.png");
+        background-position: center;
+        width: 550px;
+        height: 148px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* 第二區塊優惠券 */
+      .second-section .coupon {
+        background-image: url("../../public/hotel/hotel-images/page-image/coupon/coupon-Y.png");
+        margin-bottom: 30px;
+      }
+      .third-section .coupon {
+        background-image: url("../../public/hotel/hotel-images/page-image/coupon/coupon-B.png");
+      }
+
+      .coupon-content {
+        position: absolute;
+        top: 65%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        width: 50%;
+      }
+
+      .coupon-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff6600;
+        margin-bottom: 5px;
+        text-align: left;
+        padding-left: 15px;
+      }
+      /* 第二區塊 */
+      .other-section-content {
+        position: absolute;
+        top: 60%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #444;
+        font-weight: bold;
+        font-size: 14px;
+        width: 50%;
+      }
+      .second-section .row {
+        gap: 40px;
+      }
+
+      .coupon-code {
+        font-size: 16px;
+        color: #ff6600;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        border: 2px dashed #ff6600;
+        margin-top: 5px;
+      }
+      /* 到期日 */
+      .coupon-expiry {
+        font-size: 14px;
+        color: #d32f2f;
+        margin-top: 5px;
+        text-align: right;
+        margin-right: 10px;
+      }
+
+      .coupon-button {
+        background-color: #ff9900;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        border: none;
+        cursor: pointer;
+      }
+
+      .coupon-button:hover {
+        background-color: #ff6600;
+      }
+
+      .third-section .row,
+      .forth-section .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .third-section .coupon,
+      .forth-section .coupon {
+        margin-bottom: 30px;
+      }
+
+      .forth-section video {
+        max-width: 100%;
+        border-radius: 10px;
+        display: block;
+        margin-left: 50px;
+      }
+      @media (max-width: 768px) {
+        .third-section .row,
+        .forth-section .row {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .coupon {
+          width: 100%;
+        }
+      }
+      .fifth-section {
+        background-color: #fff6e8;
+        padding: 50px 0;
+      }
+
+      .event {
+        background: #fffdf7;
+        padding: 25px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        min-height: 180px;
+      }
+      .event:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      .event-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .event-discount {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ff6600;
+      }
+
+      .event-desc {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      .event-icon img {
+        width: 50px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 992px) {
+        .event {
+          min-height: 200px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+          text-align: center;
+        }
+        .event {
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+      }
+      .modal-content {
+        animation: fadeInUp 0.5s ease-in-out;
+        border-radius: 15px;
+      }
+
+      .success-animation {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid #4caf50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        animation: scaleIn 0.6s ease-in-out;
+        position: relative;
+      }
+
+      .checkmark {
+        width: 50px;
+        height: 25px;
+        border: solid #4caf50;
+        border-width: 0 0 4px 4px;
+        transform: rotate(-45deg);
+        position: absolute;
+        animation: draw 0.5s ease-in-out forwards;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes draw {
+        from {
+          width: 0;
+          height: 0;
+        }
+        to {
+          width: 50px;
+          height: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal 彈跳視窗 -->
+    <div
+      class="modal fade"
+      id="couponModal"
+      tabindex="-1"
+      aria-labelledby="couponModalLabel"
+      aria-hidden={true}
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content animate__bounceIn">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title fw-bold" id="couponModalLabel">
+              🎉 領取優惠券成功！
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="success-animation">
+              <div class="checkmark"></div>
+            </div>
+
+            <p class="fs-5 fw-bold text-primary" id="couponName">優惠券名稱</p>
+            <p class="coupon-code text-danger" id="couponCode">
+              優惠券代碼：XXXXXX
+            </p>
+            <p class="text-muted" id="couponExpiry">有效期限：2025/12/31</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              確認
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第一個優惠券區塊 -->
+    <div class="container-fluid coupon-container">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <!-- TOP 1 -->
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="coupon">
+              <div class="coupon-content">
+                <div class="coupon-name">🐶 狗狗專屬優惠</div>
+                <div class="coupon-code">SKUDIWEK54K64L</div>
+                <div class="coupon-expiry">有效期限：2025/12/31</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+          </div>
+
+          <!-- TOP 2 -->
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="coupon">
+              <div class="coupon-content">
+                <div class="coupon-name">🐶 狗狗專屬優惠</div>
+                <div class="coupon-code">SKUDIWEK54K64L</div>
+                <div class="coupon-expiry">有效期限：2025/12/31</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二個區塊 (促銷圖片 + 3 張優惠券) -->
+    <div class="container-fluid second-section">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <!-- 左側圖片 -->
+          <div class="col-lg-5 col-md-5 col-sm-12 text-center">
+            <img
+              src="../../public/hotel/hotel-images/page-image/coupon/ADS product.png"
+              alt="促銷圖片"
+              style="width: 100%; max-width: 430px; height: auto"
+            />
+          </div>
+
+          <!-- 右側 3 張優惠券 -->
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🐶 狗狗專屬優惠</div>
+                <div class="coupon-code">ABCD123456</div>
+                <div class="coupon-expiry">有效期限：2025/12/31</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🎁 限時折扣</div>
+                <div class="coupon-code">XYZ987654</div>
+                <div class="coupon-expiry">有效期限：2025/11/30</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🛒 商店折扣券</div>
+                <div class="coupon-code">QWER123456</div>
+                <div class="coupon-expiry">有效期限：2025/10/15</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第三個區塊 -->
+    <div class="container-fluid third-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🐶 狗狗專屬優惠</div>
+                <div class="coupon-code">ABCD123456</div>
+                <div class="coupon-expiry">有效期限：2025/12/31</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🎁 限時折扣</div>
+                <div class="coupon-code">XYZ987654</div>
+                <div class="coupon-expiry">有效期限：2025/11/30</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🛒 商店折扣券</div>
+                <div class="coupon-code">QWER123456</div>
+                <div class="coupon-expiry">有效期限：2025/10/15</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <img
+              src="../../public/hotel/hotel-images/page-image/coupon/ADS-1.png"
+              alt="第二張促銷DM"
+              style="width: 100%; max-width: 550px; height: auto"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第四個區塊 -->
+    <div class="container-fluid forth-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12 text-center">
+            <video
+              class="coupon-video"
+              src="../../public/hotel/hotel-images/page-image/coupon/ADS-7.mp4"
+              alt="促銷圖片"
+              style="width: 100%; max-width: 550px; height: auto"
+              autoplay
+              loop
+            ></video>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🐶 狗狗專屬優惠</div>
+                <div class="coupon-code">ABCD123456</div>
+                <div class="coupon-expiry">有效期限：2025/12/31</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🎁 限時折扣</div>
+                <div class="coupon-code">XYZ987654</div>
+                <div class="coupon-expiry">有效期限：2025/11/30</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+
+            <div class="coupon">
+              <div class="coupon-content other-section-content">
+                <div class="coupon-name">🛒 商店折扣券</div>
+                <div class="coupon-code">QWER123456</div>
+                <div class="coupon-expiry">有效期限：2025/10/15</div>
+              </div>
+              <button class="coupon-button" type="button">點我領取</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第五個區塊 -->
+    <div class="container-fluid fifth-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="event user-event">
+              <h5 class="event-title text-primary mt-2">首購會員</h5>
+              <h2 class="event-discount text-warning mt-2">現折50</h2>
+              <p class="event-desc mt-2">單筆消費滿 $500 即可使用</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="event">
+              <div class="event-icon">
+                <img
+                  src="../../public/hotel/hotel-images/page-image/coupon/shipping-fast.png"
+                  alt="滿額免運"
+                />
+              </div>
+              <h5 class="event-title text-danger">滿額免運</h5>
+              <p class="event-desc">超取 $1500 / 宅配 $2000</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="event">
+              <div class="event-icon">
+                <img
+                  src="../../public/hotel/hotel-images/page-image/coupon/coins-dollar-line.png"
+                  alt="購物金回饋"
+                />
+              </div>
+              <h5 class="event-title text-warning">購物金回饋</h5>
+              <p class="event-desc">
+                會員最高享 <span class="text-danger">8%</span> 回饋
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const couponButtons = document.querySelectorAll(".coupon-button");
+        const couponModalElement = document.getElementById("couponModal");
+        const couponModal = new bootstrap.Modal(couponModalElement);
+
+        couponButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const coupon = this.closest(".coupon");
+            const couponContent = coupon.querySelector(".coupon-content");
+
+            if (couponContent) {
+              const couponName =
+                couponContent.querySelector(".coupon-name")?.textContent ||
+                "未知優惠券";
+              const couponCode =
+                couponContent.querySelector(".coupon-code")?.textContent ||
+                "無代碼";
+              const couponExpiry =
+                couponContent.querySelector(".coupon-expiry")?.textContent ||
+                "未提供有效期限";
+
+              document.getElementById("couponName").textContent = couponName;
+              document.getElementById("couponCode").textContent =
+                "優惠券代碼：" + couponCode;
+              document.getElementById("couponExpiry").textContent =
+                couponExpiry;
+
+              couponModal.show();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

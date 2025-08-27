@@ -1,0 +1,89 @@
+/* Reset Body */
+/* body {
+  margin: 0;
+  padding: 0;
+} */
+
+/* 圖片區塊 */
+.cart-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cart-img img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 表單樣式 */
+form {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 輸入框區塊 */
+.input-group {
+  position: relative;
+  max-width: 400px;
+  padding: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  padding-top: 25px; /* 預留浮動標籤的空間 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+}
+
+/* 標籤樣式 */
+.input-group span {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 14px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+/* 當輸入框獲得焦點或有值時，標籤上移 */
+.input-group input:focus + span,
+.input-group input:not(:placeholder-shown) + span {
+  top: -8px;
+  font-size: 12px;
+  color: #007bff;
+  background-color: white;
+  padding: 0 5px;
+}
+.aside1 {
+  margin-bottom: 50px;
+}
+.btn {
+  background-color: #ff9538;
+  color: white;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover {
+  background-color: white;
+  color: #f5842b;
+  border: 2px solid;
+  border-color: #f5842b;
+}

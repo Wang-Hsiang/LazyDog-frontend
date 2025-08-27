@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120vh;
+  color: #3b3330;
+  font-family: "Noto Sans TC", sans-serif;
+  padding: 0 10px;
+  margin: 60px 0;
+}

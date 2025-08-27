@@ -1,0 +1,166 @@
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 90vh; */
+  margin: 80px auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 410px;
+  margin: 50px auto 5px;
+  border-radius: 8px;
+  padding: 32px;
+  background-color: white;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.title {
+  font-weight: 600;
+  margin-bottom: 32px;
+  padding: 0 8px 0;
+}
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.inputfiled {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 40px 10px 10px; /* 右邊預留空間給眼睛按鈕 */
+}
+.inputfiled:focus {
+  outline: none;
+  border-bottom: 2px solid #ffa726;
+}
+.eyeButton {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9538;
+}
+.fogotpass {
+  font-size: 12px;
+  color: #ff9538;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup,
+.logintext {
+  font-size: 14px;
+  text-align: center;
+  margin: 12px 0 5px;
+}
+.styles {
+  font-size: 12px;
+  margin-top: 30px;
+  /* padding: 0 8px 0; */
+  text-align: center;
+}
+.sociallogin {
+  display: flex;
+  /* gap: 1.31rem; */
+  align-items: center;
+  justify-content: center;
+}
+.socialloginBtn {
+  display: flex;
+  width: 60px;
+  padding: 12px 0;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #ffff;
+  cursor: pointer;
+}
+.googleIcon {
+  width: 42px;
+}
+.lineIcon {
+  width: 52px;
+}
+.separator {
+  font-size: 14px;
+  margin: 36px 0 5px;
+  text-align: center;
+}
+.register,
+.Login,
+.terms {
+  color: #ff9538;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.lumiLogin {
+  .loginbtn {
+    color: #ff9538;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ff9538;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+}
+
+.loginbtn:hover {
+  background-color: #fdf9f5;
+  color: #ff9538;
+  border-color: #ff9538;
+}
+.otherAccounts {
+  display: flex;
+  justify-content: space-between;
+}
+.otherAccountsLink {
+  display: flex;
+  gap: 15px;
+}
+
+.teacher {
+  color: #ff9538;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.hotel {
+  color: #ff9538;
+  font-size: 12px;
+}
+.agree {
+  font-size: 12px;
+  margin-top: 30px;
+  /* padding: 0 8px 0; */
+  text-align: center;
+}
+
+/* Swal 彈跳窗 */
+.tsaiSwal {
+  width: 400px;
+  padding: 25px 15px;
+  font-size: 16px !important;
+  padding: 15px 40px 40px;
+  border-radius: 35px !important;
+  background-color: white !important;
+  color: #5e5e5e;
+}

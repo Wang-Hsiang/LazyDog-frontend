@@ -1,0 +1,91 @@
+.form-control,
+.form-select {
+  border-radius: 8px;
+}
+.btn-success {
+  background-color: #81eaaf;
+  color: black;
+  border-radius: 5px;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #aaa;
+}
+.btn-orange {
+  background-color: #f5842b;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+}
+.btn-orange:hover {
+  background-color: #e65c00;
+}
+.btn-secondary {
+  background-color: #81eaaf;
+  color: black;
+  border-radius: 5px;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: #aaa;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+.section {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+}
+
+.image-card {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 8px;
+}
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: darkred;
+}

@@ -1,0 +1,69 @@
+.teacherBtn {
+  display: flex;
+  width: 270px;
+  padding: 10px 48px;
+  background-color: #66c5bd;
+  color: white;
+  border: 1px solid transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacherBtn:hover {
+  display: flex;
+  width: 270px;
+  padding: 10px 48px;
+  background-color: white;
+  color: #66c5bd;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  border-color: #66c5bd;
+  font-weight: 600;
+}
+.container {
+  /* display: flex; */
+  /* max-width: 720px; */
+  justify-content: center;
+  align-items: center;
+  background: #fff6e8;
+}
+
+.dog {
+  /* display: flex;
+  justify-content: space-between; */
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  /* width: 50%; */
+}
+
+.dog div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #66c5bd;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 6px;
+}
+.img{
+  justify-content: center;
+  align-items: center;
+}
+.teacher {
+  background-color: #fdfaf5;
+  background-image: url("/teacher-img/26.png");
+  background-position: center;
+  background-repeat: no-repeat; 
+} 
+
+@media (max-width: 768px) {
+
+.dog div{
+font-size: 20px;
+}
+.teacherBtn{
+  margin-bottom: 50px;
+}
+}

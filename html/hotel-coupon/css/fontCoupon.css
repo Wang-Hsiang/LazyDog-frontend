@@ -1,0 +1,266 @@
+ /* 第一區塊 (背景) */
+ .coupon-container {
+    background-color: #fdfaf5;
+    padding: 40px;
+  }
+
+  /* 背景 */
+  .second-section {
+    background-color: #fff6e8;
+    padding: 40px;
+  }
+  /* 背景 */
+  .third-section {
+    background-color: #fdfaf5;
+  }
+  /* 背景 */
+  .forth-section {
+    background-color: #fef3d8;
+    padding: 40px;
+  }
+
+  /* 第一區塊優惠券 */
+  .coupon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("/hotel/hotel-images/page-image/coupon/coupon-.png");
+    background-position: center;
+    width: 550px;
+    height: 148px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 第二區塊優惠券 */
+  .suSecondSection .suCoupon2 {
+    background-image: url("/hotel/hotel-images/page-image/coupon/coupon-Y.png");
+    margin-bottom: 30px;
+  }
+  .third-section .coupon {
+    background-image: url("/hotel/hotel-images/page-image/coupon/coupon-B.png");
+  }
+
+  .coupon-content {
+    position: absolute;
+    top: 65%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    width: 50%;
+  }
+
+  .coupon-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6600;
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 15px;
+  }
+  /* 第二區塊 */
+  .other-section-content {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+    width: 50%;
+  }
+  .second-section .row {
+    gap: 40px;
+  }
+
+  .coupon-code {
+    font-size: 16px;
+    color: #ff6600;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 2px dashed #ff6600;
+    margin-top: 5px;
+  }
+  /* 到期日 */
+  .coupon-expiry {
+    font-size: 14px;
+    color: #d32f2f;
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .coupon-button {
+    background-color: #ff9900;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+  }
+
+  .coupon-button:hover {
+    background-color: #ff6600;
+  }
+
+  .third-section .row,
+  .forth-section .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .third-section .coupon,
+  .forth-section .coupon {
+    margin-bottom: 30px;
+  }
+
+  .forth-section video {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-left: 50px;
+  }
+  @media (max-width: 768px) {
+    .third-section .row,
+    .forth-section .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .coupon {
+      width: 100%;
+    }
+  }
+  .fifth-section {
+    background-color: #fff6e8;
+    padding: 50px 0;
+  }
+
+  .event {
+    background: #fffdf7;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-height: 180px;
+  }
+  .event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .event-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .event-discount {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff6600;
+  }
+
+  .event-desc {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+
+  .event-icon img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 992px) {
+    .event {
+      min-height: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      text-align: center;
+    }
+    .event {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+  .modal-content {
+    animation: fadeInUp 0.5s ease-in-out;
+    border-radius: 15px;
+  }
+
+  .success-animation {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #4caf50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    animation: scaleIn 0.6s ease-in-out;
+    position: relative;
+  }
+
+  .checkmark {
+    width: 50px;
+    height: 25px;
+    border: solid #4caf50;
+    border-width: 0 0 4px 4px;
+    transform: rotate(-45deg);
+    position: absolute;
+    animation: draw 0.5s ease-in-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes draw {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 50px;
+      height: 25px;
+    }
+  }

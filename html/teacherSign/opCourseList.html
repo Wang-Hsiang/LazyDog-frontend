@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/operatorCamera.css" />
+    <title>opCourseList</title>
+    <style>
+        /* 共用 */
+      .rounded {
+        border-radius: 5px !important;
+      }
+      .tName,.tGmail,.tTitle{
+        font-weight: bold;
+        }
+
+
+        /* 左邊 */
+      .left{
+        margin: 0 20px;
+
+        .btn-outline{
+            height: 35px;
+            padding: 6px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--Color-3, #66C5BD);
+            color: var(--Color-3, #66C5BD);
+            font-family: "Noto Sans TC";
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+
+        }
+        .btn-outline:hover{
+            background-color:  var(--Color-3, #66C5BD);
+            color: #fff;
+            
+        }
+        .text-center {
+            padding: 38px;
+        }
+        .lis {
+            border-top: 0.1px solid var(--text-Gy, #dee2e6);
+        }
+        .icons{
+            width: 18px;
+            margin-right: 15px;
+        }
+
+        .li-text {
+            color: var(--text-Gy, #bcbcbc);
+            font-family: 'Noto Sans TC';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 30px; /* 187.5% */
+            letter-spacing: 0.96px;
+        }
+      }
+      
+      /* 右邊 */
+        .right{
+           
+            .top{
+                display: flex;
+                justify-content: space-between;
+                .btnAddCourse{
+                    width: 103px;
+                    height: 38px;
+                    /* padding: 0px 22px; */
+                    border-radius: 10px;
+                    background: #66C5BD;
+                    border: none;
+                    
+                }
+                .addCourse{
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    letter-spacing: .8px;
+                }
+            }
+
+                          
+
+                .cTable{
+                    /* border: 1px solid #000; */
+                    /* height: 500px; */
+                }
+                
+                .cThead, .cTbody{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 40px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    padding: 0 20px 0 17px;
+                    margin: 15px 0;
+                }
+                .cThead{
+                    border-bottom: 0.5px solid var(--text-Gy, #BCBCBC);
+                }
+                .cTbody{
+                    /* border: 1px solid lightblue; */
+                    height: 189px;
+                    padding: 12px 20px 12px 17px;
+                    margin: 30px 0;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                }
+                .courseImg{
+                    width: 200px;
+                    height: 150px;
+                    object-fit: cover;
+                }
+                .cTh1, .cTd1{
+                    /* background-color: lightpink; */
+                    width: 150px;
+                    text-align: center;
+                }
+                .cTh2, .cTd2{
+                    /* background-color: lightpink; */
+                    width: 200px;
+                    overflow: hidden;
+                    text-align: center;
+                    color: var(--text-Bk, #3E3E3E);
+                    text-overflow: ellipsis;
+                    font-family: "Noto Sans TC";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: bold;
+                }
+                .cTh3, .cTd3{
+                    /* background-color: lightpink; */
+                    width: 211px;
+                    text-align: center;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    color: var(--text-Bk, #3E3E3E);
+                    text-overflow: ellipsis;
+                    /* h4 */
+                    font-family: "Noto Sans TC";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: bold;
+                }
+                .cTh4, .cTd4{
+                    /* background-color: lightpink; */
+                    width: 80px;
+                    text-align: center;
+                    overflow: hidden;
+                    color: var(--text-Bk, #3E3E3E);
+                    text-overflow: ellipsis;
+                    /* h4 */
+                    font-family: "Noto Sans TC";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: bold;
+                }
+             
+                /*  分頁 */
+                .pagination {
+                display: flex;
+                gap: 20px;
+                padding: 66px 0;
+                }
+
+                .pagination .page-item .page-link {
+                border-radius: 50%;
+                margin: 0 5px;
+                color: #bcbcbc;
+                border: none;
+                }
+
+                .pagination .page-item.active .page-link {
+                background-color: #f5842b;
+                color: white;
+                border-radius: 60%;
+                }
+
+                .pagination .page-item .page-link:hover {
+                background-color: #f5842b;
+                color: white;
+                }
+        }
+      
+
+    </style>
+</head>
+<body>
+    <!-- 點擊圖片 Bs Modal (彈出視窗)  -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img id="modalImage" class="img-fluid" src="" alt="放大圖片">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- 左邊sidebar -->
+            <div class="col-md-3">
+                <div class="left">
+                  <div class="border rounded ">
+                    <div class="text-center">
+                      <div class="position-relative d-inline-block">
+                        <img
+                          src="./img/25 (1).jpeg"
+                          class="rounded-circle avatar-img"
+                          alt="User Avatar"
+                        />
+                        <!-- 相機按鈕Dropdown) -->
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-light camera-icon p-0"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <img
+                              src="./img/camera.png"
+                              alt="相機"
+                              class="camera-icon-img"
+                            />
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <button
+                                class="dropdown-item text-danger"
+                                id="deletePhoto"
+                              >
+                                刪除照片
+                              </button>
+                            </li>
+                            <li>
+                              <label for="uploadPhoto" class="dropdown-item"
+                                >上傳照片</label
+                              >
+                              <input
+                                type="file"
+                                id="uploadPhoto"
+                                accept="image/*"
+                                class="d-none"
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <h5 class="m-3 tName">陳大方</h5>
+                      <p class="text-muted tGmail">165846hote@gmail.com</p>
+                      <button class="btn btn-outline btn-sm">已認證</button>
+                    </div>
+                    <ul class="list-unstyled text-start m-0">
+                      <li class="p-4 lis">
+                        <a
+                          href="opTeacherInfo.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/userIcon.png" alt="" />我的資訊
+                        </a>
+                      </li>
+                      <li class="p-4 lis">
+                        <a
+                          href="opCourseList.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/penIcon.png" alt=""></i>我的課程
+                        </a>
+                      </li>
+                      <li class="p-4 lis">
+                        <a
+                          href="opCoursePlace.html"
+                          class="text-decoration-none li-text"
+                        >
+                          <img class="icons" src="./img/flagIcon.png" alt=""></i>開課地點
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                
+            </div>
+            <!-- 右邊 -->
+          <div class="col-md-9">            
+            <div class="right border rounded p-5 pb-3">
+            
+            <div class="top">
+                <h3 class="mb-4 tTitle">我的課程</h3>
+                <button
+                type="button"
+                class="btn btn-primary btn-sm  btnAddCourse"
+                ><a class="addCourse" href="./opCourseCreate.html">+ 新增課程</a>
+                </button>
+            </div>
+            
+            <div class="cTable bottom">
+                <div class="cThead">
+                    <div class="cTh1"></div>
+                    <div class="cTh2">課程名稱</div>
+                    <div class="cTh3">上課日期</div>
+                    <div class="cTh4">地點</div>
+                </div>
+                <div class="cTbody">
+                    <div class="cTd1"><img class="courseImg" src="./img/3 (1).jpeg" alt=""></div>
+                    <div class="cTd2">一對一寵物美容教學實作</div>
+                    <div class="cTd3">【台北】第一梯 11/02、11/09、11/16、11/23、11/30、12/07</div>
+                    <div class="cTd4">台北台北</div>
+                </div>
+                <div class="cTbody">
+                    <div class="cTd1"><img class="courseImg" src="./img/7 (1).jpeg" alt=""></div>
+                    <div class="cTd2">一對一寵物美容教學實作</div>
+                    <div class="cTd3">【台北】第一梯 11/02、11/09、11/16、11/23、11/30、12/07</div>
+                    <div class="cTd4">台北台北</div>
+                </div>
+                <div class="cTbody">
+                    <div class="cTd1"><img class="courseImg" src="./img/18 (1).jpeg" alt=""></div>
+                    <div class="cTd2">一對一寵物美容教學實作</div>
+                    <div class="cTd3">【台北】第一梯 11/02、11/09、11/16、11/23、11/30、12/07</div>
+                    <div class="cTd4">台北台北</div>
+                </div>
+                <div class="cTbody">
+                    <div class="cTd1"><img class="courseImg" src="./img/25 (1).jpeg" alt=""></div>
+                    <div class="cTd2">一對一寵物美容教學實作</div>
+                    <div class="cTd3">【台北】第一梯 11/02、11/09、11/16、11/23、11/30、12/07</div>
+                    <div class="cTd4">台北台北</div>
+                </div>
+
+            </div>
+                      
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item prev">
+                    <a class="page-link " href="#" aria-label="Previous">
+                      <span aria-hidden="true"><img src="./img/pageArrowleft;png.png" alt=""></span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link " href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item next">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true"><img src="./img/pageArrowright.png" alt=""></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+       
+            </div> 
+          </div>
+        </div>
+    </div>
+
+
+    <script>
+        document
+        .getElementById("imageUpload")
+        .addEventListener("change", function (event) {
+          const files = event.target.files;
+          const previewContainer = document.getElementById(
+            "imagePreviewContainer"
+          );
+
+          for (const file of files) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const imgWrapper = document.createElement("div");
+              imgWrapper.classList.add("image-card");
+
+              const imgElement = document.createElement("img");
+              imgElement.src = e.target.result;
+              imgElement.classList.add("imgCr");
+
+              const descriptionInput = document.createElement("input");
+              descriptionInput.type = "text";
+              descriptionInput.classList.add("form-control");
+              descriptionInput.placeholder = "輸入圖片描述";
+
+              const removeBtn = document.createElement("button");
+              removeBtn.classList.add("delete-btn" , "deletPic");
+              removeBtn.innerHTML = "&times;";
+              removeBtn.onclick = function () {
+                previewContainer.removeChild(imgWrapper);
+              };
+
+              imgWrapper.appendChild(imgElement);
+              imgWrapper.appendChild(descriptionInput);
+              imgWrapper.appendChild(removeBtn);
+
+              previewContainer.appendChild(imgWrapper);
+            };
+            reader.readAsDataURL(file);
+          }
+
+           event.target.value = "";
+        });
+
+        //  deletPic 
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("deletPic")) {
+                const imgCard = event.target.closest(".image-card");
+                if (imgCard) {
+                    imgCard.remove();
+                }
+            }
+         });
+
+        // 點擊圖片彈出視窗
+        document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("imgCr")) {
+            const imgSrc = event.target.src;  // 取得圖片路徑
+            document.getElementById("modalImage").src = imgSrc;  // 設定 Modal 內的圖片
+            const modal = new bootstrap.Modal(document.getElementById("imageModal"));
+            modal.show();  // 顯示 Modal
+        }
+       });
+
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

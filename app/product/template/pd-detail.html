@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/pd-detail.css" />
+    <title>Product_Detail</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="breadcrumbs">
+        <a href="">目錄</a>
+        <img src="./img/font/right.png" alt="" />
+        <a href="">罐頭</a>
+        <img src="./img/font/right.png" alt="" />
+        <a href="" class="breadcrumbs-active">主食/餐包</a>
+      </section>
+      <section class="product-info">
+        <div class="product-info-img-group">
+          <figure>
+            <img
+              src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_(1).webp"
+              alt=""
+            />
+          </figure>
+          <div class="product-info-img-small">
+            <figure class="product-info-img-small-active">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_sm(1).webp"
+                alt=""
+              />
+            </figure>
+            <figure>
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_sm(2).webp"
+                alt=""
+              />
+            </figure>
+            <figure>
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_sm(1).webp"
+                alt=""
+              />
+            </figure>
+            <figure>
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_sm(2).webp"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+        <div class="product-info-detail">
+          <div class="product-info-content">
+            <div class="info-favorite-group">
+              <button type="button" class="favorite-btn">
+                <img src="./img/font/heart.png" alt="" />
+              </button>
+              <h4>加入收藏</h4>
+            </div>
+            <div class="info-onsale-group">
+              <div class="onsale-tag"><h4>-30%</h4></div>
+              <div class="onsale-info">
+                <h4>限時促銷剩餘時間</h4>
+                <h4 class="onsale-time">00天:08時:00分</h4>
+              </div>
+            </div>
+            <h1 class="info-product-name">
+              法國皇家 SHNW 皇家小型幼犬濕糧MNPW 85克(1入)(狗主食餐包)
+            </h1>
+            <div class="info-rate-group">
+              <img src="./img/font/star-fill.png" alt="" />
+              <img src="./img/font/star-fill.png" alt="" />
+              <img src="./img/font/star-fill.png" alt="" />
+              <img src="./img/font/star-fill.png" alt="" />
+              <img src="./img/font/star.png" alt="" />
+            </div>
+            <div class="info-price-group">
+              <h3>限時促銷價格.................................</h3>
+              <h1>NT$ 62</h1>
+              <h2>NT$ 69</h2>
+            </div>
+            <div class="info-qty-group">
+              <h4>購買數量</h4>
+              <button class="qty-minus">
+                <img src="./img/font/minus.png" alt="" />
+              </button>
+              <input type="number" value="1" min="1" max="999" />
+              <button class="qty-plus">
+                <img src="./img/font/plus.png" alt="" />
+              </button>
+            </div>
+            <div class="info-btn-group">
+              <button class="btn-buynow"><h3>立即購買</h3></button>
+              <button><h3>加入購物車</h3></button>
+            </div>
+          </div>
+          <div class="product-info-payment"></div>
+        </div>
+      </section>
+      <nav class="sticky-top">
+        <ul>
+          <li>
+            <h3><a href="#collapse-heading1">商品詳情</a></h3>
+          </li>
+          <li>
+            <h3><a href="#collapse-heading2">商品介紹圖</a></h3>
+          </li>
+          <li>
+            <h3><a href="#collapse-heading3">商品規格</a></h3>
+          </li>
+        </ul>
+      </nav>
+      <section class="accordion accordion-flush product-detail" id="">
+        <article class="accordion-item">
+          <div class="accordion-header" id="collapse-heading1">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="true"
+              aria-controls="collapse1"
+            >
+              <h3>商品詳情</h3>
+            </button>
+          </div>
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse show"
+            aria-labelledby="collapse-heading1"
+          >
+            <div class="accordion-body">
+              <h4>
+                商品特色<br />為熟齡室內/絕育貓量身打造營養配方<br />熟齡元氣&amp;腎臟健康符合貓咪天生偏好<br />備受飼主及室內貓喜愛
+              </h4>
+            </div>
+          </div>
+        </article>
+        <div class="accordion-item product-detail-img">
+          <div class="accordion-header" id="collapse-heading2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              <h3>商品介紹圖</h3>
+            </button>
+          </div>
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="collapse-heading2"
+          >
+            <div class="accordion-body">
+              <figure>
+                <img
+                  src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_info(1).jpg"
+                  alt=""
+                />
+                <img
+                  src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_info(2).jpg"
+                  alt=""
+                />
+                <img
+                  src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_info(3).jpg"
+                  alt=""
+                />
+                <img
+                  src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_info(4).jpg"
+                  alt=""
+                />
+                <img
+                  src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_info(5).jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <h4>
+                    商品成分<br />肉及相關產品、穀物、蔬菜纖維、礦物質、油脂、多<br />醣類聚合物。營養添加劑:維他命D3、鐵、碘、<br />銅、鎂、鋅、沸石等。<br />營養分析<br />蛋白質8%、脂肪6%、纖維素1%<br />灰份2%、無氮浸出物4%<br />胺基酸<br />牛磺酸(%)0.12、精氨酸(%)0.45、離胺酸(%)0.5<br />、甲硫胺酸(%)0.15、甲硫胺酸+胱胺酸(%)0.3<br />鈣(%)0.32、磷(%)0.25、鈉(%)0.21、氯(%)0.2<br />鉀(%)0.15、鎂(%)0.02<br />礦物質<br />銅(mg/kg)3.4、鐵(mg/kg)34、<br />錳(mg/kg)3.4、鋅(mg/kg)25、<br />硒(mg/kg)0.2碘(mg/kg)0.4<br />維生素<br />維生素A
+                    IU/kg)8500、維生素D3 [IU/kg)140<br />維生素E
+                    [mg/kg]150、維生素C(mg/kg)100、<br />維生素B1(硫胺)(mg/kg)2、維生素B2[核黄素](mg/kg)2、<br />維生素B5(泛酸](mg/kg)10、維生素B6
+                    [此哆醇)(mg/kg)1、<br />維生素B12(氯鈷胺)(mg/kg)0.02、維生素B3
+                    [菸鹼酸)(mg/kg)14、<br />生物素(mg/kg)0.05、葉酸(mg/kg)0.3、膽鹼(mg/kg)440<br />其他營養素<br />澱粉(%)3.2、膳食纖維(%)1.8、亞麻油酸(%)1.7<br />花生四烯酸(%)0.06、ω-6脂肪酸(%)1.9、ω-3脂肪酸(%)0.15<br />EPA+DHA(%)0.07、左旋肉鹼-、葉黃素[mg/kg]1.2<br />β胡蘿蔔素
+                    (mg/kg) 1.25
+                    <br />熱量[NRC85](kcal/kg)930、熱量[NRC2006](CF)(kcal/kg)951
+                  </h4>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <article class="accordion-item product-detail-content">
+          <div class="accordion-header" id="collapse-heading3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              <h3>商品規格</h3>
+            </button>
+          </div>
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="collapse-heading3"
+          >
+            <div class="accordion-body">
+              <p>適用體型：全適用</p>
+              <p>商品適用年齡：幼齡</p>
+              <p>產地：奧地利</p>
+              <p>口味：其他</p>
+              <p>容量：51-150ml</p>
+            </div>
+          </div>
+        </article>
+        <div class="accordion-item product-detail-rate">
+          <div class="accordion-header" id="collapse-heading4">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+              aria-expanded="true"
+              aria-controls="collapse4"
+            >
+              <h3>商品評價</h3>
+            </button>
+          </div>
+          <div
+            id="collapse4"
+            class="accordion-collapse collapse show"
+            aria-labelledby="collapse-heading4"
+          >
+            <div class="accordion-body">
+              <div class="score-bar">
+                <div class="score">
+                  <h3>商品評價</h3>
+                  <h2>4.9</h2>
+                  <div class="star-group">
+                    <img src="./img/font/star-fill.png" alt="" />
+                    <img src="./img/font/star-fill.png" alt="" />
+                    <img src="./img/font/star-fill.png" alt="" />
+                    <img src="./img/font/star-fill.png" alt="" />
+                    <img src="./img/font/star-fill.png" alt="" />
+                  </div>
+                </div>
+                <div class="star-bar-group">
+                  <div class="star-bar">
+                    <div class="star-group">
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                    </div>
+                    <div class="bar-area"><div class="bar"></div></div>
+                    <p class="num">85%</p>
+                  </div>
+                  <div class="star-bar">
+                    <div class="star-group">
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                    </div>
+                    <div class="bar-area"><div class="bar"></div></div>
+                    <p class="num">10%</p>
+                  </div>
+                  <div class="star-bar">
+                    <div class="star-group">
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                    </div>
+                    <div class="bar-area"><div class="bar"></div></div>
+                    <p class="num">3%</p>
+                  </div>
+                  <div class="star-bar">
+                    <div class="star-group">
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                    </div>
+                    <div class="bar-area"><div class="bar"></div></div>
+                    <p class="num">2%</p>
+                  </div>
+                  <div class="star-bar">
+                    <div class="star-group">
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star.png" alt="" />
+                      <img src="./img/font/star-fill.png" alt="" />
+                    </div>
+                    <div class="bar-area"><div class="bar"></div></div>
+                    <p class="num">0%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="rate-card-group">
+                <div class="rate-card">
+                  <div class="rate-card-text">
+                    <div class="rate-card-user">
+                      <button type="button">
+                        <img src="./img/font/self.png" alt="" />
+                        <h6>毛小孩</h6>
+                      </button>
+                      <div class="star-group">
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                      </div>
+                    </div>
+                    <h6>
+                      我們精選全球優質狗狗用品，從營養健康的天然飼料到讓狗狗樂在其中的趣味玩具，每一款商品都經過嚴格挑選，確保您的毛孩得到最好的照顧。
+                    </h6>
+                  </div>
+                  <div class="rate-card-btn-date">
+                    <button class="rate-card-btn">
+                      <img src="./img/font/good.png" alt="" />
+                    </button>
+                    <h5>Aug 30 ,2024</h5>
+                  </div>
+                </div>
+                <div class="rate-card">
+                  <div class="rate-card-text">
+                    <div class="rate-card-user">
+                      <button type="button">
+                        <img src="./img/font/self.png" alt="" />
+                        <h6>毛小孩</h6>
+                      </button>
+                      <div class="star-group">
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                      </div>
+                    </div>
+                    <h6>
+                      我們精選全球優質狗狗用品，從營養健康的天然飼料到讓狗狗樂在其中的趣味玩具，每一款商品都經過嚴格挑選，確保您的毛孩得到最好的照顧。
+                    </h6>
+                  </div>
+                  <div class="rate-card-btn-date">
+                    <button class="rate-card-btn">
+                      <img src="./img/font/good.png" alt="" />
+                    </button>
+                    <h5>Aug 30 ,2024</h5>
+                  </div>
+                </div>
+                <div class="rate-card">
+                  <div class="rate-card-text">
+                    <div class="rate-card-user">
+                      <button type="button">
+                        <img src="./img/font/self.png" alt="" />
+                        <h6>毛小孩</h6>
+                      </button>
+                      <div class="star-group">
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                        <img src="./img/font/star-fill.png" alt="" />
+                      </div>
+                    </div>
+                    <h6>
+                      我們精選全球優質狗狗用品，從營養健康的天然飼料到讓狗狗樂在其中的趣味玩具，每一款商品都經過嚴格挑選，確保您的毛孩得到最好的照顧。
+                    </h6>
+                  </div>
+                  <div class="rate-card-btn-date">
+                    <button class="rate-card-btn">
+                      <img src="./img/font/good.png" alt="" />
+                    </button>
+                    <h5>Aug 30 ,2024</h5>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="rate-more">顯示更多評價</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="also-buy">
+        <h3 class="also-buy-title">其他人也買了...</h3>
+        <ul class="also-buy-list">
+          <!-- 用這個商品卡片 --------------------------------------------------------->
+          <li class="product-card">
+            <div class="product-card-heart" style="display: none">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover">
+              <button type="button" class="hover-icon favorite-btn">
+                <img src="./img/font/heart.png" alt="" />
+              </button>
+              <button type="button" class="hover-icon cart-btn">
+                <img src="./img/font/cart.png" alt="" />
+                <h2>1</h2>
+              </button>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <!-- 用這個商品卡片 ------------------------------------------------------>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="other-like">
+        <h3 class="other-like-title">看看其他好物...</h3>
+        <ul class="other-like-list">
+          <!-- 用這個商品卡片 -->
+          <li class="product-card">
+            <div class="product-card-heart" style="display: none">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <!-- 用這個商品卡片 -->
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li class="product-card">
+            <div class="product-card-heart">
+              <img src="./img/font/heart.png" alt="" />
+            </div>
+            <div class="product-card-onsale">-30%</div>
+            <figure class="product-card-img">
+              <img
+                src="./img/temp/GOMO PET FOOD 狗罐160公克【秘制茄紅牛蛋鮮】(1入)(狗主食罐頭)_title.webp"
+                alt=""
+              />
+            </figure>
+            <div class="product-card-info">
+              <h4 class="product-card-name">
+                我們相信，毛小孩不僅是寵物，更是家人。
+              </h4>
+              <h4 class="product-card-price">NT$1000</h4>
+            </div>
+            <div class="product-card-hover" style="display: none">
+              <a href="" class="hover-icon">
+                <img src="./img/font/heart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/cart.png" alt="" />
+              </a>
+              <a href="" class="hover-icon">
+                <img src="./img/font/list.png" alt="" />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/pd-detail.js"></script>
+  </body>
+</html>

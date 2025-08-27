@@ -1,0 +1,244 @@
+/* Reset Body */
+/* body {
+  margin: 0;
+  padding: 0;
+} */
+
+/* 圖片區塊 */
+.cartImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cartImg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.height {
+  margin: 90px auto 0;
+}
+/* 表格樣式 */
+.customTable {
+  display: flex;
+  /* flex-wrap: nowrap;  */
+  justify-content: space-between;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+.customTable th,
+.customTable td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.customTable th{
+  padding: 10px;
+  letter-spacing: 1px;
+}
+.customTable thead tr {
+  background-color: #fff6e8;
+  font-weight: bold;
+}
+
+/* 表格內的圖片 */
+.customTable td img {
+  width: 110px;
+  height: auto;
+  max-width: 100%;
+}
+
+.customTable td {
+  text-align: center;
+}
+
+/* 側邊欄 */
+.aside {
+  background: var(--Color-8, #fff6e8);
+  box-shadow: 0px 4px 3.3px 0px rgba(0, 0, 0, 0.25);
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+/* 結算區塊 */
+.summary {
+}
+.summaryItem {
+  color: var(--text-Bk, #3e3e3e);
+  font-size: 24px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.summaryItem2 {
+  font-size: 36px;
+}
+
+.totalmoney {
+  color: #f2662b;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* 圖片大小調整 */
+.table {
+  img {
+    width: 32px;
+    height: 29px;
+  }
+}
+
+/* 內部間距 */
+.summaryItem span {
+  padding: 0 10px;
+  font-size: 14px;
+}
+.tableContainer {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.checkoutBtn {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 180px;
+}
+.Btn {
+  width: 150px;
+}
+.Btn button {
+  background-color: #fdf9f5;
+  color: #bcbcbc;
+  border-radius: 5px;
+  border-color: #bcbcbc;
+  margin: 10px;
+}
+.list {
+  padding: 0 0 0 80px;
+}
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.subtext {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 53, 53);
+  letter-spacing: 1px;
+}
+.btn {
+  background-color: #ff9538;
+  color: white;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 470px;
+}
+.btn:hover {
+  background-color: white;
+  color: #f5842b;
+  border: 2px solid;
+  border-color: #f5842b;
+}
+.btn1 {
+  background-color: #ff9538;
+  color: white;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 100%;
+}
+.btn1:hover {
+  background-color: white;
+  color: #f5842b;
+  border: 2px solid;
+  border-color: #f5842b;
+}
+
+/* sususususus */
+.form-select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #f2662b;
+  box-shadow: 0 0 5px rgba(242, 102, 43, 0.5);
+}
+
+.subtext {
+  font-weight: bold;
+}
+.main {
+  box-shadow: 0px 4px 3.3px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px 40px 40px 40px;
+}
+@media (max-width: 768px) {
+  .height,
+  .container {
+    padding: 30px;
+  }
+  .list {
+    margin-top: 50px;
+    padding: 30px;
+  }
+}
+
+.OtherLikeContent {
+  --Orange: #f5842b;
+  --orange: #f5842b;
+  --Skin: #f1d5b6;
+  --skin: #f1d5b6;
+  --Tiffany: #66c5bd;
+  --tiffany: #66c5bd;
+  --White: #fdfaf5;
+  --white: #fdfaf5;
+  --Yellow: #f6ce5b;
+  --yellow: #f6ce5b;
+  --Black: #3b3330;
+  --black: #3b3330;
+  --Rice: #fff6e8;
+  --rice: #fff6e8;
+  --Gray: #bcbcbc;
+  --gray: #bcbcbc;
+  li {
+    list-style: none;
+  }
+  button {
+    border: none;
+  }
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .ProductInfoImgSmallBtn {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+  }
+}
+.OtherLikeList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

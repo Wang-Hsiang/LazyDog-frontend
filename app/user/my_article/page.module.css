@@ -1,0 +1,116 @@
+.suAvatarImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.suCameraIcon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.suCameraIconImg {
+  width: 36px;
+  height: 36px;
+}
+
+.suDropdownMenu {
+  min-width: 120px;
+  text-align: center;
+}
+
+.suDropdownItem {
+  cursor: pointer;
+}
+/* ------MyArticle-------- */
+.articleHisHieght {
+  height: auto;
+}
+.linkheight {
+  height: 130px;
+  overflow: hidden;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.link:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+/* -------button---------- */
+.customToggle::after {
+  display: none; /* 隱藏倒三角形 */
+}
+.customDropdownMenu {
+  min-width: 80px; /* 設置下拉式選單的最小寬度 */
+  padding: 10px 0; /* 設置內邊距 */
+}
+.item:hover {
+  background-color: #66c5bd;
+  color: white;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 300px auto 20px;
+}
+
+.loader27 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0000;
+  animation: loader27-animation 1s infinite alternate linear;
+  background: radial-gradient(circle closest-side, #F6CE5B 94%, #0000)
+    right/calc(200% - 1em) 100%;
+}
+
+.loader27::before {
+  content: "Loading...";
+  background: inherit;
+  background-clip: text;
+  background-image: radial-gradient(circle closest-side, #fff 94%, #F5842B);
+}
+
+@keyframes loader27-animation {
+  100% {
+    background-position: left;
+  }
+}
+
+.post {
+  width: 100px;
+  height: 30px;
+  background-color: #f5842b;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+  border:1.5 solid #f5842b;
+  .postLink{
+    color: white;
+  }
+}
+
+.post:hover {
+  background-color: white;
+  color: #f5842b;
+  border:1.5 solid #f5842b;
+  .postLink{
+    color: #f5842b;
+  }
+}
+
+

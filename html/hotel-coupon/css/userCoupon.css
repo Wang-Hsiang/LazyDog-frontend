@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.profile-card {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.profile-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.feature-links a:first-child {
+  color: red;
+}
+
+.feature-links a:last-child {
+  color: orange;
+}
+.feature-links a {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.nav-tabs {
+  border-bottom: 2px solid #ddd;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link {
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #f9a825;
+  border-bottom: 2px solid #f9a825;
+}
+.coupon-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+.coupon-card .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.coupon-card .details {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.coupon-card .details p {
+  margin: 0;
+  font-size: 14px;
+}
+.coupon-card .details .expired {
+  color: red;
+  font-size: 12px;
+}
+
+.coupon-card .action {
+  text-align: right;
+}
+.coupon-card .action a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-card .btn {
+  font-size: 14px;
+}
+
+.profile-links {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-links li {
+  padding: 8px 0;
+}
+
+.coupon-input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.coupon-input-group input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.status-filter button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.status-filter .active {
+  color: #f95325;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.stars {
+  color: #ffc107;
+}
+
+.btn-action {
+  min-width: 100px;
+}

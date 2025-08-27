@@ -1,0 +1,87 @@
+.container {
+    max-width: 1320px;
+    margin: 30px auto;
+    width: 100%;
+  }
+
+  .profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .profileImg {
+    /* max-width: 150px; */
+    /* max-width: 500px;
+max-height: 650px; */
+ width: 100%;
+  height: 500px; /* 設定固定高度 */
+  object-fit: cover;
+  }
+
+  .type {
+    color: #ff9538;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .mark{
+    background-color: white;
+    font-weight: 600;
+  }
+  .social-links a {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  .icon{
+    color: #66C5BD;
+    font-size: 36px;
+  }
+
+    .card6 {
+  width: 180px;
+  height: 364px;
+  transition: 0.4s;
+  color: #3b3330;
+  box-shadow: rgba(60, 60, 60, 0.35) 0px 5px 15px;
+}
+
+.card6:hover {
+  translate: 0 -10px;
+  background-color: #FFF6E8;
+}
+
+.card6Title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 5px 0;
+  padding:10px 20px;
+}
+
+.card6 img {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  background-color: #c9c9c9;
+  box-shadow: inset 8px 8px 10px #c3c3c3, inset -8px -8px 10px #cfcfcf;
+}
+
+.card6Description {
+  font-size: 14px;
+  padding:0 20px;
+}
+.course{
+  color: #3b3330;
+  
+}
+.course:hover{
+    color: #ff9538;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+
+.container{
+  padding: 30px;
+}
+ 
+}

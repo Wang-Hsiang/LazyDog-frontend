@@ -1,0 +1,108 @@
+/* 共用 */
+.rounded {
+  border-radius: 5px !important;
+}
+.tName,
+.tGmail,
+.tTitle {
+  font-weight: bold;
+}
+
+/* 右邊 */
+.right {
+  /* margin-top: 100px; */
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    .btnAddCourse {
+      width: 103px;
+      height: 38px;
+      /* padding: 0px 22px; */
+      border-radius: 10px;
+      background: #66c5bd;
+      border: none;
+    }
+    .addCourse {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+  }
+  .cTable {
+    margin: 35px 0;
+  }
+
+  .cTbody {
+    /* border: 1px solid lightblue; */
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center; */
+    /* gap: 60px; */
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px 0px;
+    align-items: center;
+    /* border-bottom: 0.8px solid var(--text-Gy, #d2d2d2); */
+  }
+
+  .cTd1 {
+    display: flex;
+    justify-content: center;
+    min-width: 145px;
+    text-wrap: none;
+    color: var(--text-Bk, #3e3e3e);
+    font-size: 17.5px;
+    font-weight: 400;
+    padding: 0 30px;
+    justify-content: center;
+  }
+  .cTd2 {
+    /* background-color: lightpink; */
+    min-width: 211px;
+    text-align: left;
+    color: var(--text-Bk, #3e3e3e);
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+
+    &:hover {
+      color: #ff9538;
+      text-decoration: underline;
+      text-decoration-color: #ff9538;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+    }
+  }
+
+  /*  分頁 */
+  .pagination {
+    display: flex;
+    gap: 20px;
+    padding: 66px 0;
+  }
+
+  .pagination .page-item .page-link {
+    border-radius: 50%;
+    margin: 0 5px;
+    color: #bcbcbc;
+    border: none;
+  }
+
+  .pagination .page-item.active .page-link {
+    background-color: #f5842b;
+    color: white;
+    border-radius: 60%;
+  }
+
+  .pagination .page-item .page-link:hover {
+    background-color: #f5842b;
+    color: white;
+  }
+}

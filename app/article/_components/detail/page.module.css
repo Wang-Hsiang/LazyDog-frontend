@@ -1,0 +1,107 @@
+.floor {
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-weight: bold;
+  background-color: #d9d9d9;
+}
+.carousel-inner img {
+  width: 263px;
+  height: 263px;
+}
+
+.avatar {
+  width: 37px;
+  height: 37px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+
+
+.article_img {
+  width: 100%;
+}
+.auther{
+  width: 55px;
+  color: #ffbc51;
+  font-weight: bold;
+}
+.auther:hover{
+  color: #f5842b;
+}
+
+.articleContent{
+  margin-top: 50px;
+}
+
+.articleContent img{
+  width: 100%;
+  margin:20px 0 ;
+}
+ 
+.customLink {
+  text-underline-offset: 12px;
+  color: black;
+  height: 70px;
+  overflow: hidden;
+}
+
+.moreLink{
+  padding: 10px 10px 50px 10px;
+  border-radius: 5px;
+}
+.moreLink:hover{
+  background-color: #fff6e8;
+  translate: 0 -10px;
+  .customLink{
+    color: #f5842b;
+  }
+}
+
+/* :global(img) {
+  width: 100%;
+  margin:20px 0 ;
+} */
+.customToggle{
+  background-color: #ffffff00;
+}
+.customToggle::after {
+  display: none; /* 隱藏倒三角形 */
+}
+.customToggle:hover{
+  background-color: #f5842b;
+}
+.customDropdownMenu {
+  min-width: 80px; /* 設置下拉式選單的最小寬度 */
+  padding: 10px 0; /* 設置內邊距 */
+ width: "25px";
+ background-color: #f5842b;
+ color: white;
+}
+.customDropdownMenu:hover{
+  background-color: white;
+  color: #f5842b;
+}
+/* #FFF6E8 */
+/*#66c5bd*/
+
+@media screen and (min-width: 390px) {
+    .chat{
+        width: 390px;
+    }
+    /* textarea{
+        height: 27px;
+    } */
+}
+@media (max-width: 768px) {
+.moreLink{
+  margin-bottom: 20px;
+}
+}

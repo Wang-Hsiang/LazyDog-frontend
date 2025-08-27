@@ -1,0 +1,297 @@
+/* 第一區塊 (背景) */
+.suCouponContainer {
+  background-color: #fdfaf5;
+  padding: 40px;
+}
+
+/* 背景 */
+.suSecondSection {
+  background-color: #fff6e8;
+  padding: 40px;
+}
+/* 背景 */
+.suThirdSection {
+  background-color: #fdfaf5;
+}
+/* 背景 */
+.suForthSection {
+  background-color: #fef3d8;
+  padding: 40px;
+}
+
+/* 第一區塊優惠券 */
+.suCoupon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-position: center;
+  width: 550px;
+  height: 148px;
+  position: relative;
+  overflow: hidden;
+  top: 20px;
+  margin-bottom: 30px;
+}
+
+.suCoupon img {
+  object-fit: cover;
+}
+
+.suCouponContent {
+  position: absolute;
+  top: 65%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  width: 50%;
+}
+
+.suCouponName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff9538;
+  margin-bottom: 5px;
+  text-align: left;
+  padding-left: 15px;
+}
+/* 第二區塊 */
+.suOtherSectionContent {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #444;
+  font-weight: bold;
+  font-size: 14px;
+  width: 50%;
+}
+:global(.second-section) .row {
+  gap: 40px;
+}
+
+.suCouponCode {
+  font-size: 16px;
+  color: #ff9538;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: 2px dashed #ff9538;
+  margin-top: 5px;
+}
+/* 到期日 */
+.suCouponExpiry {
+  font-size: 14px;
+  color: #d32f2f;
+  margin-top: 5px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.suCouponButton {
+  background-color: #ff9538;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.suCouponButton:hover {
+  background-color: #ff9538;
+}
+
+:global(.third-section) .row,
+:global(.forth-section) .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+:global(.third-section .coupon),
+:global(.forth-section .coupon) {
+  margin-bottom: 30px;
+}
+.forth-section {
+  text-align: center;
+}
+.forth-section video {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; /* 讓影片置中 */
+}
+@media (max-width: 768px) {
+  :global(.third-section .row),
+  :global(.forth-section .row) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+:global(.fifth-section) {
+  background-color: #fff6e8;
+  padding: 50px 0;
+}
+
+.suEvent {
+  background: #fffdf7;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  min-height: 180px;
+}
+.suEvent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.suEventTitle {
+  /* font-size: 18px; */
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #66c5bd;
+  letter-spacing: 3px;
+}
+.suEventTitle1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ff9538;
+  letter-spacing: 3px;
+}
+
+.suEventDiscount {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ff9538;
+  letter-spacing: 3px;
+}
+
+.suEventDesc {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.suEventIcon img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .suEvent {
+    min-height: 200px;
+  }
+}
+
+.suModalContent {
+  animation: fadeInUp 0.5s ease-in-out;
+  border-radius: 15px;
+}
+
+.suSuccessAnimation {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #66c5bd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  animation: scaleIn 0.6s ease-in-out;
+  position: relative;
+}
+
+.suCheckmark {
+  width: 50px;
+  height: 25px;
+  border: solid #66c5bd;
+  border-width: 0 0 4px 4px;
+  transform: rotate(-45deg);
+  position: absolute;
+  animation: draw 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+@media (max-width: 768px) {
+  .suCoupon {
+    width: 100%;
+    max-width: 330px;
+    height: 120px;
+    display: flex;
+    padding: 12px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto 15px auto;
+  }
+
+  .suCoupon img {
+    width: 90%;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .suCouponContent {
+    position: relative;
+    font-size: 8px;
+    width: 70%;
+    top: -5px; 
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .suCouponName {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff4238;
+    margin-bottom: 5px;
+  }
+
+  .suCouponCode {
+    display: none;
+  }
+
+  .suCouponExpiry {
+    display: none;
+  }
+
+  .suCouponButton {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 80px;
+    right: 115px;
+    background-color: #ff9538;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .suCouponButton:hover {
+    background-color: #ff7b00;
+  }
+}

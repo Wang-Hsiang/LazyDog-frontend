@@ -1,0 +1,335 @@
+.container {
+    max-width: 1320px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .con1 {
+    background-color: gray;
+    left: 0;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* .big1 {
+      flex: 2;
+      height: 200px;
+      margin-top: 20px;
+      z-index: 2;
+    }
+
+    .big2 {
+      flex: 1.5;
+      margin-top: 30px;
+      height: 150px;
+      z-index: 1;
+    } */
+  /* -------------------------- */
+  /* -------麵包屑與標題-------- */
+  /* .BreadcrumbsTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 30px 0px 30px 0px;
+    gap: 60px;
+  } */
+
+  /* -------------------------- */
+  /* ----------麵包屑---------- */
+  .breadcrumbs {
+    width: 242px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .list {
+      color: var(--gray);
+    }
+
+    .breadcrumbsActive {
+      color: var(--Black);
+      font-weight: bold;
+    }
+  }
+
+  /* -------------------------- */
+  /* -----------標題----------- */
+  .teaTitle {
+    display: flex;
+    flex: auto;
+    padding: 0px 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* -------------------------- */
+  /* -------標題的篩選---------- */
+  .titleFilter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pdArea {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  /* --------------------------- */
+  /* ------商品區域篩選器-------- */
+  .pdFilter {
+    width: 242px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .pdFilterTable {
+    width: 100%;
+  }
+  
+  .tdTable {
+    height: 50px;
+    padding: 0px 25px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchTable {
+    gap: 17px;
+    /* border-bottom: 1px solid rgba(167, 166, 166, 0.521); */
+     input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  }
+  
+  .searchP {
+    font-size: 16px;
+    color: var(--gray);
+    font-weight: 350;
+    letter-spacing: 3.2px;
+  }
+  
+  .menuTable {
+     height: 58px;
+     margin: 10px 0 0 0;
+     padding: 10px 0 0 25px ;
+    border-top: 1px solid rgba(167, 166, 166, 0.521);
+    /* border-bottom: 1px solid rgba(167, 166, 166, 0.521); */
+  }
+  
+  .checkboxTable {
+    gap: 10px;
+  }
+  
+  .checkboxLabel {
+    width: 100%;
+  }
+  
+  .clear {
+    width: 260px;
+    height: 40px;
+    padding: 6px 16px;
+    align-self: stretch;
+    color: #F5842B;
+    background-color: white;
+    border: 1px solid #F5842B;
+    border-radius: 66px;
+  }  
+  .clear:hover{
+    background-color: #ff9538;
+  color: white;
+  }
+  .carouselbtn button {
+    background-color: #f7c090 !important; 
+  }
+  
+  .carouselbtn .active {
+    background-color: #cc4400 !important;
+  }
+
+
+/* 桌機版篩選選單 */
+.asideContainer {
+  display: flex;
+}
+
+/* 手機版篩選選單 (預設隱藏) */
+.mobileFilter {
+  position: fixed;
+  top: 62px;
+  left: -100%;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* 當 `filterOpen` 為 true 時，篩選選單滑入畫面 */
+.showFilter {
+  left: 0;
+}
+
+/* 關閉篩選按鈕 */
+/* .closeButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ccc;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+} */
+.BreadcrumbsTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 30px 0px 30px 0px;
+}
+
+  .sbar {
+      background-color: #ff9538;
+      width: 50px;
+      height: 4px;
+      border-radius: 5px;
+    }
+    
+.imgFluid{
+  padding: 30px;
+}
+.right{
+  /* display: none;
+  border-radius: 50%;
+  border: #F5842B; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9538;
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border: 1.3px solid #ff9538;
+  border-radius: 11px;
+  transition: 0.4s;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s ease, background-color 0.4s ease; /* 動畫過渡效果 */
+
+  &:active {
+    background-color: #fc861f;
+    color: #fff;
+  }
+  &:hover {
+    /* width: 120px; */
+    /* translate: 0 -5px; */
+    background-color: #ff9538;
+    color: #fff;
+    border: none;
+  }
+  /* 使用 ::after 顯示文字 */
+  &:hover::after {
+    content: "Filter"; /* 顯示的文字 */
+    position: absolute;
+    right: 50px; /* 讓文字顯示在按鈕右側 */
+    top: 50%;
+    transform: translateY(-50%); /* 使文字垂直置中 */
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #ff9538; /* 文字背景色與按鈕一致 */
+    padding: 8px 16px;
+    border-radius: 25px; /* 使文字背景有圓角 */
+  }
+}
+/* 手機篩選按鈕 (點擊後打開篩選) */
+.filterButton {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobileFilter {
+    display: none;
+  }
+
+}
+@media (max-width: 768px) {
+  .asideContainer {
+    display: none;
+  }
+    .container{
+    padding: 30px;
+  }
+  .right{
+  display: block;
+  border-radius: 50%;
+  border: #F5842B;
+}
+  .BreadcrumbsTitle{
+    display: inline-block ;
+    gap: 0;
+  }
+  }
+
+  .collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+   
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid #F5842B;
+      
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+        
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid #F5842B;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+

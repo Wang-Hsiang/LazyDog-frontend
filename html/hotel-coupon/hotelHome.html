@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>hotelhome</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-city-selector"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+
+    <style>
+      .suBody {
+        background-color: #fff;
+      }
+
+      /* 搜尋欄 */
+      .suSearch-bar {
+        display: flex;
+        gap: 15px;
+        background: #f5d1a8;
+        border-radius: 15px;
+        padding: 12px;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 950px;
+        margin: auto;
+      }
+
+      .suSearch-group {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 8px;
+        padding: 8px 12px;
+        flex: 1;
+        max-width: 300px;
+      }
+
+      .suIcon {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .suSearch-input,
+      .suSearch-date {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      /* 數量 */
+      .suQuantity-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .suQuantity-btn img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .suQuantity-btn:hover {
+        background: #f3dccc;
+      }
+
+      .suQuantity-number {
+        width: 40px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      /* 搜尋按鈕 */
+      .suSearch-btn {
+        background-color: #f5842b;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      .suSearch-btn:hover {
+        background-color: #e65c00;
+      }
+      .suSearch-bg {
+        background: url("../../public/images/hotel/hotel-images/services-banner-dog-boarding.2203041608391.jpg")
+          no-repeat center;
+        background-size: cover;
+        padding: 80px 0;
+      }
+
+      /* 地圖 */
+      .suMap-card {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .suMap-btn {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 123, 255, 0.9);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .suMap-btn:hover {
+        background: rgba(0, 123, 255, 1);
+      }
+
+      .suMap-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* 側邊篩選區 */
+      .suSidebar {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .suFilter-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .suFilter-group {
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      /* 價格篩選 */
+      .suPrice-filter-container {
+        background: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .suPrice-input-group {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+
+      .suPrice-input {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: 2px solid #ff9900;
+        border-radius: 20px;
+        padding: 5px 10px;
+      }
+
+      .suPrice-input input {
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 50px;
+        font-size: 12px;
+      }
+
+      /* 滑桿 */
+      .suRange-slider {
+        position: relative;
+        width: 100%;
+        height: 40px;
+      }
+
+      .suRange-slider input {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background: #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .suRange-slider input::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+        background: #ff9900;
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      /* 篩選按鈕 */
+      .suClear-filter-btn {
+        background: none;
+        border: 2px solid #ff9900;
+        color: #ff9900;
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .suClear-filter-btn:hover {
+        background: #ff9900;
+        color: white;
+      }
+      .suShow-more {
+        cursor: pointer;
+        color: #0c0c0d;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .suShow-more:hover {
+        text-decoration: underline;
+      }
+
+      .suHidden {
+        display: none;
+      }
+      /*自訂 Slider */
+      .slider-track {
+        background: #ff9900 !important;
+        height: 5px;
+      }
+
+      .slider-selection {
+        background: #ff6600 !important;
+      }
+
+      .slider-handle {
+        background: white !important;
+        border: 3px solid #ff9900 !important;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+      }
+
+      .slider-handle:hover {
+        background-color: #ff9900 !important;
+        border-color: #ff6600 !important;
+      }
+
+      .tooltip-inner {
+        background: white !important;
+        color: #333 !important;
+        font-weight: bold;
+        border: 1px solid #ccc !important;
+      }
+
+      /* 清除搜尋按鈕 */
+      .suClear-btn {
+        background: white;
+        border: 2px solid #ff9900;
+        color: #ff9900;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .suClear-btn:hover {
+        background: #ff9900;
+        color: white;
+      }
+
+      /* 飯店 */
+      .suHotel-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .suHotel-card img {
+        width: 180px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .suHotel-info {
+        flex: 1;
+        padding-left: 15px;
+      }
+
+      .suHotel-info h5 {
+        color: #333;
+        font-weight: bold;
+      }
+
+      .suHotel-info p {
+        color: #ff6600;
+        font-size: 14px;
+      }
+
+      .suPrice-box {
+        text-align: right;
+        font-size: 18px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      .suReview {
+        color: #008080;
+        font-size: 14px;
+      }
+
+      .suBook-btn {
+        background-color: #ff9900;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      .suBook-btn:hover {
+        background-color: #ff6600;
+      }
+
+      /*  分頁 */
+      .suPagination .page-item .page-link {
+        border-radius: 50%;
+        margin: 0 5px;
+        color: #333;
+        border: none;
+      }
+
+      .suPagination .page-item.active .page-link {
+        background-color: #f5842b;
+        color: white;
+        border-radius: 50%;
+      }
+
+      .suPagination .page-item .page-link:hover {
+        background-color: #ff9900;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body class="suBody">
+    <div class="suSearch-bg">
+      <div class="container mt-4">
+        <div class="suSearch-bar">
+          <div class="suSearch-group">
+            <img
+              class="suIcon"
+              src="../../public/images/hotel/hotel-images/page-image/icon-search.png"
+              alt=""
+            />
+            <input
+              type="text"
+              class="suSearch-input"
+              id="locationInput"
+              placeholder="搜尋關鍵字、地區..."
+              data-bs-toggle="modal"
+              data-bs-target="#locationModal"
+            />
+          </div>
+          <div class="suSearch-group">
+            <img
+              class="suIcon"
+              src="../../public/images/hotel/hotel-images/page-image/icon-Calendar.png"
+              alt=""
+            />
+            <input
+              type="text"
+              id="date-date"
+              class="suSearch-date"
+              placeholder="入住日期 → 退房日期"
+            />
+          </div>
+
+          <div class="suSearch-group">
+            <img
+              class="suIcon"
+              src="../../public/images/hotel/hotel-images/page-image/Icon-mimi.png"
+              alt=""
+            />
+            <span class="text">數量</span>
+            <button class="suQuantity-btn" id="minus">
+              <img
+                src="../../public/images/hotel/hotel-images/page-image/Minus.png"
+                alt="減少"
+              />
+            </button>
+            <span id="suQuantity-number">1</span>
+            <button class="suQuantity-btn" id="plus">
+              <img
+                src="../../public/images/hotel/hotel-images/page-image/Plus.png"
+                alt="增加"
+              />
+            </button>
+          </div>
+          <button class="suSearch-btn">搜尋</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">選擇地區</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="twzipcode">
+              <select class="county"></select>
+              <select class="district"></select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="confirmLocation" class="btn btn-primary">確定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <!-- 篩選-->
+        <aside class="col-lg-3 suSidebar">
+          <div class="suMap-card">
+            <button class="btn suMap-btn btn-primary" onclick="openMap()">
+              📍 於地圖上顯示
+            </button>
+            <img
+              src="https://maps.googleapis.com/maps/api/staticmap?center=台北,台灣&zoom=13&size=300x200&maptype=roadmap
+                &markers=color:blue%7Clabel:台北%7C25.0330,121.5654
+                &key="
+              alt="地圖縮圖"
+              class="suMap-image"
+            />
+          </div>
+
+          <div class="suFilter-group mt-4">
+            <h6 class="suFilter-title">優質住宿</h6>
+            <select class="form-select">
+              <option>選擇類型</option>
+              <option>五星級</option>
+              <option>四星級</option>
+            </select>
+          </div>
+
+          <div class="suFilter-group">
+            <h6 class="suFilter-title">設施</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="walk" />
+              <label class="form-check-label" for="walk">免費散步</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="pool" />
+              <label class="form-check-label" for="pool">游泳池</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="pets" />
+              <label class="form-check-label" for="pets">戶外運動</label>
+            </div>
+            <!-- 顯示全部按鈕 -->
+            <span class="suShow-more" id="toggleBtn">顯示全部 ▼</span>
+
+            <!-- 折疊項目 (顯示全部按鈕下方) -->
+            <div class="collapse-items hidden suHidden mt-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="wifi" />
+                <label class="form-check-label" for="wifi">免費 Wi-Fi</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="spa" />
+                <label class="form-check-label" for="spa">SPA 按摩</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gym" />
+                <label class="form-check-label" for="gym">健身房</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 價格篩選區 -->
+          <div class="suFilter-group suPrice-filter-container">
+            <h6 class="suFilter-title">價格篩選</h6>
+
+            <!-- 價格輸入框 -->
+            <div class="suPrice-input-group">
+              <div class="suPrice-input">
+                <label for="filterMin">最少</label>
+                <input
+                  id="filterMin"
+                  type="number"
+                  value="200"
+                  min="0"
+                  max="10000"
+                />
+                <span>元</span>
+              </div>
+              <div class="suPrice-input">
+                <label for="filterMax">最多</label>
+                <input
+                  id="filterMax"
+                  type="number"
+                  value="1000"
+                  min="0"
+                  max="10000"
+                />
+                <span>元</span>
+              </div>
+            </div>
+
+            <!-- Bootstrap Slider -->
+            <input
+              id="priceRange"
+              type="text"
+              data-slider-min="0"
+              data-slider-max="10000"
+              data-slider-step="100"
+              data-slider-value="[200,1000]"
+            />
+
+            <!-- 清除按鈕 -->
+            <button id="resetFilter" class="suClear-filter-btn">
+              清除搜尋
+            </button>
+          </div>
+          <a href=""
+            ><figure>
+              <img
+                src="../../public/images/hotel/hotel-images/page-image/hotelad2.png"
+                alt=""
+                class="mx-4"
+              /></figure
+          ></a>
+        </aside>
+
+        <section class="col-lg-9">
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/1-outside.png"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>烏來Spring Spa溫泉山莊</h5>
+              <p>
+                烏來溫泉山莊位於烏來，設有水療中心和溫泉浴池，舒適的客房均以不同風格裝潢...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+          <div class="suHotel-card">
+            <img
+              src="../../public/images/hotel/hotel-uploads/11-outside.webp"
+              alt="飯店圖片"
+            />
+            <div class="suHotel-info">
+              <h5>Grupotel Mayorazgo</h5>
+              <p>
+                Una de las principales ventajas del Hotel Mayorazgo es su
+                magnífica ubicación en el centro de Madrid...
+              </p>
+            </div>
+            <div class="price-box suPrice-box">
+              <div class="suReview">很棒 ⭐ 8</div>
+              1,258 則評論
+              <button class="suBook-btn">查看價格</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="container page">
+      <nav aria-label="Page navigation">
+        <ul
+          class="pagination suPagination justify-content-center"
+          id="pagination"
+        >
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const collapseItems = document.querySelector(".collapse-items");
+
+      toggleBtn.addEventListener("click", function () {
+        collapseItems.classList.toggle("suHidden");
+
+        if (collapseItems.classList.contains("suHidden")) {
+          toggleBtn.textContent = "顯示全部 ▼";
+        } else {
+          toggleBtn.textContent = "收起 ▲";
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 台灣地區選擇器 (TwCitySelector)
+        new TwCitySelector({
+          el: "#twzipcode",
+          elCounty: ".county",
+          elDistrict: ".district",
+          hasZipcode: false,
+        });
+
+        document
+          .getElementById("confirmLocation")
+          .addEventListener("click", function () {
+            let county = document.querySelector(".county").value;
+            let district = document.querySelector(".district").value;
+            document.getElementById(
+              "locationInput"
+            ).value = `${county} ${district}`;
+
+            let modalElement = document.getElementById("locationModal");
+            let modalInstance = bootstrap.Modal.getInstance(modalElement);
+            if (modalInstance) {
+              modalInstance.hide();
+            }
+
+            setTimeout(() => {
+              document
+                .querySelectorAll(".modal-backdrop")
+                .forEach((el) => el.remove());
+              document.body.classList.remove("modal-open");
+              document.body.style.overflow = "auto";
+            }, 300);
+          });
+
+        // 日期選擇器 (Flatpickr)
+        flatpickr("#date-date", {
+          mode: "range",
+          dateFormat: "m/d",
+          minDate: "today",
+          locale: "zh",
+          formatDate: function (date, format, locale) {
+            const days = ["日", "一", "二", "三", "四", "五", "六"];
+            return `${date.getMonth() + 1}/${date.getDate()} (${
+              days[date.getDay()]
+            })`;
+          },
+        });
+
+        // +-功能
+        document.getElementById("plus").addEventListener("click", () => {
+          let quantity = parseInt(
+            document.getElementById("suQuantity-number").innerText
+          );
+          document.getElementById("suQuantity-number").innerText = quantity + 1;
+        });
+
+        document.getElementById("minus").addEventListener("click", () => {
+          let quantity = parseInt(
+            document.getElementById("suQuantity-number").innerText
+          );
+          if (quantity > 1) {
+            document.getElementById("suQuantity-number").innerText =
+              quantity - 1;
+          }
+        });
+      });
+
+      //  Google 地圖按鈕
+      function openMap() {
+        window.open("https://www.google.com/maps?q=台北", "_blank");
+      }
+      const filterMin = document.getElementById("filterMin");
+      const filterMax = document.getElementById("filterMax");
+      const priceRange = new Slider("#priceRange", {
+        min: 0,
+        max: 10000,
+        step: 100,
+        value: [200, 1000],
+        tooltip_split: true,
+      });
+
+      priceRange.on("slide", function (values) {
+        filterMin.value = values[0];
+        filterMax.value = values[1];
+      });
+
+      // 滑桿數值
+      filterMin.addEventListener("input", () => {
+        priceRange.setValue([filterMin.value, filterMax.value]);
+      });
+      filterMax.addEventListener("input", () => {
+        priceRange.setValue([filterMin.value, filterMax.value]);
+      });
+
+      // 清除
+      document
+        .getElementById("resetFilter")
+        .addEventListener("click", function () {
+          priceRange.setValue([200, 1000]);
+          filterMin.value = 200;
+          filterMax.value = 1000;
+        });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

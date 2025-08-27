@@ -1,0 +1,306 @@
+.allwrapper {
+  max-width: 1320px;
+  /* margin-top:100px; */
+  /* margin: 90px auto 20px; */
+}
+
+.container {
+  width: 100%;
+  /* max-width: 180px; */
+  /* margin-right: 50px; */
+  border-radius: 8px;
+  padding: 32px 0;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  /* margin-top: 100px; */
+  h5 {
+    font-weight: 550;
+  }
+
+  p {
+    font-size: 13.5px;
+    letter-spacing: 0.7px;
+    padding-bottom: 5px;
+  }
+}
+.welcome {
+  font-weight: 550;
+}
+.link span {
+  margin-right: 12px;
+}
+
+.righttop {
+  margin-top: 100px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 頂端對齊 */
+  gap: 40px;
+  margin: 30px auto 20px;
+  max-width: 1320px;
+}
+
+.item {
+  padding: 16px 0;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ffa557;
+    border-radius: 3px;
+    transform: translate(5px, -5px);
+  }
+
+  &:hover a {
+    color: white;
+    font-weight: bold;
+  }
+
+  a {
+    display: block;
+    color: #474646;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+}
+
+/* .item {
+  padding: 8px;
+  color: #3b3330;
+  text-decoration: none;
+}
+.item:hover {
+  color: #ff9538;
+  font-weight: bold;
+} */
+.suAvatarImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+.suDropdownItem {
+  cursor: pointer;
+}
+.CameradropdownItem {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  .suAvatarImg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #ddd;
+  }
+  .suDropdownMenu {
+    min-width: 120px;
+    text-align: center;
+  }
+  .suCameraIcon {
+    position: absolute;
+    top: 75px;
+    right: 5px;
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .suDropdownMenu {
+    min-width: 120px;
+    text-align: center;
+  }
+  .suDropdownItem {
+    cursor: pointer;
+  }
+  .suCameraIcon {
+    right: -5px;
+  }
+}
+.suCameraIcon {
+  position: absolute;
+  top: 75px;
+  right: 5px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.suCameraIconImg {
+  width: 36px;
+  height: 36px;
+}
+.suDropdownMenu {
+  min-width: 120px;
+  text-align: center;
+}
+/* 桌機版篩選選單 */
+.asideContainer {
+  display: block;
+}
+
+/* 手機版篩選選單 (預設隱藏) */
+.mobileFilter {
+  position: fixed;
+  top: 62px;
+  left: -100%;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+}
+/* 當 `filterOpen` 為 true 時，篩選選單滑入畫面 */
+.showFilter {
+  left: 0;
+}
+
+/* 關閉篩選按鈕 */
+.closeButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ccc;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #bbb;
+}
+
+.right {
+  /* display: none;
+  border-radius: 50%;
+  border: #f5842b; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9538;
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border: 1.3px solid #ff9538;
+  border-radius: 11px;
+  transition: 0.4s;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s ease, background-color 0.4s ease; /* 動畫過渡效果 */
+
+  &:active {
+    background-color: #fc861f;
+    color: #fff;
+  }
+  &:hover {
+    /* width: 120px; */
+    /* translate: 0 -5px; */
+    background-color: #ff9538;
+    color: #fff;
+    border: none;
+  }
+  /* 使用 ::after 顯示文字 */
+  &:hover::after {
+    content: "Filter"; /* 顯示的文字 */
+    position: absolute;
+    right: 50px; /* 讓文字顯示在按鈕右側 */
+    top: 50%;
+    transform: translateY(-50%); /* 使文字垂直置中 */
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #ff9538; /* 文字背景色與按鈕一致 */
+    padding: 8px 16px;
+    border-radius: 25px; /* 使文字背景有圓角 */
+  }
+}
+/* 手機篩選按鈕 (點擊後打開篩選) */
+.filterButton {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .mobileFilter {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .asideContainer {
+    display: none;
+  }
+  .container {
+    padding: 30px;
+  }
+  .right {
+    display: block;
+    border-radius: 50%;
+    border: #f5842b;
+  }
+  .wrapper {
+    gap: 0px;
+  }
+}
+
+.collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid #f5842b;
+
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid #f5842b;
+    width: 35px;
+    height: 35px;
+  }
+}

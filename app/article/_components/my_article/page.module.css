@@ -1,0 +1,115 @@
+.suAvatarImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.suCameraIcon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.suCameraIconImg {
+  width: 36px;
+  height: 36px;
+}
+
+.suDropdownMenu {
+  min-width: 120px;
+  text-align: center;
+}
+
+.suDropdownItem {
+  cursor: pointer;
+}
+/* ------MyArticle-------- */
+.articleHisHieght {
+  height: auto;
+  box-shadow: 0px 1px 5px .1px rgba(105, 105, 105, 0.75);
+  
+  /* overflow: hidden; */
+}
+.linkheight {
+  height: 130px;
+  overflow: hidden;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  max-height: 52px;
+  overflow: hidden;
+}
+.commentCard:hover{
+  .link{
+    color: #f5842b;
+  }
+}
+.link2 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  max-height: 80px;
+  overflow: hidden;
+}
+.link2:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+.link3 {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+/* -------button---------- */
+.customToggle{
+  background-color: #ffffff00;
+}
+.customToggle::after {
+  display: none; /* 隱藏倒三角形 */
+}
+.customDropdownMenu {
+  min-width: 80px; /* 設置下拉式選單的最小寬度 */
+  padding: 10px 0; /* 設置內邊距 */
+}
+.item:hover {
+  background-color: #66c5bd;
+  color: white;
+  .link3 {
+    text-decoration: none;
+    color: white;
+  }
+
+}
+.commentCard{ 
+  width: 100%;
+  height: 155px
+}
+.author{
+  height:100%
+}
+@media screen and (max-width: 390px) {
+  .commentCard{
+    
+    height: 100%;
+  }
+  .author{
+    height:150px
+  }
+  .link {
+    font-size: 16px;
+    max-height: 75px;
+    overflow: hidden;
+  }
+}

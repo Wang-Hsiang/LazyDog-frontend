@@ -1,0 +1,21 @@
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .bg-light {
+    background-color: #f9f9f9 !important;
+  }
+
+  .rounded {
+    border-radius: 10px !important;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+
+  .generate-code-btn {
+    margin-left: 10px;
+  }

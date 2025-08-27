@@ -1,0 +1,272 @@
+.container {
+  padding: 10px 20px 45px;
+
+  h5 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: #3b3330;
+    padding-bottom: 15px;
+  }
+
+  h6 {
+    font-size: 22px;
+    font-weight: 550;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+    color: #3b3330;
+    padding-bottom: 5px;
+  }
+}
+
+.profileCard {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.profileCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.suFeatureLinks1 {
+  color: #ff9538;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  gap: 20px;
+}
+
+.suFeatureLinks2 {
+  color: #ff9538;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.suNavTabs {
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: 450;
+  letter-spacing: 1.2px;
+  margin-bottom: 28px;
+  padding: 0px 15px 0 8px;
+}
+
+.suNavTabs .suNavLink {
+  display: block;
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+.suNavTabs .suNavLink:hover {
+  color: #ff9538;
+  border-bottom: 2px solid #ff9538;
+}
+
+.suNavTabs .suNavLink:focus {
+  color: #ff9538;
+  border-bottom: 2px solid #ff9538;
+}
+
+/* suCouponCard 實際控制在_component裡那支 */
+/* .suCouponCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0 5px 0 0;
+  background-color: white;
+  margin-bottom: 15px;
+  height: 100px;
+  overflow: hidden;
+}
+.suCouponCard .suPrice {
+  font-size: 22px;
+  font-weight: bold;
+  color: #66c5bd;
+}
+
+.suCouponCard .suDetails {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.suCouponCard .suDetails p {
+  margin: 0px;
+  font-size: 14px;
+}
+.suUsed {
+  background-color: #d4edda;
+  font-size: 14px;
+  color: #66c5bd;
+}
+
+.suExpired {
+  background-color: #f8d7da;
+  font-size: 14px;
+  color: #721c24;
+}
+
+.suUnused {
+  background-color: white;
+  color: #ff9538;
+}
+
+.suCouponCard .suAction {
+  text-align: right;
+}
+.suCouponCard .suAction a {
+  color: #66c5bd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profileCard .btn {
+  font-size: 14px;
+}
+
+.profileLinks {
+  list-style: none;
+  padding: 0;
+}
+
+.profileLinks li {
+  padding: 8px 0;
+}
+
+.suCouponInputGroup {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.suCouponInputGroup input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.statusFilter button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.statusFilter button:hover {
+  color: #ff9538;
+}
+
+.suTable th,
+.suTable td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.stars {
+  color: #ff9538;
+}
+
+.btnAction {
+  min-width: 100px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+} */
+
+/* 我的收藏 */
+.favProImgs {
+  /* width: 225px; */
+  height: 260px;
+  border: 1px solid #f0efef;
+  /* border-radius: 6px;
+  overflow: "hidden"; */
+  @media (max-width: 390px) {
+    height: auto;
+  }
+}
+.favHotelImgs {
+  /* width: 304px; */
+  height: 215px;
+  border: 1px solid #f7f5f5;
+  border-radius: 0;
+  @media (max-width: 390px) {
+    height: auto;
+  }
+}
+.favCourseImgs {
+  /* width: 223px; */
+  height: 223px;
+  border: 1px solid #f0efef;
+  border-radius: 0;
+  @media (max-width: 390px) {
+    height: auto;
+  }
+}
+.clickHeart {
+  /* box-shadow: 0 0 12px rgba(255, 255, 255, 0.6); */
+}
+.noFavProduct {
+  height: 287px;
+  line-height: 287px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+.noFavHotel {
+  height: 224px;
+  line-height: 224px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+.noFavCourse {
+  height: 247px;
+  line-height: 247px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+
+/* Swal 彈跳窗 */
+.tsaiSwal {
+  width: 400px;
+  padding: 25px 15px;
+  font-size: 16px !important;
+  padding: 15px 40px 40px;
+  border-radius: 35px !important;
+  background-color: white !important;
+  color: #5e5e5e;
+}
+.tsaiSwalButton1 {
+  background-color: #fa524c !important;
+  border-radius: 5px;
+  font-size: 14.5px;
+  font-weight: 550 !important;
+  letter-spacing: 0.5px;
+  margin: 5px 10px;
+}
+.tsaiSwalButton2 {
+  background-color: #cccbcb !important;
+  border-radius: 5px;
+  font-size: 14.5px;
+  font-weight: 550 !important;
+  letter-spacing: 0.5px;
+  margin: 5px 10px;
+}

@@ -1,0 +1,83 @@
+/* 熱門課程 */
+
+.similarCourse {
+  /* .sTitle {
+    margin-bottom: 18px;
+    color: var(--text-Bk, #3e3e3e);
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 39px;
+    letter-spacing: 3.2px;
+    @media (max-width: 992px) {
+      margin-left: 15px;
+    }
+  }
+  .sBars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    @media (max-width: 992px) {
+      margin-left: 15px;
+    }
+  }
+  .sbar {
+    background-color: #ff9538;
+    width: 50px;
+    height: 4px;
+    border-radius: 5px;
+  }
+  .btns {
+    display: flex;
+    gap: 23px;
+  }
+  .arrowLeft {
+    cursor: pointer;
+  }
+  .arrowRight {
+    cursor: pointer;
+  } */
+  .sCards {
+    display: flex;
+    gap: 10px;
+    padding: 13px 25px;
+    justify-content: space-between;
+    overflow: hidden;
+    text-align: center;
+    .sCard {
+      width: 20%;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.4s;
+      margin: 48px 0;
+
+      &:hover {
+        translate: 0 -20px;
+      }
+    }
+    .cardImg {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 27px;
+      /* border: 0.1px solid #f5f1f1; */
+      border-radius: 8px;
+      @media (max-width: 992px) {
+        margin-bottom: 15px;
+      }
+    }
+    .cardName {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      word-wrap: break-word;
+      color: var(--Color, #3b3330);
+      text-overflow: ellipsis;
+      font-size: 17px;
+      font-weight: 550;
+      letter-spacing: 1.2px;
+      padding: 2px 0;
+      margin: 0;
+    }
+  }
+}

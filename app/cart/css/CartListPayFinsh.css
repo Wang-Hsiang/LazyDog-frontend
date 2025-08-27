@@ -1,0 +1,83 @@
+/* Reset Body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 圖片區塊 */
+.cart-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cart-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 表格樣式 */
+.custom-table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.custom-table thead tr {
+  background-color: #fff6e8;
+  font-weight: bold;
+}
+
+/* 表格內的圖片 */
+.custom-table td img {
+  width: 110px;
+  height: auto;
+  max-width: 100%;
+}
+
+.custom-table td {
+  text-align: center;
+}
+
+/* 側邊欄 */
+aside {
+  background: var(--Color-8, #fff6e8);
+  box-shadow: 0px 4px 3.3px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* 結算區塊 */
+.summary-item {
+  color: var(--text-Bk, #3e3e3e);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.summary-item2 {
+  font-size: 36px;
+}
+
+.totalmoney {
+  color: #f2662b;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* 圖片大小調整 */
+td img {
+  width: 32px;
+  height: 29px;
+}
+
+/* 內部間距 */
+.summary-item span {
+  padding: 0 10px;
+}

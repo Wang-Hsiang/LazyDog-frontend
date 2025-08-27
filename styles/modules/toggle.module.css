@@ -1,0 +1,316 @@
+.infoCard {
+  width: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* 選單項目 */
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid #eee;
+  color: #454545;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: #ff9538;
+  color: #fff;
+  border: none;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+.active{
+  color: #ff9538;
+}
+/* teacher */
+.server {
+  background-image: url(../../public/teacher-img/bag.png);
+  height: 450px;
+
+  background-image: url("/teacher-img/2.png");
+  background-size: cover;
+  /* background-position: center;  */
+  background-repeat: no-repeat;
+  height: 550px;
+
+  justify-content: center;
+  align-content: center;
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin: 0;
+}
+.person {
+  border-radius: 100%;
+}
+.card6 {
+  /* width: 180px; */
+  height: 364px;
+  transition: 0.4s;
+  color: #3b3330;
+  box-shadow: rgba(60, 60, 60, 0.35) 0px 5px 15px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card6:hover {
+  translate: 0 -10px;
+  background-color: #fff6e8;
+}
+
+.card6Title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 5px 0;
+  padding: 10px 20px;
+}
+
+.card6 img {
+  height: 260px;
+  width: 100%;
+  background-color: #c9c9c9;
+  box-shadow: inset 8px 8px 10px #c3c3c3, inset -8px -8px 10px #cfcfcf;
+}
+
+.card6Description {
+  font-size: 14px;
+  padding: 0 20px !important;
+  color: #ff9538;
+}
+
+.card7 {
+  /* width: 180px; */
+  /* height: 264px; */
+  transition: 0.4s;
+  color: #3b3330;
+  box-shadow: rgba(60, 60, 60, 0.35) 0px 5px 15px;
+  /* border-radius: 20px; */
+}
+
+.card7:hover {
+  translate: 0 -10px;
+  background-color: #fff6e8;
+}
+
+.card7Title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 0;
+  padding: 10px 20px 20px 20px;
+}
+
+.img1 {
+  width: 571px;
+  height: 300px;
+  /* padding: 10px; */
+  margin: 10px;
+  object-fit: cover;
+}
+.img {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  object-fit: cover;
+}
+.cube {
+  width: 240px;
+  height: 80px;
+}
+.dog-image {
+  width: 80px;
+
+  height: 80px;
+  margin: 50px;
+}
+/* .carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.carouselItem {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: block;
+} */
+.textContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.carouselbtn button {
+  background-color: #f7c090 !important;
+}
+
+.carouselbtn .active {
+  background-color: #cc4400 !important;
+}
+
+/* 圖片容器 */
+.imagesContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+
+  .leftImage {
+    position: absolute;
+    left: 320px;
+    top: 60px;
+    transform: translateY(-50%);
+    width: 90px;
+  }
+
+  .rightImage {
+    position: absolute;
+    right: 300px;
+    bottom: 200px;
+    transform: translateY(50%);
+    width: 100px;
+  }
+}
+
+.container {
+  position: relative;
+}
+/* .imageContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 20px;
+  .leftImages {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.leftImage {
+  width: 80px;
+  height: auto;
+}
+
+.rightImage {
+  position: absolute;
+left: 1540px;
+
+top: -100px;
+}
+} */
+
+/* @keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(-200%);
+  }
+  60% {
+    transform: translateX(-300%);
+  }
+  80% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
+@media (max-width: 768px) {
+  .img1 {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+  }
+  .container,
+  .courseContainer {
+    padding: 30px;
+  }
+  .server {
+    font-size: 24px;
+    background-size: 100% auto;
+    background-position: center;
+    height: 110px;
+  }
+  .mobile {
+    margin-bottom: 20px;
+  }
+  .person {
+    height: 80px;
+    margin-top: 42px;
+  }
+  .imagesContainer {
+    .leftImage,
+    .rightImage {
+      display: none;
+    }
+  }
+  .card6 {
+    height: 264px;
+    transition: 0.4s;
+    color: #3b3330;
+    box-shadow: rgba(60, 60, 60, 0.35) 0px 5px 15px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card6Title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 5px 0;
+    padding: 10px 15px 5px;
+  }
+
+  .card6 img {
+    height: 160px;
+    width: 100%;
+    background-color: #c9c9c9;
+    box-shadow: inset 8px 8px 10px #c3c3c3, inset -8px -8px 10px #cfcfcf;
+  }
+
+  .card6Description {
+    font-size: 12px;
+    padding: 0 15px !important;
+    color: #ff9538;
+  }
+  .carouselItem p {
+    font-size: 14px;
+  }
+  .image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardImg {
+  height: 180px;
+  object-fit: cover;
+}

@@ -1,0 +1,490 @@
+.container {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+}
+/* --------麵包屑與標題-------- */
+.breadcrumbs {
+  width: 242px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    color: var(--gray);
+  }
+  .breadcrumbs-active {
+    color: var(--Black);
+    font-weight: bold;
+  }
+}
+/* --------------------------- */
+/* ----------商品資訊---------- */
+.product-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.product-info-img-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+.product-info-img-small {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  .product-info-img-small-active {
+    border: 4px solid var(--Orange);
+  }
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--skin);
+    border-radius: 4px;
+  }
+}
+.product-info-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  flex: 1 0 0;
+}
+.product-info-content {
+  display: flex;
+  padding: 0px 10px 30px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  .info-product-name {
+    font-weight: bold;
+  }
+}
+.info-favorite-group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  h4 {
+    font-weight: bold;
+    user-select: none;
+  }
+}
+.info-onsale-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  .onsale-tag {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Orange);
+    border-radius: 30px;
+    h4 {
+      color: var(--White);
+    }
+  }
+  .onsale-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .onsale-time {
+    font-weight: bold;
+  }
+}
+.info-rate-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-price-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  h1 {
+    font-weight: bold;
+  }
+  h2 {
+    text-decoration: line-through;
+    color: var(--gray);
+  }
+  h3 {
+    color: var(--gray);
+  }
+}
+.info-qty-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--White);
+    width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    border: 1px solid var(--Orange);
+    border-radius: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  input {
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+.info-btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding: 25px 55px;
+  }
+  h3 {
+    font-weight: bold;
+    color: var(--White);
+    cursor: pointer;
+  }
+  .btn-buynow {
+    background: var(--White);
+    h3 {
+      color: var(--orange);
+    }
+  }
+}
+/* --------------------------- */
+/* ------商品詳細(手風琴)------- */
+.sticky-top {
+  background: #fff;
+  padding-block: 20px;
+  opacity: 0;
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  a {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+.product-detail {
+  width: 100%;
+  .accordion-button {
+    box-shadow: none;
+    &:not(.collapsed) {
+      background: var(--Orange);
+      h3,
+      h2 {
+        color: var(--White);
+      }
+    }
+  }
+}
+.accordion-item {
+  h3 {
+    font-weight: bold;
+  }
+}
+.accordion-body {
+  padding: 20px 30px;
+  h4 {
+    line-height: 2;
+  }
+  figure {
+    width: 840px;
+    margin: auto;
+  }
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+/* ------商品評價(手風琴)------- */
+.product-detail-rate {
+  .accordion-body {
+    display: flex;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+.score-bar {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.star-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  img {
+    width: 18px;
+  }
+}
+.star-bar-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  .star-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    img {
+      width: 12px;
+    }
+  }
+}
+.star-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p {
+    line-height: 1;
+  }
+}
+.bar-area {
+  width: 110px;
+  height: 5px;
+  background: var(--skin);
+}
+.bar {
+  height: 100%;
+  background: var(--orange);
+}
+/* ------商品評價(卡片)------- */
+.rate-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.rate-card {
+  display: flex;
+  width: 392px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  border: 1px solid var(--Orange);
+}
+.rate-card-text {
+  width: 100%;
+  display: flex;
+  padding: 20px 20px 5px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  .star-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    img {
+      width: 12px;
+    }
+  }
+}
+.rate-card-user {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    h6 {
+      cursor: pointer;
+    }
+  }
+}
+.rate-card-btn-date {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px 20px 20px;
+  justify-content: space-between;
+  align-items: center;
+  .rate-card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid var(--skin);
+    border-radius: 50%;
+  }
+}
+.rate-more {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--Orange);
+}
+/* --------------------------- */
+/* ----------也買區------------ */
+.also-buy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.also-buy-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.also-buy-list {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+/* --------------------------- */
+/* ----------他愛區------------ */
+.other-like {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.other-like-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.other-like-list {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+/* --------------------------- */
+/* ---------card元件----------- */
+.product-card {
+  width: 240px;
+  position: relative;
+}
+.product-card-hover {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  background: rgb(241, 213, 182, 0.7);
+  top: 0;
+  left: 0;
+  .hover-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart-btn {
+    h2 {
+      display: none;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      line-height: 1;
+      color: var(--Black);
+      text-shadow: 0 0 2px var(--White);
+      cursor: pointer;
+    }
+  }
+}
+.product-card-img {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+.product-card-heart {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 25px;
+  img {
+    width: 100%;
+  }
+}
+.product-card-onsale {
+  position: absolute;
+  background: url(../img/font/onsale-bg.png) no-repeat center/cover;
+  width: 50px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+  user-select: none;
+  padding-bottom: 3px;
+}
+.product-card-info {
+  padding: 0 20px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .product-card-name {
+    color: var(--Black);
+  }
+  .product-card-price {
+    color: var(--Orange);
+  }
+}
+/* --------------------------- */

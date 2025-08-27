@@ -1,0 +1,363 @@
+.mainDog {
+  width: 100%;
+  height: 475px;
+  background-image: url('http://localhost:5000/api/articles/image4.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  position: relative; /* 讓 ::before 定位 */
+  overflow: hidden;
+  margin-top:71px; ;
+}
+
+.mainDog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* 繼承背景圖片 */
+  background-size: cover;
+  filter: blur(10px); /* 模糊背景 */
+  z-index: 0; /* 讓它在文字後面 */
+}
+
+.mainDog h1 {
+  position: relative; /* 確保內容在上層 */
+  z-index: 1;
+  color: rgb(255, 130, 5); /* 讓文字更清楚 */
+  font-size: 36px;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-bottom:100px
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap:100px
+  /* position: relative;  */
+}
+
+.postButton {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin:25px 0;
+}
+
+.top {
+  width: 393px;
+  height: 537px;
+  /* display: block; */
+}
+
+.middle {
+  width: 860px;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 50px;
+  position: absolute;
+  left: 452px;
+  top: 50px;
+}
+
+.bottom {
+  width: 393px;
+  height: 618px;
+  position: absolute;
+  top: 564px;
+}
+
+/* top */
+
+.top a {
+  text-decoration: none;
+  color: #9f9f9f;
+  font-size: 24px;
+}
+
+.top a:hover {
+  color: #f5842b;
+}
+
+.top select {
+  display: none;
+}
+.aside {
+   
+  width: 377px;
+}
+
+.aside-category {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* middle */
+.post {
+  background-color: #f5842b;
+  /* color: white; */
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+  border:1.5 solid #f5842b;
+  .postLink{
+    color: white;
+  }
+}
+
+.post:hover {
+  background-color: white;
+  color: #f5842b;
+  border:1.5 solid #f5842b;
+  .postLink{
+    color: #f5842b;
+  }
+}
+
+.filter {
+  background: none;
+  border: none;
+  display: flex;
+  justify-self: end;
+  margin-bottom: 10px;
+}
+
+.card {
+  width: 818.69px;
+  height: 684px;
+  border: none;
+  /* display: flex; */
+  gap: 16px;
+}
+
+.card img {
+  width: 818.69px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.cardDetail {
+  display: flex;
+  gap: 50px;
+}
+
+.card p {
+  font-size: 24px;
+}
+
+.card a {
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  color: black;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  color: #f5842b;
+}
+
+/* bottom */
+.asideRead {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  margin: 37px 0;
+}
+
+.asideRead img {
+  width: 80px;
+  height: 80px;
+}
+
+.tt {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tt a {
+  color: black;
+  text-decoration: none;
+  max-width: 265.81px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.tt a:hover {
+  color: #f5842b;
+  text-decoration: none;
+}
+
+.pagination .page-item .page-link {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+}
+
+.pagination .page-item .page-link {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+}
+
+.pagination .page-item {
+  margin: 0 20px;
+}
+
+.pagination .page-item.active .page-link { 
+  background-color: #000000 !important;
+  /* 設定背景顏色 */
+  border-color: #f5842b !important;
+  /* 設定邊框顏色 */
+  color: white !important;
+  /* 讓文字變白色，對比更明顯 */
+} 
+
+.ArticlePage {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  .PageItem {
+    cursor: pointer;
+  }
+}
+.PageItem {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid orange;
+  color: #f5842b;
+  border-radius: 50%;
+  &:hover {
+    background: #f5842b;
+    color: White;
+  }
+  /* &:active{
+    background: orange;
+    color: White;
+
+  } */
+  .PageLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.PageItemActive {
+    background: orange;
+    color: White;
+  }
+  
+.page{
+  display: flex !important;
+  justify-content: center;
+}
+
+}
+.asideCategory{
+  margin-bottom: 15px;
+}
+
+.asideCategoryP{
+    color: #f5842b;
+    font-size: 20px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.asideCategoryP:hover{
+ background-color: #66c5bd;
+ color: aliceblue;
+}
+.asideCategoryP:active{
+  background-color: #66c5bd;
+  color: aliceblue;
+ }
+ .asideCategoryPA{
+  background-color: #f5842b;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+ .RWDH4{
+  display: none;
+}
+.RWDfilter{
+  display: none;
+  }
+  .activePage {
+    /* background-color: #f5842b; 背景色为粉色 */
+    color: #66c5bd; /* 文字颜色为白色 */
+    font-weight: bolder;
+    /* border-radius: 50%; */
+}
+/* @media screen */
+@media screen and (max-width: 390px) {
+  .mainDog{
+    height: 250px;
+  }
+  .main{
+    padding-bottom: 1px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    gap:100px
+    /* position: relative;  */
+  }
+  .RWDH4{
+    display: block;
+    margin-bottom: 35px;
+  }
+  .H4{
+    display: none;
+  
+  }
+  .aside {
+   
+    display: none;
+  }
+ .RWDfilter{
+  display: block;
+}
+  .post-button {
+    justify-content: center;
+  }
+  .card{
+    width: 366px;
+  }
+  .card img{
+    width: 366px;
+  }
+  .page{
+    position: relative;
+    top: 1150px;
+  }
+}

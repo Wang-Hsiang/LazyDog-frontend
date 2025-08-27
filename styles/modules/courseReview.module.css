@@ -1,0 +1,489 @@
+/* .wrapper {
+  margin: 100px auto 0 !important;
+}
+.suAvatarImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.suCameraIcon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.suCameraIconImg {
+  width: 36px;
+  height: 36px;
+}
+
+.suDropdownMenu {
+  min-width: 120px;
+  text-align: center;
+}
+
+.suDropdownItem {
+  cursor: pointer;
+}
+.suBtnSecondary {
+  background-color: #66c5bd;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid transparent;
+}
+.suBtnSecondary:hover {
+  background-color: white;
+  color: #66c5bd;
+  border: 2px solid;
+  border-color: #66c5bd;
+}
+.secondary {
+  background-color: #66c5bd;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid transparent;
+} */
+
+/* 桌機版篩選選單 */
+.asideContainer {
+  display: block;
+}
+
+/* 手機版篩選選單 (預設隱藏) */
+.mobileFilter {
+  position: fixed;
+  top: 62px;
+  left: -100%;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* 當 `filterOpen` 為 true 時，篩選選單滑入畫面 */
+.showFilter {
+  left: 0;
+}
+
+/* 關閉篩選按鈕 */
+.closeButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ccc;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #bbb;
+}
+
+.right {
+  /* display: none;
+  border-radius: 30%;
+  width: 50px;
+  height: 50px;
+  border: #f5842b;
+  color: white;
+  position: fixed;
+  top: 73px;
+  left: 10.5px;
+  z-index: 5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9538;
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border: 1.3px solid #ff9538;
+  border-radius: 11px;
+  transition: 0.4s;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s ease, background-color 0.4s ease; /* 動畫過渡效果 */
+
+  &:active {
+    background-color: #fc861f;
+    color: #fff;
+  }
+  &:hover {
+    /* width: 120px; */
+    /* translate: 0 -5px; */
+    background-color: #ff9538;
+    color: #fff;
+    border: none;
+  }
+  /* 使用 ::after 顯示文字 */
+  &:hover::after {
+    content: "Filter"; /* 顯示的文字 */
+    position: absolute;
+    right: 50px; /* 讓文字顯示在按鈕右側 */
+    top: 50%;
+    transform: translateY(-50%); /* 使文字垂直置中 */
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #ff9538; /* 文字背景色與按鈕一致 */
+    padding: 8px 16px;
+    border-radius: 25px; /* 使文字背景有圓角 */
+  }
+}
+
+/* 手機篩選按鈕 (點擊後打開篩選) */
+.filterButton {
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  color: white;
+  background-color: #ff9538;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 3.5px 6.5px;
+}
+.btn:hover {
+  background-color: #fdf9f5;
+  color: #ff9538 !important;
+  border-color: #ff9538;
+}
+
+.btn2 {
+  background-color: #fdf9f5;
+  color: #ff9538;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #ff9538;
+  cursor: pointer;
+}
+.btn2:hover {
+  background-color: #ff9538;
+  color: white;
+  border-color: #ff9538;
+}
+
+.btn3 {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  color: white;
+  background-color: #66c5bd;
+  border-radius: 5px;
+  font-size: 14px;
+  /* padding: 4px 8px; */
+  font-weight: 450;
+  letter-spacing: 1px;
+  padding: 6px 7px;
+}
+/* .btn3:hover {
+  background-color: #fdf9f5;
+  color: #66c5bd;
+  border-color: #66c5bd;
+} */
+
+.btn4 {
+  background-color: #ff9538;
+  color: #fdf9f5;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #ff9538;
+  cursor: pointer;
+}
+.btn4:hover {
+  background-color: #fdf9f5;
+  color: #ff9538 !important;
+  border-color: #ff9538;
+}
+.moreBtn {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+.moreBtn:hover {
+  color: #f5842b;
+  text-decoration: underline;
+}
+
+.righttop {
+  padding: 10px 30px 48px;
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 8px;
+  }
+}
+/* .suTable {
+  width: 100%;
+  table-layout: fixed;
+} */
+
+.tdTsai, .tdTsai1 {
+  /* white-space: normal; */
+  word-wrap: break-word;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 350;
+  font-size: 15px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 12px auto;
+}
+.thTsai {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin: 0 auto;
+}
+.thTsai1 {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin: 0 auto;
+}
+
+/* .btn-sm {
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 5px;
+} */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+@media (min-width: 768px) {
+  .mobileFilter {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .asideContainer {
+    display: none;
+  }
+  .container {
+    padding: 30px;
+  }
+  .right {
+    display: block;
+    border-radius: 50%;
+    border: #f5842b;
+  }
+  .righttop {
+    padding: 30px;
+  }
+  .suTable {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border: none;
+  }
+
+  .suTable thead {
+    display: none;
+  }
+
+  .suTable tbody,
+  .suTable tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .suTable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .suTable td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    color: #555;
+    min-width: 90px;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .btn-sm {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 10px;
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+    border-radius: 6px;
+  }
+  .add-coupon-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  /* 「更多」按鈕縮小 */
+  .moreBtn {
+    font-size: 12px;
+    color: #ff6600;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .moreBtn:hover {
+    color: #cc5500;
+    text-decoration: underline;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .modal-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+  .thTsai1{
+    display: none;
+  }
+  .tdTsai1{
+    display: none;
+  }
+}
+
+.collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid #f5842b;
+
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid #f5842b;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.height {
+  margin: 100px auto 0;
+}
+@media (max-width: 375px) {
+  .suTable td {
+    font-size: 12px;
+    padding: 6px;
+  }
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .btn-sm {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+  .badge {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+  .add-coupon-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .moreBtn {
+    font-size: 10px;
+  }
+
+  .modal-content {
+    height: 100vh;
+    padding: 15px;
+  }
+}
+
+/* 星星 */
+.starRate {
+  width: 24%;
+  padding-bottom: 5px;
+}
+
+/* Swal 彈跳窗 */
+.tsaiSwal {
+  width: 500px;
+  padding: 25px 15px;
+  font-size: 16px !important;
+  padding: 15px 40px 40px;
+  border-radius: 35px !important;
+  background-color: white !important;
+  color: #5e5e5e;
+}

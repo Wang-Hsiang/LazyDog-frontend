@@ -1,0 +1,102 @@
+/* 左邊 */
+.left{
+    background: #fff;
+    width: 100%;
+    /* position: fixed; */
+    margin-right: 15px;
+    .top {
+        .tName,.tGmail,.tTitle{
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+    
+        .tName{
+            font-weight: bold;
+        }
+        .tGmail{
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+        
+    
+        .outline{
+            /* height: 35px; */
+            padding: 4px 8px;
+            border-radius: 3px;
+            border: 1px solid var(--Color-3, #66C5BD);
+            color: var(--Color-3, #66C5BD);
+            font-family: "Noto Sans TC";
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+    
+        }
+        .outline:hover{
+            background-color:  var(--Color-3, #66C5BD);
+            color: #fff;
+        }
+    }
+    .lis {
+        border-top: 0.1px solid var(--text-Gy, #dee2e6);
+        padding: 20px 24px 20px 38px;
+    }
+  
+    .lis:hover {
+        a, .icons{
+        color: #f7a96d;
+        }         
+    }
+    
+    .icons{
+        color: #bcbcbc;
+        padding-right: 10px;
+    }
+    .liText {
+        color: #bcbcbc;
+        font-family: 'Noto Sans TC';
+        font-size: 15px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 30px; /* 187.5% */
+        letter-spacing: 0.96px;
+    }
+    
+    /* 相機 */
+  .camera{
+    .avatarImg {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1.5px solid #ddd;
+        }
+        
+        .cameraIcon {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cameraIconImg {
+        width: 18px;
+        height: auto;
+        }
+        
+        .dropdown-menu {
+        min-width: 120px;
+        text-align: center;
+        }
+        
+        .dropdown-item {
+        cursor: pointer;
+        }
+  }
+  }

@@ -1,0 +1,160 @@
+.container {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+/* ----------廣告區1---------- */
+.dm-area01 {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+/* --------------------------- */
+/* ----------熱銷區------------ */
+.best-selling-product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.best-selling-product-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.best-selling-product-list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+/* --------------------------- */
+/* ---------card元件----------- */
+.product-card {
+  width: 360px;
+  position: relative;
+}
+.product-card-img {
+  width: 100%;
+}
+.product-card-heart {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+}
+.product-card-onsale {
+  position: absolute;
+  background: url(../img/font/onsale-bg.png);
+  width: 63px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+  user-select: none;
+  padding-bottom: 3px;
+}
+.product-card-info {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  .product-card-name {
+    color: var(--Black);
+  }
+  .product-card-price {
+    color: var(--Orange);
+  }
+}
+/* --------------------------- */
+/* --------廣告區2------------ */
+.dm-area02 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  img {
+    width: 100%;
+  }
+}
+/* --------------------------- */
+/* --------最新商品------------ */
+.latest-product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.latest-product-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.latest-product-list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+/* --------------------------- */
+/* --------廣告區3------------ */
+.dm-area03 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  img {
+    width: 100%;
+  }
+}
+/* --------------------------- */
+/* --------推薦收藏------------ */
+.recommend-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.recommend-collection-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recommend-collection-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/* ----------------------------- */
+/* --------收藏卡片元件---------- */
+.collection-card {
+  position: relative;
+  width: 100%;
+}
+.collection-card-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+.collection-card-heart {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+}
+/* ----------------------------- */

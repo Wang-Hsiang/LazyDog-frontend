@@ -1,0 +1,269 @@
+.ProductCard {
+  max-width: 225px;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+  @media (max-width: 499px) {
+    /* max-width: 130px; */
+  }
+}
+.ProductCardHover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgb(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  .HoverIcon {
+    display: none;
+  }
+  .CartBtn {
+    display: none;
+  }
+}
+.ProductCardHover:hover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: absolute;
+  background: rgb(241, 213, 182, 0.5);
+  top: 0;
+  left: 0;
+  .HoverIcon {
+    min-width: 45px;
+    min-height: 45px;
+    border-radius: 50%;
+    background: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .CartBtnOff {
+    h6 {
+      display: none;
+    }
+  }
+  .CartBtn {
+    h6 {
+      position: absolute;
+      color: var(--Black);
+      text-shadow: 0 0 2px var(--White);
+      cursor: pointer;
+      top: 0;
+    }
+  }
+}
+.ProductCardClickOff {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgb(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  .HoverIcon {
+    display: none;
+  }
+  .CartBtn {
+    display: none;
+  }
+}
+.ProductCardClickOn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: absolute;
+  background: rgb(241, 213, 182, 0.5);
+  top: 0;
+  left: 0;
+  .HoverIcon {
+    min-width: 45px;
+    min-height: 45px;
+    border-radius: 50%;
+    background: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .CartBtnOff {
+    h6 {
+      display: none;
+    }
+  }
+  .CartBtn {
+    h6 {
+      position: absolute;
+      color: var(--Black);
+      text-shadow: 0 0 2px var(--White);
+      cursor: pointer;
+      top: 0;
+    }
+  }
+}
+.ProductCardImg {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+  .HoverIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    img {
+      width: 25px;
+    }
+  }
+  .CartBtnOff {
+    h6 {
+      display: none;
+    }
+  }
+  .CartBtn {
+    h6 {
+      position: absolute;
+      color: var(--Black);
+      text-shadow: 0 0 2px var(--White);
+      cursor: pointer;
+      top: 0;
+    }
+  }
+}
+.ProductCardInfo {
+  padding: 0 20px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  p,
+  h5 {
+    margin: 0;
+  }
+  .ProductCardName {
+    color: var(--Black);
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    height: 72px;
+    overflow: hidden;
+  }
+  .ProductCardNameSm {
+    color: var(--Black);
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    max-width: 116.69px;
+    height: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (max-width: 499px) {
+      font-size: 15px;
+    }
+  }
+  .ProductCardPrice {
+    color: var(--Orange);
+  }
+  .ProductCardPriceSm {
+    width: 100%;
+    text-align: center;
+    color: var(--Orange);
+    @media (max-width: 499px) {
+      font-size: 15px;
+      text-wrap: nowrap;
+    }
+  }
+}
+.ProductCardHeart {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+}
+.ProductCardHeartOff {
+  display: none;
+}
+.ProductCardCart {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  p {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 7px;
+    left: 2px;
+    color: var(--White);
+  }
+}
+.ProductCardCartOff {
+  display: none;
+}
+/* .ProductCardOnsale {
+  position: absolute;
+  background: url(/product/font/onsale-bg.png) no-repeat center/cover;
+  width: 50px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+  user-select: none;
+  padding-bottom: 3px;
+} */
+/* ----------商品資訊---------- */
+.ProductInfoImgGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  gap: 15px;
+  .ProductInfoImg {
+    margin-left: 43px;
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}
+.ProductInfoImgSmall {
+  display: flex;
+  align-items: flex-start;
+  .ProductInfoImgSmallActive {
+    border: 4px solid var(--Orange);
+  }
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--skin);
+    border-radius: 4px;
+  }
+  .ProductInfoImgSmallBtn {
+    margin: auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    img {
+      width: 50%;
+    }
+  }
+}

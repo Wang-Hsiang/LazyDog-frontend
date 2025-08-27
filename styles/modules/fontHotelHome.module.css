@@ -1,0 +1,800 @@
+.breadSpace {
+  margin-left: 35px;
+}
+/* 搜尋欄 */
+.suSearchBar {
+  display: flex;
+  gap: 15px;
+  background: #f5d1a8;
+  border-radius: 12px;
+  padding: 13px 17px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 950px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.suSearchGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  border-radius: 6px;
+  padding: 12px 17px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.suIcon {
+  /* margin-right: 8px; */
+  width: 20px;
+  height: 20px;
+}
+
+.suSearchInput,
+.suSearchDate {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-weight: 450;
+  /* line-height: 31px; */
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+}
+.suSearchInput {
+  color: rgb(197, 192, 192);
+  font-size: 16.5px;
+  letter-spacing: 2.4;
+}
+.suSearchDate::placeholder {
+  color: rgb(197, 192, 192);
+  font-size: 15.4px;
+  letter-spacing: 1.05px;
+}
+
+/* 數量 */
+
+.suSearchBar  .suQuantityBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.suQuantityBtn img {
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
+}
+
+.suSearchBar .suQuantityBtn:hover {
+  background: #f3dccc;
+  /* height: auto; */
+  border-radius: 50px;
+}
+
+.suQuantityNumber {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* 搜尋按鈕 */
+.suSearchBar .suSearchBtn {
+  background-color: #ff9538;
+  color: white;
+  padding: 11px 17px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 450;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.suSearchBar .suSearchBtn2 {
+  background-color: #ff9538;
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.suSearchBar .suSearchBtn:hover,
+.suSearchBar .suSearchBtn2:hover {
+  background-color: #fdf9f5;
+  color: #ff9538;
+  border-color: #ff9538;
+}
+
+.suSearchBg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 108px 0;
+  margin-top: 71px;
+  background-image: url("/hotel/hotel-images/services-banner-dog-boarding.2203041608391.jpg");
+  @media (max-width: 992px) {
+    background-size: auto 100%;
+    background-position: 31% 0;
+  }
+}
+
+/* 地圖 */
+.suMapCard {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 45px;
+}
+
+.suMapCard .suMapBtn {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background: rgba(0, 123, 255, 0.9); */
+  background: #ff9538;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 350;
+  letter-spacing: 0.5px;
+  text-wrap: nowrap;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.suMapCard .suMapBtn:hover {
+  background: #66c5bd;
+}
+
+.suMapImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* 側邊篩選區 */
+.suSidebar {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.suFilterTitle {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.suFilterGroup {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 43px;
+  margin-bottom: 38px;
+}
+
+.suLabels {
+  font-size: 16px;
+  font-weight: 350;
+  letter-spacing: 1.4px;
+  padding-left: 12px;
+}
+.suCheckbox {
+  transform: scale(1.35);
+  margin-top: 6px;
+}
+
+.suCheckbox:focus,
+.suCheckbox:checked,
+.suCheckbox:active {
+  box-shadow: none; /* 移除點擊後的藍色高亮 */
+  background-color: #ff9538;
+  border-color: #ff9538;
+  color: #fff;
+}
+.suCheckbox:not(:checked) {
+  background: #fff;
+  border-color: #d4d3d3;
+}
+.suCheckbox:active {
+  transform: scale(0.95); /* 讓按下時有輕微縮小的效果（可選） */
+}
+
+.selects {
+  margin: 5px 0;
+  border-radius: 7px;
+  color: #a1a1a1;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.selects:focus,
+.selects:checked,
+.selects:active {
+  box-shadow: none; /* 移除點擊後的藍色高亮 */
+  border: 1px solid #ff9538;
+}
+
+.selectsRegion {
+  margin: 5px 0;
+  border-radius: 7px;
+  border: 1px solid #cac9c9;
+  color: #a1a1a1;
+  font-size: 15px;
+  width: 110px;
+  height: 35px;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+.selectsRegion:focus,
+.selectsRegion:checked,
+.selectsRegion:active {
+  box-shadow: none;
+  border: 1px solid #ff9538;
+}
+
+/* 價格篩選 */
+.suPriceFilterContainer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.suPriceInputGroup {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.suPriceInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 300px;
+  height: 35px;
+  border: 2px solid #ff9538;
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.suPriceInput span {
+  flex: 1;
+  text-align: center;
+}
+
+.suPriceInput input {
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 60px;
+  font-size: 12px;
+  background: transparent;
+}
+
+/* 篩選按鈕 */
+.suFilterGroup .suClearFilterBtn {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  background: none;
+  border: 0.5px solid #ff9538;
+  color: #ff9538;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  cursor: pointer;
+}
+
+.suFilterGroup .suClearFilterBtn:hover {
+  background: #ff9538;
+  color: white;
+}
+
+.suShowMore {
+  cursor: pointer;
+  color: #ff9538;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+  display: inline-block;
+  /* margin-top: 10px; */
+  margin-left: 5px;
+}
+
+.suShowMore:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+.suHidden {
+  display: none;
+}
+
+/* 飯店 */
+.suCards {
+  padding: 0 20px;
+}
+.suHotelCard {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  box-shadow: rgba(60, 60, 60, 0.25) 0px 5px 10px;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.05); /* 放大 5% */
+  }
+}
+.hotelName {
+  color: #3b3330;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  /* margin-top: 9px; */
+  margin-bottom: 20px;
+}
+.suHotelCard img {
+  width: 170px;
+  height: 156px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.suHotelInfo {
+  align-self: center;
+  flex: 1;
+  padding-left: 15px;
+}
+
+.suHotelInfo h5 {
+  font-weight: bold;
+}
+
+.suHotelInfo p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  color: rgba(61, 56, 54, 0.505);
+  font-size: 12.8px;
+  letter-spacing: 1.2px;
+  line-height: 23px;
+}
+
+.suPriceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  height: 100%;
+  text-align: right;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.suReview {
+  color: #66c5bd;
+  /* width: 18px; */
+  height: 30px;
+  letter-spacing: 0.8px;
+  margin-right: 12px;
+}
+
+.suReview .starIcon {
+  width: 21px;
+  height: 18px;
+  padding-right: 2px;
+}
+
+.suReviewCount {
+  font-size: 14.8px;
+  letter-spacing: 1px;
+  margin-right: 11px;
+}
+
+.suPriceBox .suBookBtn {
+  background-color: #ff9538;
+  color: white;
+  font-size: 15.5px;
+  letter-spacing: 1px;
+  text-wrap: nowrap;
+  width: 120px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  margin: 35px 0 0 0px;
+  cursor: pointer;
+}
+
+.suPriceBox .suBookBtn:hover {
+  background-color: #fdf9f5;
+  color: #ff9538;
+  border-color: #ff9538;
+}
+
+/*  分頁 */
+
+.suPagination {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  border-radius: 50%;
+}
+
+/* 分頁按鈕 */
+.pageItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-width: 36px;
+  min-height: 36px; */
+  min-width: 45px;
+  min-height: 45px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.pageItem:focus,
+.pageItem:active,
+.pageLink:focus,
+.pageLink:active {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.pageLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 48px;
+  height: 48px; */
+  width: 36px;
+  height: 36px;
+  border-radius: 50% !important; /* 確保是圓形 */
+  color: #333333;
+  border: none;
+  padding: 0;
+  font-size: 16.5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.pageItemActive .pageLink {
+  background-color: #ff9538;
+  color: white;
+  border-radius: 50%;
+}
+.pageItemDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+  border-radius: 50%;
+  background: #f3f3f3;
+}
+
+.pageLink:hover {
+  background-color: #ff9538;
+  color: white;
+}
+
+/* 桌機版篩選選單 */
+.asideContainer {
+  display: block;
+}
+
+/* 手機版篩選選單 (預設隱藏) */
+.mobileFilter {
+  position: fixed;
+  top: 62px;
+  left: -100%;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* 當 `filterOpen` 為 true 時，篩選選單滑入畫面 */
+.showFilter {
+  left: 0;
+}
+
+/* 關閉篩選按鈕 */
+.closeButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ccc;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #bbb;
+}
+
+.right {
+  display: none;
+  border-radius: 30%;
+  width: 50px;
+  height: 50px;
+  border: #f5842b;
+  color: white;
+}
+/* 手機篩選按鈕 (點擊後打開篩選) */
+.filterButton {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  /* .suHotelInfo {
+    flex: 0;
+  } */
+  .suPriceBox {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .asideContainer {
+    display: none;
+  }
+  .container {
+    padding: 30px;
+  }
+  .right {
+    display: block;
+    border-radius: 50%;
+    border: #f5842b;
+  }
+  .rwd {
+    padding: 30px;
+  }
+  .suHotelCard img {
+    width: 90%;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .hotelName {
+    font-size: 16.3px;
+    margin-top: 0;
+  }
+  .suPriceBox {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .mobileFilter {
+    display: none;
+  }
+}
+
+.collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid #f5842b;
+
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid #f5842b;
+    width: 35px;
+    height: 35px;
+  }
+}
+/*  搜尋欄 RWD */
+@media (max-width: 768px) {
+  .suSearchBar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .suSearchGroup {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+  }
+
+  .suSearchBar .suSearchBtn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+/*  390px 以下（最小寬度） */
+@media (max-width: 390px) {
+  .suSearchBg {
+    padding: 58px 0;
+  }
+  .suSearchBar {
+    width: 280px;
+    padding: 26px 23px;
+    border-radius: 29px;
+    gap: 8px;
+  }
+  .suSearchGroup {
+    padding: 6px 12px;
+  }
+  .suSearchInput {
+    font-size: 16.5px;
+  }
+  .suSearchDate {
+    font-size: 12px;
+    letter-spacing: 0px;
+    margin: 5px;
+  }
+  .suSearchBar .suSearchBtn {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .suQuantityNumber {
+    width: 30px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .regionModal {
+    width: 380px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .rwd {
+    padding: 0;
+  }
+  .suSidebar {
+    padding: 0;
+  }
+  .suHotelCard {
+    padding: 22px 20px;
+  }
+  .hotelName {
+    margin-bottom: 8px;
+  }
+  .suHotelInfo p {
+    -webkit-line-clamp: 4;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 15px;
+    margin-bottom: 0;
+  }
+}
+
+/* 手機側邊攔 */
+.rightIcon {
+  position: fixed;
+  top: 73px;
+  left: 10.5px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9538;
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border: 1.3px solid #ff9538;
+  border-radius: 11px;
+  transition: 0.4s;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s ease, background-color 0.4s ease; /* 動畫過渡效果 */
+
+  &:active {
+    background-color: #fc861f;
+    color: #fff;
+  }
+  &:hover {
+    /* width: 120px; */
+    /* translate: 0 -5px; */
+    background-color: #ff9538;
+    color: #fff;
+    border: none;
+  }
+  /* 使用 ::after 顯示文字 */
+  &:hover::after {
+    content: "Filter"; /* 顯示的文字 */
+    position: absolute;
+    right: 50px; /* 讓文字顯示在按鈕右側 */
+    top: 50%;
+    transform: translateY(-50%); /* 使文字垂直置中 */
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #ff9538; /* 文字背景色與按鈕一致 */
+    padding: 8px 16px;
+    border-radius: 25px; /* 使文字背景有圓角 */
+  }
+}
+
+.offcanvasBody {
+  padding: 16px 0px;
+  overflow-x: hidden;
+}
+
+/* 滾軸樣式 */
+.scrollOrg {
+  --sb-track-color: #bcbcbc38;
+  --sb-thumb-color: #f7a96d;
+  --sb-size: 4px;
+}
+
+.scrollOrg::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scrollOrg::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 4px;
+}
+
+.scrollOrg::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 4px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollOrg {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}

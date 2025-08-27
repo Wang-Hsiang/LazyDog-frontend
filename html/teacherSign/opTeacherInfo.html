@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>opTeacherInfo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/operatorCamera.css" />
+    <style>
+
+      /* 共用 */
+      .rounded {
+        border-radius: 5px !important;
+      }
+      .tName,.tGmail,.tTitle{
+        font-weight: bold;
+        }
+
+
+      /* 左邊 */
+      .left{
+        margin: 0 20px;
+
+        .btn-outline{
+          height: 35px;
+          padding: 6px 15px;
+          border-radius: 5px;
+          border: 1px solid var(--Color-3, #66C5BD);
+          color: var(--Color-3, #66C5BD);
+          font-family: "Noto Sans TC";
+          font-size: 14px;
+          font-weight: bold;
+          letter-spacing: 2.5px;
+
+        }
+        .btn-outline:hover{
+          background-color:  var(--Color-3, #66C5BD);
+          color: #fff;
+          
+        }
+        .text-center {
+          padding: 38px;
+        }
+        .lis {
+          border-top: 0.1px solid var(--text-Gy, #dee2e6);
+        }
+        .icons{
+          width: 18px;
+          margin-right: 15px;
+        }
+
+        .li-text {
+          color: var(--text-Gy, #bcbcbc);
+          font-family: 'Noto Sans TC';
+          font-size: 15px;
+          font-style: normal;
+          font-weight: bold;
+          line-height: 30px; /* 187.5% */
+          letter-spacing: 0.96px;
+        }
+
+      }
+      
+      
+     
+
+      /* 右邊 */
+      .right{
+        height: 85vh;
+        overflow-y: auto;
+        .must{
+        color: red;
+        padding-left: 5px;
+        }
+
+        .form-control {
+          border-radius: 8px;
+        }  
+
+        /* 美化圖片預覽區 */
+        .image-card {
+          position: relative;
+          width: 120px;
+          height: 120px;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #f8f9fa;
+          border: 1px solid #ddd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          /* padding: 8px; */
+        }
+
+        .image-card .imgCr {
+          width: 100%;
+          /* height: 80px; */
+          object-fit: cover;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+
+        .image-card .add {
+          width: 100%;
+          font-size: 12px;
+          margin-top: 5px;
+          padding: 3px;
+        }
+        .delete-btn {
+          position: absolute;
+          top: 4px;
+          right: 5px;
+          background: red;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          
+        }
+        .delete-btn:hover {
+          background: rgba(255, 0, 0, 0.616);
+          box-shadow: 2px 2px 7px 3px white;
+        }
+
+        .btnAddPic{
+            background-color: #66C5BD;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btnSubmit{
+          background-color: #F5842B;
+          border: none;
+        }
+
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <!-- 點擊圖片 Bs Modal (彈出視窗)  -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body text-center">
+                  <img id="modalImage" class="img-fluid" src="" alt="放大圖片">
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    <main>
+      <div class="container mt-5">
+        <div class="row">
+          <!-- 左邊sidebar -->
+          <div class="col-md-3">
+            <div class="left">
+              <div class="border rounded ">
+                <div class="text-center">
+                  <div class="position-relative d-inline-block">
+                    <img
+                      src="./img/25 (1).jpeg"
+                      class="rounded-circle avatar-img"
+                      alt="User Avatar"
+                    />
+                    <!-- 相機按鈕Dropdown) -->
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-light camera-icon p-0"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="./img/camera.png"
+                          alt="相機"
+                          class="camera-icon-img"
+                        />
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <button
+                            class="dropdown-item text-danger"
+                            id="deletePhoto"
+                          >
+                            刪除照片
+                          </button>
+                        </li>
+                        <li>
+                          <label for="uploadPhoto" class="dropdown-item"
+                            >上傳照片</label
+                          >
+                          <input
+                            type="file"
+                            id="uploadPhoto"
+                            accept="image/*"
+                            class="d-none"
+                          />
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <h5 class="m-3 tName">馬克</h5>
+                  <p class="text-muted tGmail">165846hote@gmail.com</p>
+                  <button class="btn btn-outline btn-sm">已認證</button>
+                </div>
+                <ul class="list-unstyled text-start m-0">
+                  <li class="p-4 lis">
+                    <a
+                      href="opTeacherInfo.html"
+                      class="text-decoration-none li-text"
+                    >
+                      <img class="icons" src="./img/userIcon.png" alt="" />我的資訊
+                    </a>
+                  </li>
+                  <li class="p-4 lis">
+                    <a
+                      href="opCourseList.html"
+                      class="text-decoration-none li-text"
+                    >
+                      <img class="icons" src="./img/penIcon.png" alt=""></i>我的課程
+                    </a>
+                  </li>
+                  <li class="p-4 lis">
+                    <a
+                      href="opTeacherPlace.html"
+                      class="text-decoration-none li-text"
+                    >
+                      <img class="icons" src="./img/flagIcon.png" alt=""></i>開課地點
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          <!-- 右邊 -->
+          <div class="col-md-9">
+            <form action="">
+            <div class="right border rounded p-5">
+            <h3 class="mb-4 tTitle">師資內容</h3>
+            <div class="mb-4">
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label">姓名<span class="must">*</span></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="馬克"
+                    placeholder=""
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">教學類別<span class="must">*</span></label>
+                  <select class="form-select">
+                    <option selected>請選擇</option>
+                    <option>寵物美容</option>
+                    <option>寵膳食育</option>
+                    <option>寵物訓練</option>
+                    <option>寵物照護</option>
+                    <option>商業思維與專業培訓</option>
+                  </select>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label">個人介紹<span class="must">*</span></label>
+                  <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="6">「在我們的生命中，有一隻無條件愛著自己的狗是何等的幸福。如果可以，我希望牠一生都快樂又逍遙。」10年前，有點像是命運的洪流，把我推向動物表演訓練，讓我愛上了訓練師這份工作，也時常在思考，怎麼樣才能成為一位更好的訓練師？怎麼樣才能透過教學，讓動物過上更好的生活？離開動物表演後投身導盲犬的訓練，對我影響最深的莫過於導盲犬的幼犬教育，了解到導盲犬的成功養成並非偶然，是透過完整的教育來成就出一隻生理及心理都健康的狗狗。那我們自己的狗狗也能做得到嗎？當然可以！而這訓練成功的關鍵，會建立在我們人與狗的能力水準都共同成長的時候。很榮幸有機會加入犬研室，一起為狗狗與飼主的共同美好生活來做努力。</textarea>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label">經歷<span class="must">*</span></label>
+                  <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="6">綠世界生態農場 鸚鵡表演訓練師六福村主題遊樂園 鸚鵡表演訓練師臺灣導盲犬協會 儲備導盲犬訓練師/寄養家庭輔導員</textarea>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label">出版<span class="must">*</span></label>
+                  <textarea class="form-control" style="resize: none;" id="exampleFormControlTextarea1" rows="6">「馬克先生的鸚鵡教室」「馬克先生的狗狗幼兒園」</textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <div class="section">
+                <label class="form-label">師資照片<span class="must">*</span></label>
+                <div
+                  id="imagePreviewContainer"
+                  class="d-flex flex-wrap gap-3 mb-2"
+                >
+                  <div class="image-card">
+                    <img
+                      class="imgCr"
+                      src="./img/25 (1).jpeg"
+                      alt="課程圖片1"
+                    />
+                    <button type="button" class="delete-btn deletPic">&times;</button>
+                  </div>                  
+                </div>
+                <input
+                  type="file"
+                  id="imageUpload"
+                  class="form-control d-none add"
+                  accept="image/*"
+                  multiple
+                />
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm mt-2 btnAddPic"
+                  onclick="document.getElementById('imageUpload').click();"
+                >
+                  + 新增圖片
+                </button>
+              </div>
+            </div>
+
+            <!-- 圖片 -->
+            
+
+             <!-- 按鈕區 -->
+             <div class="d-flex justify-content-end gap-3">
+              <button type="submit" class="btn btn-primary btn-sm px-4 btnSubmit">
+                儲存
+              </button>
+            </div>
+            </div>
+            
+          </form>
+           
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <script src="./js/operatorCamera.js"></script>
+    <script>
+      function generateCode() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+        let code = ''
+        for (let i = 0; i < 10; i++) {
+          code += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          )
+        }
+        document.getElementById('couponCode').value = code
+      }
+
+      // 上傳師資照片
+      document
+        .getElementById("imageUpload")
+        .addEventListener("change", function (event) {
+          const files = event.target.files;
+          const previewContainer = document.getElementById(
+            "imagePreviewContainer"
+          );
+
+          for (const file of files) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const imgWrapper = document.createElement("div");
+              imgWrapper.classList.add("image-card");
+
+              const imgElement = document.createElement("img");
+              imgElement.src = e.target.result;
+              imgElement.classList.add("imgCr");
+
+              const descriptionInput = document.createElement("input");
+              descriptionInput.type = "text";
+              descriptionInput.classList.add("form-control");
+              descriptionInput.placeholder = "輸入圖片描述";
+
+              const removeBtn = document.createElement("button");
+              removeBtn.classList.add("delete-btn" , "deletPic");
+              removeBtn.innerHTML = "&times;";
+              removeBtn.onclick = function () {
+                previewContainer.removeChild(imgWrapper);
+              };
+
+              imgWrapper.appendChild(imgElement);
+              imgWrapper.appendChild(descriptionInput);
+              imgWrapper.appendChild(removeBtn);
+
+              previewContainer.appendChild(imgWrapper);
+            };
+            reader.readAsDataURL(file);
+          }
+
+           event.target.value = "";
+        });
+
+
+
+      //  deletPic 
+       document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("deletPic")) {
+                const imgCard = event.target.closest(".image-card");
+                if (imgCard) {
+                    imgCard.remove();
+                }
+            }
+         });
+
+        // 點擊圖片彈出視窗
+        document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("imgCr")) {
+            const imgSrc = event.target.src;  // 取得圖片路徑
+            document.getElementById("modalImage").src = imgSrc;  // 設定 Modal 內的圖片
+            const modal = new bootstrap.Modal(document.getElementById("imageModal"));
+            modal.show();  // 顯示 Modal
+        }
+       });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

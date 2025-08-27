@@ -1,0 +1,481 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+}
+/* ----------廣告區---------- */
+.DmArea {
+  width: 100%;
+  .carouselItem {
+    width: 100%;
+  }
+}
+/* -------------------------- */
+/* -------麵包屑與標題-------- */
+.BreadcrumbsTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 30px 0px 30px 0px;
+  gap: 60px;
+}
+/* -------------------------- */
+/* ----------麵包屑---------- */
+.Breadcrumbs {
+  width: 242px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  a {
+    color: var(--gray);
+  }
+  .BreadcrumbsActive {
+    color: var(--Black);
+    font-weight: bold;
+  }
+}
+/* -------------------------- */
+/* -----------標題----------- */
+.Title {
+  display: flex;
+  flex: auto;
+  padding: 0px 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+/* -------------------------- */
+/* -------標題的篩選---------- */
+.TitleFilter {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  li {
+    list-style-type: none;
+    a {
+      color: var(--Black);
+    }
+  }
+}
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .dropdownToggle {
+    border: 1px solid var(--Orange);
+    border-radius: 20px;
+    &.PageItemActive {
+      background: var(--Orange);
+      color: var(--White);
+    }
+  }
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 21px;
+  right: -15px;
+  background-color: #ff9538;
+  min-width: 115px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  .dropdown-link {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.dropdown-contentOn {
+  display: block;
+  position: absolute;
+  top: 21px;
+  right: -15px;
+  background-color: #ff9538;
+  min-width: 115px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  .dropdown-link {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.dropdown-contentOff {
+  display: none;
+}
+.dropdown-link-top:hover {
+  border-radius: 10px 10px 0 0;
+}
+.dropdown-link-bottom:hover {
+  border-radius: 0 0 10px 10px;
+}
+.dropdown-link:hover {
+  background-color: #ffffff;
+  color: #ff9538;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* -------------------------- */
+/* --------收縮Aside---------- */
+.collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid var(--Orange);
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid var(--Orange);
+    width: 35px;
+    height: 35px;
+  }
+}
+/* -------------------------- */
+/* --------商品區域----------- */
+.PdArea {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  min-height: 40vh;
+}
+/* --------------------------- */
+/* ---------商品清單---------- */
+.PdList {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: auto;
+}
+/* --------------------------- */
+/* ---------商品群組----------- */
+.ProductCardGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+/* --------------------------- */
+/* ----------他愛區------------ */
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.OtherLike {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.OtherLikeTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.OtherLikeContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .ProductInfoImgSmallBtn {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    @media (max-width: 499px) {
+      width: 25px;
+      height: 25px;
+      img {
+        width: 9px;
+      }
+    }
+  }
+}
+.OtherLikeList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/* --------------------------- */
+/* ---------page元件---------- */
+.ProductListPagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  .PageItem {
+    cursor: pointer;
+  }
+}
+.PageItem {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--Orange);
+  border-radius: 50%;
+  &:hover {
+    background: var(--Orange);
+    color: var(--White);
+  }
+  .PageLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.PageItemActive {
+    background: var(--Orange);
+    color: var(--White);
+  }
+}
+.PageArrow {
+  display: flex;
+  align-items: center;
+  img {
+    display: block;
+  }
+}
+.dropdownMenuOff {
+  display: none;
+}
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  transform: translate(0px, 38px) !important;
+  inset: 0px 0px auto 0px !important;
+  min-width: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  .dropdownItem {
+    padding: 0;
+    &.PageItemActive {
+      background: var(--Orange);
+      color: var(--White);
+    }
+  }
+  .dropdownItem:hover {
+    background: var(--Orange);
+    color: var(--White);
+  }
+  .PageLink {
+    padding: 2px 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* -------------------------- */
+/* ----小狗動畫衍生--------------- */
+.dogApp {
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+}
+.dog {
+  width: 60px;
+  height: 38px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000;
+}
+.dogWoof {
+  background: url("@/app/product/template/woof.png") 0 0;
+  animation: four 0.8s steps(4) infinite;
+}
+.dogWalk {
+  background: url("@/app/product/template/walk.png") 0 0;
+  animation: six 0.9s steps(6) infinite;
+}
+.dogRun {
+  background: url("@/app/product/template/run.png") 0 0;
+  animation: five 0.4s steps(5) infinite;
+}
+.dogSit {
+  background: url("@/app/product/template/sit.png") 0 0;
+  animation: four 0.6s steps(4) infinite;
+}
+.dogWalkToSit {
+  background: url("@/app/product/template/walktosit.png") 0 0;
+  animation: three 0.2s steps(2) forwards;
+}
+.dogSitToWalk {
+  background: url("@/app/product/template/walktosit.png") 0 0;
+  animation: backthree 0.2s steps(2) forwards;
+}
+.dogStop {
+  background: url("@/app/product/template/stop.png") 0 0;
+  animation: four 0.6s steps(4) infinite;
+}
+.flip {
+  transform: scaleX(-1);
+}
+@keyframes six {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -360px 0px;
+  }
+}
+@keyframes five {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -300px 0;
+  }
+}
+@keyframes four {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -240px 0;
+  }
+}
+@keyframes three {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -120px 0;
+  }
+}
+@keyframes backthree {
+  0% {
+    background-position: -120px 0;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+.lumi-cart-icon {
+  display: block;
+  font-size: 40px;
+  color: var(--Black);
+  position: absolute;
+  bottom: -8px;
+  width: 0px;
+  left: 90px;
+  transform: scaleX(-1);
+  i {
+    position: relative;
+    z-index: 100;
+  }
+  .lumi-cart-count {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 20px;
+    height: 30px;
+    background-color: var(--Orange);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    top: 6px;
+    left: 11px;
+    z-index: 80;
+    border: 0.3px dashed #000000;
+    border-radius: 2px;
+  }
+}
+.customTable {
+  background: #ffffff;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  .tableName {
+    width: 180px;
+  }
+}
+.customTable th,
+.customTable td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.customTable thead tr {
+  background-color: #fff6e8;
+  font-weight: bold;
+}
+.customTable td img {
+  width: 110px;
+  height: auto;
+  max-width: 100%;
+}
+.customTable td {
+  text-align: center;
+}
+.table {
+  img {
+    width: 32px;
+    height: 29px;
+  }
+}
+.Btn {
+  width: 150px;
+}
+.Btn button {
+  background-color: #fdf9f5;
+  color: #bcbcbc;
+  border-radius: 5px;
+  border-color: #bcbcbc;
+  margin: 10px;
+}

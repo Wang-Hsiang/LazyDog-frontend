@@ -1,0 +1,762 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 150px;
+}
+/* --------麵包屑與標題-------- */
+.Breadcrumbs {
+  width: 242px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  a {
+    color: var(--gray);
+  }
+  .BreadcrumbsActive {
+    color: var(--Black);
+    font-weight: bold;
+  }
+}
+/* --------------------------- */
+/* ----------商品資訊---------- */
+.ProductInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .InfoBtnGroup {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 15px;
+    button {
+      background: var(--orange);
+      border: 1px solid var(--orange);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 300px;
+      flex: 1 0 0;
+      padding: 15px 50px;
+      text-wrap: nowrap;
+      color: white;
+    }
+    @media (max-width: 499px) {
+      button {
+        padding: 15px 40px;
+      }
+    }
+    h5 {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .BtnBuynow {
+      background: var(--White);
+      color: #ff9538;
+    }
+  }
+}
+.ProductInfoImgGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  gap: 15px;
+  .ProductInfoImg {
+    max-width: 611px;
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}
+.ProductInfoImgSmall {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  .ProductInfoImgSmallActive {
+    border: 4px solid var(--Orange);
+  }
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--skin);
+    border-radius: 4px;
+  }
+  .ProductInfoImgSmallBtn {
+    margin: auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+  }
+}
+.ProductInfoDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* gap: 30px; */
+  flex: 1 0 0;
+  padding-top: 30px;
+}
+.ProductInfoContent {
+  display: flex;
+  padding: 0px 10px 30px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  .InfoProductName {
+    font-weight: bold;
+  }
+}
+.InfoFavoriteGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  h6 {
+    font-weight: bold;
+    user-select: none;
+  }
+  button {
+    padding: 0;
+  }
+}
+.InfoOnsaleGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  .OnsaleTag {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Orange);
+    border-radius: 30px;
+    h5 {
+      color: var(--White);
+    }
+  }
+  .OnsaleInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .OnsaleTime {
+    font-weight: bold;
+  }
+}
+.InfoRateGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.InfoPriceGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  h3 {
+    font-weight: bold;
+  }
+  /* h4 {
+    text-decoration: line-through;
+    color: var(--gray);
+  } */
+  h5 {
+    color: var(--gray);
+  }
+}
+.InfoQtyGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--White);
+    width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    border: 1px solid var(--Orange);
+    border-radius: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  input {
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+/* --------------------------- */
+/* ------商品詳細(手風琴)------- */
+.StickyTop {
+  background: transparent;
+  padding-block: 19px;
+  margin-left: 20px;
+  width: 100%;
+  @media (width < 576px) {
+    background: white;
+    margin-left: 0;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  a {
+    color: var(--Black);
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      color: var(--Orange);
+    }
+  }
+}
+.StickyTopOff {
+  display: none;
+}
+.ProductDetail {
+  width: 100%;
+  .AccordionButton {
+    box-shadow: none;
+    &:not(.collapsed) {
+      background: var(--Orange);
+      h5 {
+        color: var(--White);
+      }
+      &::after {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fdfaf5'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+      }
+    }
+    &::after {
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fdfaf5'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+    }
+  }
+}
+.AccordionItem {
+  h5 {
+    font-weight: bold;
+  }
+}
+.AccordionBody {
+  padding: 20px 30px;
+  h6 {
+    line-height: 2;
+  }
+  figure {
+    max-width: 700px;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    line-height: 1.8;
+    font-weight: 500;
+  }
+}
+/* ------商品評價(手風琴)------- */
+.ProductDetailRate {
+  .AccordionBody {
+    display: flex;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+.ScoreBarAndSetReviews {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 80px; */
+}
+.ScoreBar {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  @media (max-width: 499px) {
+    gap: 15px;
+  }
+}
+.Score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.StarBarGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+.SetReviews {
+}
+/* ----StarGroup(備份css---- */
+/* .StarGroup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  img {
+    width: 18px;
+  }
+}
+.StarBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+.BarArea {
+  width: 110px;
+  height: 5px;
+  background: var(--skin);
+}
+.Bar {
+  height: 100%;
+  background: var(--orange);
+} */
+/* ------商品評價(卡片)------- */
+.RateCardGroup {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  /* gap: 30px; */
+}
+.RateMore {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--Orange);
+  &:hover {
+    color: var(--skin);
+  }
+}
+/* ----RateCard元件(備份css---- */
+/* .RateCard {
+  display: flex;
+  width: 392px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  border: 1px solid var(--Orange);
+}
+.RateCardText {
+  width: 100%;
+  display: flex;
+  padding: 20px 20px 5px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  .StarGroup {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    img {
+      width: 12px;
+    }
+  }
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+}
+.RateCardUser {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    h6 {
+      cursor: pointer;
+    }
+  }
+}
+.RateCardBtnDate {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px 20px 20px;
+  justify-content: space-between;
+  align-items: center;
+  .RateCardBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid var(--skin);
+    border-radius: 50%;
+  }
+} */
+/* --------------------------- */
+/* ----------也買區------------ */
+.AlsoBuy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.AlsoBuyTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.AlsoBuyContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .ProductInfoImgSmallBtn {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    @media (max-width: 499px) {
+      width: 25px;
+      height: 25px;
+      img {
+        width: 9px;
+      }
+    }
+  }
+}
+.AlsoBuyList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  @media (max-width: 499px) {
+    gap: 15px;
+  }
+}
+
+/* --------------------------- */
+/* ----------他愛區------------ */
+.OtherLike {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.OtherLikeTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.OtherLikeContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .ProductInfoImgSmallBtn {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    @media (max-width: 499px) {
+      width: 25px;
+      height: 25px;
+      img {
+        width: 9px;
+      }
+    }
+  }
+}
+.OtherLikeList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  @media (max-width: 499px) {
+    gap: 15px;
+  }
+}
+/* --------------------------- */
+/* ---------card元件(備份css)----------- */
+/* .ProductCard {
+  width: 240px;
+  position: relative;
+}
+.ProductCardHover {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  background: rgb(241, 213, 182, 0.7);
+  top: 0;
+  left: 0;
+  .HoverIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .CartBtn {
+    h2 {
+      display: none;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      line-height: 1;
+      color: var(--Black);
+      text-shadow: 0 0 2px var(--White);
+      cursor: pointer;
+    }
+  }
+}
+.ProductCardImg {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+.ProductCardHeart {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 25px;
+}
+.ProductCardOnsale {
+  position: absolute;
+  background: url(/product/font/onsale-bg.png) no-repeat center/cover;
+  width: 50px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+  user-select: none;
+  padding-bottom: 3px;
+}
+.ProductCardInfo {
+  padding: 0 20px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .ProductCardName {
+    color: var(--Black);
+  }
+  .ProductCardPrice {
+    color: var(--Orange);
+  }
+} */
+/* --------------------------- */
+/* ----小狗動畫衍生--------------- */
+.dogApp {
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+}
+.dog {
+  width: 60px;
+  height: 38px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000;
+}
+.dogWoof {
+  background: url("@/app/product/template/woof.png") 0 0;
+  animation: four 0.8s steps(4) infinite;
+}
+.dogWalk {
+  background: url("@/app/product/template/walk.png") 0 0;
+  animation: six 0.9s steps(6) infinite;
+}
+.dogRun {
+  background: url("@/app/product/template/run.png") 0 0;
+  animation: five 0.4s steps(5) infinite;
+}
+.dogSit {
+  background: url("@/app/product/template/sit.png") 0 0;
+  animation: four 0.6s steps(4) infinite;
+}
+.dogWalkToSit {
+  background: url("@/app/product/template/walktosit.png") 0 0;
+  animation: three 0.2s steps(2) forwards;
+}
+.dogSitToWalk {
+  background: url("@/app/product/template/walktosit.png") 0 0;
+  animation: backthree 0.2s steps(2) forwards;
+}
+.dogStop {
+  background: url("@/app/product/template/stop.png") 0 0;
+  animation: four 0.6s steps(4) infinite;
+}
+.flip {
+  transform: scaleX(-1);
+}
+@keyframes six {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -360px 0px;
+  }
+}
+@keyframes five {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -300px 0;
+  }
+}
+@keyframes four {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -240px 0;
+  }
+}
+@keyframes three {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -120px 0;
+  }
+}
+@keyframes backthree {
+  0% {
+    background-position: -120px 0;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+.lumi-cart-icon {
+  display: block;
+  font-size: 40px;
+  color: var(--Black);
+  position: absolute;
+  bottom: -8px;
+  width: 0px;
+  left: 90px;
+  transform: scaleX(-1);
+  i {
+    position: relative;
+    z-index: 100;
+  }
+  .lumi-cart-count {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 20px;
+    height: 30px;
+    background-color: var(--Orange);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    top: 6px;
+    left: 11px;
+    z-index: 80;
+    border: 0.3px dashed #000000;
+    border-radius: 2px;
+  }
+}
+.customTable {
+  background: #ffffff;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  .tableName {
+    width: 180px;
+  }
+}
+.customTable th,
+.customTable td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.customTable thead tr {
+  background-color: #fff6e8;
+  font-weight: bold;
+}
+.customTable td img {
+  width: 110px;
+  height: auto;
+  max-width: 100%;
+}
+.customTable td {
+  text-align: center;
+}
+.table {
+  img {
+    width: 32px;
+    height: 29px;
+  }
+}
+.Btn {
+  width: 150px;
+}
+.Btn button {
+  background-color: #fdf9f5;
+  color: #bcbcbc;
+  border-radius: 5px;
+  border-color: #bcbcbc;
+  margin: 10px;
+}

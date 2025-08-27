@@ -1,0 +1,23 @@
+/* 待改 */
+
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .bgLight {
+    background-color: #f9f9f9 !important;
+  }
+
+  .rounded {
+    border-radius: 10px !important;
+  }
+
+  .formControl {
+    border-radius: 8px;
+  }
+
+  .generateCodeBtn {
+    margin-left: 10px;
+  }

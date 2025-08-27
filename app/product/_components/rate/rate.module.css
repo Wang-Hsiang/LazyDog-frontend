@@ -1,0 +1,136 @@
+/* RateCard */
+.RateCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  border: 1px solid var(--Orange);
+  padding: 0;
+  form {
+    width: 100%;
+  }
+}
+.RateCardText {
+  width: 100%;
+  display: flex;
+  padding: 20px 20px 5px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  .StarGroup {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    img {
+      width: 12px;
+    }
+  }
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  textarea {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 14px;
+    border: 0.5px solid var(--skin);
+    &:focus {
+      border: none;
+      outline: 0.5px solid var(--tiffany);
+    }
+  }
+}
+.RateCardUser {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    h6 {
+      cursor: pointer;
+    }
+  }
+}
+.RateCardBtnDate {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px 20px 20px;
+  justify-content: space-between;
+  align-items: center;
+  .RateCardGood {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .RateCardBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid var(--skin);
+    border-radius: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  .UpdateRateBtn {
+    color: var(--Orange);
+    border-radius: 20px;
+    padding: 5px 15px;
+    &:hover {
+      background: var(--Orange);
+      color: var(--white);
+    }
+  }
+}
+/* RateStar */
+.StarGroup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  img {
+    width: 18px;
+  }
+}
+/* StarBar */
+.StarBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .StarGroup {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    img {
+      width: 12px;
+      @media (max-width: 500px) {
+        width: 11px;
+      }
+    }
+  }
+}
+.BarArea {
+  width: 110px;
+  height: 5px;
+  background: var(--skin);
+  @media (max-width: 500px) {
+    width: 60px;
+  }
+}
+.Bar {
+  height: 100%;
+  background: var(--orange);
+}

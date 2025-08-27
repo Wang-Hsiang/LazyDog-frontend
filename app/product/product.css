@@ -1,0 +1,128 @@
+:root {
+  --Orange: #f5842b;
+  --orange: #f5842b;
+  --Skin: #f1d5b6;
+  --skin: #f1d5b6;
+  --Tiffany: #66c5bd;
+  --tiffany: #66c5bd;
+  --White: #fdfaf5;
+  --white: #fdfaf5;
+  --Yellow: #f6ce5b;
+  --yellow: #f6ce5b;
+  --Black: #3b3330;
+  --black: #3b3330;
+  --Rice: #fff6e8;
+  --rice: #fff6e8;
+  --Gray: #bcbcbc;
+  --gray: #bcbcbc;
+  scrollbar-width: thin;
+  /* scrollbar-width: none; */
+  scrollbar-color: var(--Orange) var(--White);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      cursor: default;
+      user-select: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    /* color: var(--Black); */
+    user-select: none;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+  }
+
+  button {
+    border: none;
+    background: none;
+    user-select: none;
+  }
+
+  div {
+    /* margin: 0;
+    padding: 0; */
+    user-select: none;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 32px;
+    font-weight: 700;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 24px;
+    font-weight: 500;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 20px;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 16px;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 14px;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  h6 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 12px;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    /* font-size: 10px;
+    color: var(--Black); */
+    cursor: default;
+    user-select: none;
+  }
+}
+.PDLayout {
+  margin-top: 74px;
+}
+@media (max-width: 768px) {
+  .PDLayout {
+    margin-top: 62px;
+  }
+}

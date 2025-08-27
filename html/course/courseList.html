@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/courseList.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-city-selector"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+    
+    <title>courseList</title>
+  </head>
+  <body>
+    <div class="new">
+      <img class="newImg" src="./img/18 (1).jpeg" alt="" />
+      <div class="bottom">
+        <div class="date">01 / 08</div>
+        <div class="arrows">
+          <img class="arrowLW" src="./img/arrow-left-white.png" alt="" />
+          <img class="arrowRW" src="./img/arrow-right-white.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- <nav class="breadcrumbs">
+      <ul>
+        <li><a href="">寵物課程</a></li>
+        <img src="./img/right.svg" alt="" />
+        <li><a href="">課程</a></li>
+        <img src="./img/right.svg" alt="" />
+        <li><a href="">一對一寵物美容教學實作</a></li>
+      </ul>
+    </nav> -->
+
+    <div class="container section1">
+      <div class="row">
+        <!-- 篩選 -->
+        <aside class="col-lg-3 sidebar">
+          <!-- 搜尋 -->
+          <div class="search-group">
+            <img class="searchIcon" src="./img/searchIcon.png" alt="" />
+            <input type="text" class="search-input" id="courseInput" placeholder="搜尋課程" />
+            <img class="xIcon" src="./img/x.png" alt="" />
+          </div>
+           <!-- 課程類別 -->
+          <div class="filter-group">
+              <div class="bar">
+                <h6 class="filter-title">課程類別</h6>
+                <img class="arrowDown" src="./img/arrow-down.png" alt=""></button>
+              </div>
+              <div class="checks">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="train" />
+                  <label class="form-check-label" for="train">寵物訓練</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="food" />
+                  <label class="form-check-label" for="food">寵膳食育</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="beauty" />
+                  <label class="form-check-label" for="beauty">寵物美容</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="takecare" />
+                  <label class="form-check-label" for="takecare">寵物照護</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="profession" />
+                  <label class="form-check-label" for="profession"
+                    >商業思維與專業培訓</label
+                  >
+                </div>
+              </div>
+          </div>
+          <!-- 上課地點 -->
+          <div class="filter-group">
+            <div class="bar">
+              <h6 class="filter-title">上課地點</h6>
+              <img class="arrowDown" src="./img/arrow-down.png" alt=""></button>
+            </div>
+            <div class="checks">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="taipei" />
+                <label class="form-check-label" for="taipei">台北</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="taichung" />
+                <label class="form-check-label" for="taichung">台中</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="kaoshiung" />
+                <label class="form-check-label" for="kaoshiung">高雄</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="live" />
+                <label class="form-check-label" for="live">線上直播</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="prevideo" />
+                <label class="form-check-label" for="prevideo"
+                  >線上預錄</label
+                >
+              </div>
+            </div>
+         </div>
+        <!-- 🔹 價格篩選區 -->
+        <div class="filter-group price-filter-container">
+          <div class="bar priceBar">
+            <h6 class="filter-title">價格篩選</h6>
+          </div>
+      
+          <!-- 價格輸入框 -->
+          <div class="price-input-group">
+            <div class="price-input">
+              <label class="visually-hidden" for="filterMin">最少</label>
+              <input id="filterMin" type="number" value="200" min="0" max="10000" />
+              <span>元</span>
+            </div>
+            <div class="price-input">
+              <label class="visually-hidden" for="filterMax">最多</label>
+              <input id="filterMax" type="number" value="1000" min="0" max="10000" />
+              <span>元</span>
+            </div>
+          </div>
+      
+          <!-- Bootstrap Slider -->
+          <input
+            id="priceRange"
+            type="text"
+            data-slider-min="0"
+            data-slider-max="10000"
+            data-slider-step="100"
+            data-slider-value="[200,1000]"
+          />
+      
+         
+        </div>
+         <!-- 清除按鈕 -->
+        <button id="resetFilter" class="clear-filter-btn">清除搜尋</button>
+        
+        <!-- 廣告 -->
+        <div class="ad">
+          <p class="adWords">最新課程優惠中!</p>
+          <button class="buynow">BUY NOW</button>
+          <img class="" src="./img/girlPic.png" alt="">
+        </div>
+        
+        <a href=""
+          ><figure>
+            <img
+              src="./hotel-images/page-image/hotelad2.png"
+              alt=""
+              class="mx-4"
+            /></figure
+        ></a>
+        </aside>
+
+        <div class="col-lg-9 right">
+          <div class="top">
+            <h2 class="sTitle">所有課程</h2>
+            <div class="sbar"></div>
+          </div>
+
+          <div class="medium">
+            <div class="count">共計 <span class="countNum">42</span> 堂課</div>
+            <div class="hot"><img src="./img/sort.png" alt="">依熱門程度排序</div>
+          </div>
+
+          <div class="courseGroup">
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+            <div class="courseCard">
+              <img class="img" src="./img/18 (1).jpeg" alt="">
+              <h5 class="tag">寵物訓練</h5>
+              <h2 class="name">犬貓營養與動物中醫</h2>
+              <p class="intro">了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提了解犬貓基礎六大營養需求，及營養不足或過多造成疾病。自製鮮食如何計算毛孩需要的熱量、營養成分、提</p>
+            </div>
+          </div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item prev">
+                <a class="page-link " href="#" aria-label="Previous">
+                  <span aria-hidden="true"><img src="./img/pageArrowleft;png.png" alt=""></span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link " href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item next">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true"><img src="./img/pageArrowright.png" alt=""></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="container section2">
+      <div class="similarCourse">
+        <h2 class="sTitle">熱門內容</h2>
+        <div class="sBars">
+          <div class="sbar"></div>
+          <div class="btns">
+            <img class="arrowLeft" src="./img/arrow-left.png" alt="" />
+            <img class="arrowRight" src="./img/arrow-right.png" alt="" />
+          </div>
+        </div>
+        <div class="sCards">
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+          <div class="sCard">
+            <img class="cardImg" src="./img/7 (1).jpeg" alt="" />
+            <h5 class="cardName">我家也有狗醫生</h5>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <script>
+      const xIcon =document.querySelector("xIcon");
+      const cards=document.querySelector("courseCard");
+      const searchInput = document.getElementById('courseInput');
+      const checks = document.querySelectorAll("input[type=checkbox]");
+      const filterMin = document.getElementById('filterMin');
+      const filterMax = document.getElementById('filterMax');
+      const priceRange = new Slider('#priceRange', {
+        min: 0,
+        max: 10000,
+        step: 100,
+        value: [200, 1000],
+        tooltip_split: true,
+      })
+
+      // 搜尋 清除事件
+      searchInput.addEventListener('input', e => {
+      // let filter = searchInput.value.trim(); // 取得輸入值（不轉小寫）
+      let inputs = e.value;
+
+      // 顯示或隱藏 xIcon
+      xIcon.style.display = inputs ? 'block' : 'none';
+
+      // 篩選課程卡片
+      cards.forEach(card => {
+        let nameText = card.querySelector('.name').textContent; // 取得標題
+        let tagText = card.querySelector('.tag').textContent;   // 取得標籤
+        let introText = card.querySelector('.intro').textContent; // 取得簡介
+
+        // 如果標題、標籤或簡介包含搜尋關鍵字，則顯示，否則隱藏
+        if (nameText.includes(inputs) || tagText.includes(inputs) || introText.includes(inputs)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+
+      // 價格
+      priceRange.on('slide', function (values) {
+        filterMin.value = values[0]
+        filterMax.value = values[1]
+      })
+
+      // 滑桿數值
+      filterMin.addEventListener('input', () => {
+        priceRange.setValue([filterMin.value, filterMax.value])
+      })
+      filterMax.addEventListener('input', () => {
+        priceRange.setValue([filterMin.value, filterMax.value])
+      })
+
+      // 清除
+      document
+        .getElementById('resetFilter')
+        .addEventListener('click', function () {
+          searchInput.value=''
+          checks.forEach(e=>{
+            e.checked = false;
+          })
+          priceRange.setValue([200, 1000])
+          filterMin.value = 200
+          filterMax.value = 1000
+        })
+    </script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

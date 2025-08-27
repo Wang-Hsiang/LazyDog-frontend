@@ -1,0 +1,236 @@
+/*  介紹  */
+.suHotelDescription {
+  /* max-width: 550px; */
+  line-height: 1.6;
+  text-align: left;
+}
+
+.suHotelImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*  房型 */
+.suRoomCard {
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 420px;
+}
+
+.suRoomCard img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #fff !important;
+}
+
+.suRoomCard h3 {
+  font-size: 20px;
+}
+
+.room{
+  color: #ff9538 !important;
+  font-weight: bold;
+}
+
+.select{
+  .option:hover {
+    background-color: #ff9538 !important;
+  }
+}
+.select:focus{
+  border-color: #ff9538 !important;
+  outline: none;
+}
+
+/* book按鈕 */
+.suRoomBookBtn {
+  background-color: #ff9538 !important;
+  color: white !important;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.suRoomBookBtn:hover {
+  background-color: #fdf9f5 !important;
+  color: #ff9538 !important;
+  border-color: #ff9538 !important;
+}
+
+/* =================== 廣告區 (努力區塊) =================== */
+.suEffortSection {
+  background-image: url("/hotel/hotel-images/page-image/bg-hotel-01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 0 100px 0 ;
+  text-align: center;
+}
+
+.suEffortTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff9538;
+  margin-bottom: 10px;
+}
+
+.suEffortSubtitle {
+  font-size: 18px;
+  color: #66c5bd;
+  margin-bottom: 25px;
+}
+
+.suEffortStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.suStatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.suStatItem img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  background-color: #ffcc80;
+}
+
+.suStatItem p {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.suIntroduce {
+  margin: 30px 0;
+  white-space: pre-line;
+}
+/* 按鈕兩顆 */
+.suEffortButtons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.suEffortButtons .btn {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 5px;
+}
+
+.suEffortButtons .suBtnPrimary {
+  background-color: #ff9538 !important;
+  color: white !important;
+  border: 1px solid transparent;
+  width: 250px;
+}
+
+.suEffortButtons .suBtnPrimary:hover {
+  background-color: #fdf9f5 !important;
+  color: #ff9538 !important;
+  border-color: #ff9538 !important;
+}
+
+.suEffortButtons .suBtnOutlineLight {
+  color: #ff9538 !important;
+  border: 2px solid #ff9538    !important;
+  background: transparent;
+  width: 250px;
+}
+
+.suEffortButtons .suBtnOutlineLight:hover {
+  background-color: #ff9538  !important;
+  color: white !important;
+}
+
+
+
+/*Google 地圖 API  */
+.suMapContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: -250px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 100%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+/* 📱 RWD 版地圖調整 */
+@media (max-width: 768px) {
+  .suMapContainer {
+    height: 400px;
+    margin-bottom: -140px; /* 避免 footer 波浪壓縮 */
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 90%, /* 讓 footer 過渡更順暢 */
+      rgba(0, 0, 0, 0) 98%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 98%
+    );
+  }
+  .container{
+    padding: 30px;
+  }
+}
+
+
+/* (RWD) */
+@media (max-width: 1024px) {
+  .suSearchBar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .suSearchGroup {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .suEffortStats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .suStatItem {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .suEffortStats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .suEffortButtons {
+    flex-direction: column;
+  }
+}

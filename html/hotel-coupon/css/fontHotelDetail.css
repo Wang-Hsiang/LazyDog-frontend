@@ -1,0 +1,278 @@
+/* =================== 搜尋欄 =================== */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  background: #f5d1a8;
+  border-radius: 15px;
+  padding: 12px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 950px;
+  margin: auto;
+  flex-wrap: wrap; /* ✅ 讓小螢幕時可換行 */
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.icon {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.search-input,
+.search-date {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* 數量選擇 */
+.quantity-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.quantity-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.quantity-btn:hover {
+  background: #f3dccc;
+}
+
+/* ✅ 修正：確保搜尋按鈕不會縮小 */
+.search-btn {
+  background-color: #f5842b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+.search-btn:hover {
+  background-color: #e65c00;
+}
+
+/* =================== 飯店介紹 =================== */
+.hotel-description {
+  max-width: 550px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.hotel-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =================== 房型選擇 =================== */
+.room-card {
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 420px; /* ✅ 讓所有房型卡片等高 */
+}
+
+.room-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.room-card h3 {
+  font-size: 20px;
+}
+
+.room-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+/* book按鈕 */
+.book-btn {
+  background-color: #ff9900;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background-color: #ff6600;
+}
+
+/* =================== 廣告區 (努力區塊) =================== */
+.effort-section {
+  background-image: url("/hotel/hotel-images/page-image/bg-hotel-01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.effort-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+.effort-subtitle {
+  font-size: 18px;
+  color: #5db2a5;
+  margin-bottom: 25px;
+}
+
+
+.effort-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  background-color: #ffcc80;
+}
+
+.stat-item p {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 按鈕兩顆 */
+.effort-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.effort-buttons .btn {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+.effort-buttons .btn-primary {
+  background-color: #ff9900;
+  border: none;
+}
+
+.effort-buttons .btn-primary:hover {
+  background-color: #e67e22;
+}
+
+.effort-buttons .btn-outline-light {
+  color: #ff9900;
+  border: 2px solid #ff9900;
+  background: transparent;
+}
+
+.effort-buttons .btn-outline-light:hover {
+  background-color: #ff9900;
+  color: white;
+}
+
+/* =================== Google 地圖 API =================== */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px; 
+  }
+}
+
+/* 波浪裝飾 */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.wave svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* =================== 響應式設計 (RWD) =================== */
+@media (max-width: 1024px) {
+  .search-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .search-group {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .effort-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-item {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .effort-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .effort-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,338 @@
+:root {
+  --Orange: #f5842b;
+  --orange: #f5842b;
+  --Skin: #f1d5b6;
+  --skin: #f1d5b6;
+  --Tiffany: #66c5bd;
+  --tiffany: #66c5bd;
+  --White: #fdfaf5;
+  --white: #fdfaf5;
+  --Yellow: #f6ce5b;
+  --yellow: #f6ce5b;
+  --Black: #3b3330;
+  --black: #3b3330;
+  --Rice: #fff6e8;
+  --rice: #fff6e8;
+  --Gray: #bcbcbc;
+  --gray: #bcbcbc;
+  scrollbar-width: thin;
+  /* scrollbar-width: none; */
+  scrollbar-color: var(--Orange) var(--White);
+
+  /* div {
+    margin: 0;
+    padding: 0;
+  } */
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 32px;
+    font-weight: 700;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 24px;
+    font-weight: 500;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 20px;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 16px;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 14px;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  h6 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 12px;
+    color: var(--Black); */
+    cursor: default;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    /* font-size: 10px;
+    color: var(--Black); */
+    cursor: default;
+  }
+}
+.table {
+  width: 100%;
+  a {
+    padding: 0;
+  }
+  .productPic {
+    width: 65px;
+    /* height: 100%; */
+    padding-left: 8px;
+  }
+  .star {
+    width: 15px;
+    /* height: 100%; */
+    padding-top: 4px;
+  }
+  th {
+    padding: 13px 0;
+    font-weight: 550;
+  }
+  td {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0;
+    max-width: 323.98px;
+    height: 56px;
+    gap: 8px;
+    font-size: 14.8px;
+    font-weight: 350;
+    letter-spacing: 1px;
+    line-height: 25px;
+    max-width: 350px;
+
+    &:hover {
+      color: #ff9538;
+      /* font-weight: bold; */
+    }
+  }
+  .btn {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    color: white;
+    background-color: #ff9538;
+    border-radius: 5px;
+  }
+  .btn:hover {
+    background-color: #fdf9f5;
+    color: #ff9538;
+    border-color: #ff9538;
+  }
+}
+
+/* ------------------------------ */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .dropdownToggle {
+    border: 1px solid var(--Orange);
+    border-radius: 20px;
+    &.PageItemActive {
+      background: var(--Orange);
+      color: var(--White);
+    }
+  }
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 21px;
+  right: -15px;
+  background-color: #ff9538;
+  min-width: 115px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  .dropdown-link {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.dropdown-contentOn {
+  display: block;
+  position: absolute;
+  top: 21px;
+  right: -15px;
+  background-color: #ff9538;
+  min-width: 115px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  .dropdown-link {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.dropdown-contentOff {
+  display: none;
+}
+.dropdown-link-top:hover {
+  border-radius: 10px 10px 0 0;
+}
+.dropdown-link-bottom:hover {
+  border-radius: 0 0 10px 10px;
+}
+.dropdown-link:hover {
+  background-color: #ffffff;
+  color: #ff9538;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* ------------------ */
+.ProductListPagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 55px;
+
+  .PageItem {
+    cursor: pointer;
+  }
+}
+.PageItem {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--Orange);
+  border-radius: 50%;
+  &:hover {
+    background: var(--Orange);
+    color: var(--White);
+  }
+  .PageLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.PageItemActive {
+    background: var(--Orange);
+    color: var(--White);
+  }
+}
+.PageArrow {
+  display: flex;
+  align-items: center;
+  img {
+    display: block;
+  }
+}
+.dropdownMenuOff {
+  display: none;
+}
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  transform: translate(0px, 38px) !important;
+  inset: 0px 0px auto 0px !important;
+  min-width: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  .dropdownItem {
+    padding: 0;
+    &.PageItemActive {
+      background: var(--Orange);
+      color: var(--White);
+    }
+  }
+  .dropdownItem:hover {
+    background: var(--Orange);
+    color: var(--White);
+  }
+  .PageLink {
+    padding: 2px 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+}
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 300px auto 20px;
+}
+
+.loader27 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0000;
+  animation: loader27-animation 1s infinite alternate linear;
+  background: radial-gradient(circle closest-side, #f6ce5b 94%, #0000)
+    right/calc(200% - 1em) 100%;
+}
+
+.loader27::before {
+  content: "Loading...";
+  background: inherit;
+  background-clip: text;
+  background-image: radial-gradient(circle closest-side, #fff 94%, #f5842b);
+}
+
+@keyframes loader27-animation {
+  100% {
+    background-position: left;
+  }
+}
+
+/* 0314 add */
+.container {
+  padding: 10px 20px 25px;
+
+  h5 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: #3b3330;
+    padding-bottom: 15px;
+  }
+
+  h6 {
+    font-size: 22px;
+    font-weight: 550;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+    color: #3b3330;
+    padding-bottom: 5px;
+  }
+}

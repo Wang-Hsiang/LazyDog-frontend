@@ -1,0 +1,66 @@
+.header {
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 65px;
+}
+/* ---------導覽列--------- */
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  a {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-align: center;
+    color: var(--Black);
+    &:hover {
+      color: var(--Orange);
+    }
+  }
+}
+/* ------------------------ */
+/* ---------導覽列icon------ */
+.header-icon {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+/* ------------------------ */
+/* ------導覽列hover顯示區--- */
+.header-hoverArea {
+  background: var(--Skin);
+  position: absolute;
+  left: 346px;
+  top: 300px;
+  padding: 20px 30px 30px 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  ul {
+    display: flex;
+    li {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  a {
+    color: var(--Black);
+    &:hover {
+      color: var(--Orange);
+    }
+  }
+}
+/* ------------------------ */

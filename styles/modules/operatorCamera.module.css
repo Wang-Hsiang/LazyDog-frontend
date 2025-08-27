@@ -1,0 +1,464 @@
+.wrapper {
+  margin: 100px auto 0 !important;
+}
+.suAvatarImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  /* border: 1px solid #ddd; */
+  margin-top: 23px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.suCameraIcon {
+  position: absolute;
+  bottom: 19px;
+  right: -1px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    animation: twist 0.8s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes twist {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  } /* 右扭 */
+  100% {
+    transform: rotate(0deg);
+  } /* 回來 */
+}
+
+.suCameraIconImg {
+  width: 36px;
+  height: 36px;
+}
+
+.suDropdownMenu {
+  min-width: 120px;
+  text-align: center;
+}
+
+.suDropdownItem {
+  cursor: pointer;
+}
+.suBtnSecondary {
+  background-color: #66c5bd;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 1.1px;
+  border: 1px solid transparent;
+  margin: 5px 0 10px;
+}
+.suBtnSecondary:hover {
+  background-color: white;
+  color: #66c5bd;
+  border: 1px solid;
+  border-color: #66c5bd;
+}
+.secondary {
+  background-color: #66c5bd;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid transparent;
+}
+
+/* 桌機版篩選選單 */
+.asideContainer {
+  display: block;
+}
+
+/* 手機版篩選選單 (預設隱藏) */
+.mobileFilter {
+  position: fixed;
+  top: 62px;
+  left: -100%;
+  width: 80%;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* 當 `filterOpen` 為 true 時，篩選選單滑入畫面 */
+.showFilter {
+  left: 0;
+}
+
+/* 關閉篩選按鈕 */
+.closeButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #ccc;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #bbb;
+}
+
+.right {
+  /* display: none;
+  border-radius: 30%;
+  width: 50px;
+  height: 50px;
+  border: #f5842b;
+  color: white;
+  position: fixed;
+  top: 73px;
+  left: 10.5px;
+  z-index: 5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff9538;
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border: 1.3px solid #ff9538;
+  border-radius: 11px;
+  transition: 0.4s;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s ease, background-color 0.4s ease; /* 動畫過渡效果 */
+
+  &:active {
+    background-color: #fc861f;
+    color: #fff;
+  }
+  &:hover {
+    /* width: 120px; */
+    /* translate: 0 -5px; */
+    background-color: #ff9538;
+    color: #fff;
+    border: none;
+  }
+  /* 使用 ::after 顯示文字 */
+  &:hover::after {
+    content: "Filter"; /* 顯示的文字 */
+    position: absolute;
+    right: 50px; /* 讓文字顯示在按鈕右側 */
+    top: 50%;
+    transform: translateY(-50%); /* 使文字垂直置中 */
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #ff9538; /* 文字背景色與按鈕一致 */
+    padding: 8px 16px;
+    border-radius: 25px; /* 使文字背景有圓角 */
+  }
+}
+/* 手機篩選按鈕 (點擊後打開篩選) */
+.filterButton {
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  color: white;
+  background-color: #ff9538;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  background-color: #fdf9f5;
+  color: #ff9538 !important;
+  border-color: #ff9538;
+}
+
+.btn2 {
+  background-color: #fdf9f5;
+  color: #ff9538;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #ff9538;
+  cursor: pointer;
+}
+.btn2:hover {
+  background-color: #ff9538;
+  color: white;
+  border-color: #ff9538;
+}
+
+.btn3 {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  color: white;
+  background-color: #66c5bd;
+  border-radius: 5px;
+}
+.btn3:hover {
+  background-color: #fdf9f5;
+  color: #66c5bd;
+  border-color: #66c5bd;
+}
+.moreBtn {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+.moreBtn:hover {
+  color: #f5842b;
+  text-decoration: underline;
+}
+.suTable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.suTable td {
+  padding: 10px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-align: left;
+}
+.suTable th {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-sm {
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+@media (min-width: 768px) {
+  .mobileFilter {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .asideContainer {
+    display: none;
+  }
+  .container {
+    padding: 30px;
+  }
+  .right {
+    display: block;
+    border-radius: 50%;
+    border: #f5842b;
+  }
+  .righttop {
+    padding: 30px;
+  }
+  .suTable {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border: none;
+  }
+
+  .suTable thead {
+    display: none;
+  }
+
+  .suTable tbody,
+  .suTable tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .suTable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .suTable td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    color: #555;
+    min-width: 90px;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .btn-sm {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 10px;
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+    border-radius: 6px;
+  }
+  .add-coupon-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  /* 「更多」按鈕縮小 */
+  .moreBtn {
+    font-size: 12px;
+    color: #ff6600;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .moreBtn:hover {
+    color: #cc5500;
+    text-decoration: underline;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .modal-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.collapseAside {
+  position: sticky;
+  width: 100%;
+  top: 74px;
+  @media (max-width: 768px) {
+    top: 62px;
+  }
+  z-index: 2;
+  .collapseAsideContent {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+    .collapseHorizontal {
+      position: relative;
+      margin-top: -10px;
+      padding: 10px 35px 10px 25px;
+      background: white;
+      border-right: 3px solid #f5842b;
+
+      transition: width 0.05s ease, height 0.05s ease;
+      .collapseAsideBtn {
+        margin-left: 0;
+        padding: 0;
+        width: 11px;
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        border: none;
+      }
+    }
+  }
+  .collapseAsideBtn {
+    margin-left: 63px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: white;
+    border: 1px solid #f5842b;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.height {
+  margin: 100px auto 0;
+}
+@media (max-width: 375px) {
+  /* ✅ 隱藏「訂單編號」、「評論日期」、「是否回覆」、「狀態」 */
+  .suTable td:nth-child(2),  /* 訂單編號 */
+  .suTable td:nth-child(3),  /* 評論日期 */
+  .suTable td:nth-child(6),  /* 是否回覆 */
+  .suTable td:nth-child(7),  /* 狀態 */
+  .suTable th:nth-child(2),
+  .suTable th:nth-child(3),
+  .suTable th:nth-child(6),
+  .suTable th:nth-child(7) {
+    display: none !important;
+  }
+
+  /* ✅ 隱藏「評論內容」，但保留「檢視 / 回覆」按鈕 */
+  .suTable td:nth-child(5) {
+    display: none !important;
+  }
+
+  /* ✅ 確保「操作」按鈕寬度正常 */
+  .suTable td:nth-child(8) {
+    text-align: center;
+  }
+  
+  .suTable td:nth-child(8) .btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  /* ✅ 確保表格可滾動 */
+  .suTable {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 375px) {
+  .modal-content {
+    max-height: 90vh;
+    overflow: hidden;
+  }
+
+  .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 15px;
+  }
+}

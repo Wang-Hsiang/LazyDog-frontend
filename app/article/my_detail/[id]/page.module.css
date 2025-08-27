@@ -1,0 +1,46 @@
+.floor {
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-weight: bold;
+  background-color: #d9d9d9;
+}
+.carousel-inner img {
+  width: 263px;
+  height: 263px;
+}
+
+.avatar {
+  width: 37px;
+  height: 37px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  text-decoration: none;
+  color: #f5842b;
+}
+
+
+.article_img {
+  width: 100%;
+}
+.auther{
+  width: 48px;
+}
+ 
+
+/* img{
+  width: 100%;  
+} */
+@media screen and (min-width: 390px) {
+    .chat{
+        width: 390px;
+    }
+    /* textarea{
+        height: 27px;
+    } */
+}
