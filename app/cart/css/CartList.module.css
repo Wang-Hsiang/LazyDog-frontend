@@ -85,12 +85,12 @@
 }
 
 /* 圖片大小調整 */
-.table {
+/* .table {
   img {
     width: 32px;
     height: 29px;
   }
-}
+} */
 
 /* 內部間距 */
 .summaryItem span {
