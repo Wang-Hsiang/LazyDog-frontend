@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const API_URL = 'http://localhost:5000/api/articles';
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/articles`;
 
 function useArticles() {
     const [articles, setArticles] = useState([]);
