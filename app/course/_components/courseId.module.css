@@ -38,7 +38,7 @@
     margin: 100px 0 60px;
   }
 
-  ul {
+/*   ul {
     display: flex;
     list-style: none;
     padding: 0;
@@ -49,7 +49,7 @@
     @media (max-width: 768px) {
       gap: 10px 20px;
     }
-  }
+  } */
 
   .home {
     color: #a1a1a1;
