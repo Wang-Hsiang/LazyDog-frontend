@@ -216,9 +216,9 @@
   --rice: #fff6e8;
   --Gray: #bcbcbc;
   --gray: #bcbcbc;
-  li {
+/*   li {
     list-style: none;
-  }
+  } */
   button {
     border: none;
   }
