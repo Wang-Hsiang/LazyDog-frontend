@@ -26,7 +26,7 @@
   }
 }
 
-body {
+.body {
   font-family: "Noto Sans TC", sans-serif;
   font-style: normal;
 }
@@ -38,7 +38,7 @@ body {
     margin: 100px 0 60px;
   }
 
-  ul {
+  .ul {
     display: flex;
     list-style: none;
     padding: 0;
