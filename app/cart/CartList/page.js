@@ -105,6 +105,7 @@ export default function CartListPage(props) {
                         <tr key={cartItem.id}>
                           <td className={styles.table}>
                             <img
+                              className={styles.img}
                               src={`/product/img/${encodeURIComponent(
                                 cartItem.name
                               )}${imgName[0]}`}
@@ -157,6 +158,7 @@ export default function CartListPage(props) {
                       <tr key={cartItem.id}>
                         <td className={styles.table}>
                           <img
+                            className={styles.img}
                             src={`/course/img/${cartItem.img_url}`}
                             alt={cartItem.name}
                           />
@@ -201,7 +203,7 @@ export default function CartListPage(props) {
                     {hotelItems.map((cartItem) => (
                       <tr key={cartItem.id}>
                         <td className={styles.table}>
-                          <img src={cartItem.imageUrl} alt={cartItem.name} />
+                          <img src={cartItem.imageUrl} alt={cartItem.name} className={styles.img} />
                         </td>
                         <td>
                           {cartItem.name}
