@@ -9,7 +9,7 @@ export default function Breadcrumb({ course }) {
   return (
     <>
       <nav className={`px-4 ${styles.breadcrumbs}`}>
-        <ul>
+        <ul className={styles.ul}>
           <li>
             <a className={styles.home} href={`/home`}>
               首頁
