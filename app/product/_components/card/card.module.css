@@ -45,20 +45,17 @@
     align-items: center;
     position: relative;
   }
-  .CartBtnOff {
-    h6 {
+  .CartBtnOff .h6 {
       display: none;
-    }
   }
-  .CartBtn {
-    h6 {
+  .CartBtn .h6 {
       position: absolute;
       color: var(--Black);
       text-shadow: 0 0 2px var(--White);
       cursor: pointer;
       top: 0;
     }
-  }
+  
 }
 .ProductCardClickOff {
   width: 100%;
@@ -96,20 +93,16 @@
     align-items: center;
     position: relative;
   }
-  .CartBtnOff {
-    h6 {
+  .CartBtnOff .h6 {
       display: none;
     }
-  }
-  .CartBtn {
-    h6 {
+  .CartBtn .h6 {
       position: absolute;
       color: var(--Black);
       text-shadow: 0 0 2px var(--White);
       cursor: pointer;
       top: 0;
     }
-  }
 }
 .ProductCardImg {
   width: 100%;
