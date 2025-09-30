@@ -16,7 +16,7 @@
   align-items: center;
   gap: 17px;
   border-bottom: 1px solid var(--gray);
-  input {
+  .input {
     width: 100%;
     border: none;
     outline: none;
