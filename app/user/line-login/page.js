@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { useAuth } from '@/hooks/use-auth'
-import LineLogo from '@/public/images/line.webp'
+// import LineLogo from '@/public/images/line.webp'
 import {
   useAuthGet,
   useAuthLogout,
