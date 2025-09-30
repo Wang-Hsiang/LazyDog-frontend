@@ -129,6 +129,7 @@ export default function Aside({
           <div className={styles.SearchTable}>
             <img src="/product/font/search.png" alt="" />
             <input
+              className={styles.input}
               type="text"
               value={clearSearch}
               onChange={(e) => {
